@@ -1,0 +1,15 @@
+{
+  "extends": [
+      "next/core-web-vitals",
+      "plugin:storybook/recommended",
+      "prettier",
+      "react-app",
+      "react-app/jest",
+      "eslint:recommended",
+      // "plugin:react/recommended",
+      "plugin:react/jsx-runtime"
+  ],
+  "rules": {
+    "no-unused-vars":"off"
+  }
+}
