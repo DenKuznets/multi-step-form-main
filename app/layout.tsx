@@ -1,32 +1,25 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { raleway, merriweather, leagueSpartan } from "./fonts";
-import React from "react";
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+import './globals.css';
+import type { Metadata } from 'next';
+import { raleway, merriweather, leagueSpartan } from './fonts';
+import React from 'react';
 
 export const metadata: Metadata = {
-    title: "Denis Kuznetsov | Frontend Developer",
-    description: "I build sites with modern technics",
+    title: 'Frontend Mentor | Multi-step form',
+    description:
+        'challenge designed by frontend-mentor, programmed by DenKuznets'
 };
 
 export default function RootLayout({
-    children,
+    children
 }: {
     children: React.ReactNode;
 }) {
     return (
         <html
-            className={`scroll-smooth md:scroll-pt-20 ${raleway.variable} ${merriweather.variable} ${leagueSpartan.variable} font-serif`}
+            className={`${raleway.variable} ${merriweather.variable} ${leagueSpartan.variable} font-serif`}
             lang="ru"
         >
-            <body
-                className={`pb-16 sm:pb-24 pt-14 md:pt-20  min-h-screen p-0 relative text-almostBlack text-lg first-letter:uppercase`}
-            >
-            <Header />
-                {children}
-            <Footer />
-            </body>
+            <body>{children}</body>
         </html>
     );
 }
