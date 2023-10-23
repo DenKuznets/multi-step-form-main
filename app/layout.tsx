@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { raleway, merriweather, leagueSpartan } from './fonts';
 import React from 'react';
 import { Providers } from './ReduxProvider';
-
+import Steps from '@/components/Steps/Steps';
 
 export const metadata: Metadata = {
     title: 'Frontend Mentor | Multi-step form',
@@ -22,7 +22,9 @@ export default function RootLayout({
             lang="ru"
         >
             <body>
-                <Providers>{ children }</Providers>
+                <Providers>
+                    <Steps>{children}</Steps>
+                </Providers>
             </body>
         </html>
     );
