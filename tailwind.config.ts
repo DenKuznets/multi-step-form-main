@@ -31,13 +31,13 @@ const config: Config = {
             },
 
             colors: {
-                violet: '#6344C6',
-                darkViolet: '#262439',
-                customYellow: '#FFC448',
-                almostBlack: '#11141D',
-                customOrange: '#F26440',
-                pTextColor: 'grey',
-                aTextColor: 'grey'
+                // violet: '#6344C6',
+                // darkViolet: '#262439',
+                // customYellow: '#FFC448',
+                // almostBlack: '#11141D',
+                // customOrange: '#F26440',
+                // pTextColor: 'grey',
+                // aTextColor: 'grey'
             },
             screens: {
                 uhd: '2560px',

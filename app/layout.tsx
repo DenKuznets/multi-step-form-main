@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { raleway, merriweather, leagueSpartan } from './fonts';
 import React from 'react';
+import { Providers } from './ReduxProvider';
+
 
 export const metadata: Metadata = {
     title: 'Frontend Mentor | Multi-step form',
@@ -19,7 +21,9 @@ export default function RootLayout({
             className={`${raleway.variable} ${merriweather.variable} ${leagueSpartan.variable} font-serif`}
             lang="ru"
         >
-            <body>{children}</body>
+            <body>
+                <Providers>{ children }</Providers>
+            </body>
         </html>
     );
 }
