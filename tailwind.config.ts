@@ -19,7 +19,7 @@ const config: Config = {
             }
         },
         fontFamily: {
-            sans: ['var(--font-ubuntu)', 'sans-serif'],
+            serif: ['var(--font-ubuntu)', 'sans-serif'],
             body: ['var(--font-ubuntu)', 'sans-serif']
         },
         extend: {

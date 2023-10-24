@@ -19,7 +19,7 @@ export default function RootLayout({
     return (
         <Providers>
             <html
-                className={`${ubuntu.variable} font-serif`}
+                className={`${ubuntu.variable} font-sans`}
                 lang="ru"
             >
                 <body>

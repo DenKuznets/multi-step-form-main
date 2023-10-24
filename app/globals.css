@@ -3,8 +3,26 @@
 @tailwind utilities;
 
 @layer base {
+    h1 {
+        @apply text-2xl font-bold;
+    }
+
+    .step {
+        @apply p-4 rounded-lg
+    }
+
+    .step-info {
+        @apply text-coolGray font-medium tracking-[-.015em];
+    }
+
+    .label {
+        @apply text-[0.75rem] font-bold tracking-[-.015em]
+    }
+
+    .input {
+        @apply placeholder:text-[.95rem] block placeholder:font-bold placeholder:text-lightGray placeholder:tracking-[-.015em] border rounded p-1
+    }
     img,
-    .small-icon,
     svg {
         user-select: none;
         -moz-user-select: none;
