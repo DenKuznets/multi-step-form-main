@@ -6,7 +6,7 @@ import { PropsWithChildren } from 'react';
 const Steps = (props: PropsWithChildren) => {
     const count = useAppSelector(selectCount);
     return (
-        <div>
+        <div className=''>
             Steps: {count} {props.children}
         </div>
     );

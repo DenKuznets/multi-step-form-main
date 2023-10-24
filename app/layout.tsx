@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { raleway, merriweather, leagueSpartan } from './fonts';
+import { ubuntu } from './fonts';
 import React from 'react';
 import { Providers } from '../lib/providers';
 import Steps from '@/components/Steps/Steps';
@@ -19,7 +19,7 @@ export default function RootLayout({
     return (
         <Providers>
             <html
-                className={`${raleway.variable} ${merriweather.variable} ${leagueSpartan.variable} font-serif`}
+                className={`${ubuntu.variable} font-serif`}
                 lang="ru"
             >
                 <body>
