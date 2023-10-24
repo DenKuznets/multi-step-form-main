@@ -1,7 +1,15 @@
-import { PropsWithChildren } from 'react'
+'use client'
+import { selectCount } from '@/lib/redux/slices/appSlice';
+import { useAppSelector } from '@/lib/redux/hooks';
+import { PropsWithChildren } from 'react';
 
 const Steps = (props: PropsWithChildren) => {
-    return <div>Steps: {props.children}</div>;
+    const count = useAppSelector(selectCount);
+    return (
+        <div>
+            Steps: {count} {props.children}
+        </div>
+    );
 };
 
-export default Steps
+export default Steps;
