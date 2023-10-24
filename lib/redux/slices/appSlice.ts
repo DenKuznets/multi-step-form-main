@@ -4,7 +4,7 @@ import type { RootState } from '../store';
 import { AddonsStep, PersonalInfoStep, SelectPlanStep, SummaryStep } from '@/lib/types';
 
 export enum Steps {
-    personalInfo,
+    personalInfo = 1,
     selectPlan,
     addons,
     summary
@@ -23,7 +23,7 @@ export const SUBSCRIBTION = {
 
 // Define a type for the slice state
 interface AppState {
-    selectedIndex: number;
+    currentStep: number;
     steps: {
         personalInfo: PersonalInfoStep;
         selectPlan: SelectPlanStep;
@@ -34,7 +34,7 @@ interface AppState {
 
 // Define the initial state using that type
 const initialState: AppState = {
-    selectedIndex: Steps.personalInfo,
+    currentStep: Steps.personalInfo,
     steps: {
         personalInfo: {
             valid: false,
@@ -77,9 +77,6 @@ export const appSlice = createSlice({
         increment: (state) => {
             // state.valu
         },
-        decrement: (state) => {
-            // state.value -= 1;
-        },
         // Use the PayloadAction type to declare the contents of `action.payload`
         incrementByAmount: (state, action: PayloadAction<number>) => {
             // state.value += action.payload;
@@ -87,9 +84,9 @@ export const appSlice = createSlice({
     }
 });
 
-export const { increment, decrement, incrementByAmount } = appSlice.actions;
+export const { increment, incrementByAmount } = appSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-// export const selectCount = (state: RootState) => state.app.value;
+export const selectCurrentStep = (state: RootState) => state.app.currentStep;
 
 export default appSlice.reducer;

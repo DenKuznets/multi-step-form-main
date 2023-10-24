@@ -1,14 +1,14 @@
-'use client'
-// import { selectCount } from '@/lib/redux/slices/appSlice';
+'use client';
 import { useAppSelector } from '@/lib/redux/hooks';
+import { selectCurrentStep } from '@/lib/redux/slices/appSlice';
 import { PropsWithChildren } from 'react';
 
 const Steps = (props: PropsWithChildren) => {
-    // const count = useAppSelector(selectCount);
+    const currentStep = useAppSelector(selectCurrentStep);
     return (
-        <div className=''>
+        <div className="">
             Steps:
-            {/* {count} */}
+            {currentStep}
             {props.children}
         </div>
     );

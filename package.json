@@ -12,6 +12,7 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "@redux-devtools/extension": "^3.2.5",
     "@reduxjs/toolkit": "^1.9.7",
     "next": "13.5.4",
     "react": "^18",
