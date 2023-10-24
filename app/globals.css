@@ -20,7 +20,7 @@
     }
 
     .input {
-        @apply placeholder:text-[.95rem] block placeholder:font-bold placeholder:text-lightGray placeholder:tracking-[-.015em] border rounded p-1
+        @apply font-bold placeholder:text-[.95rem] block placeholder:text-coolGray placeholder:tracking-[-.015em] border rounded px-3 py-1 w-full min-w-0
     }
     img,
     svg {

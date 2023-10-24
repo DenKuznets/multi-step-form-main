@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
@@ -17,14 +18,18 @@ const Step1 = () => {
     console.log(watch('name'));
 
     return (
-        <div className='step'>
+        <div className="step">
             <h1 className="">Personal info</h1>
             <p className="step-info">
                 Please provide your name, email address, and phone number.
             </p>
-            <form>
-                <label className='label'>Name</label>
-                <input className='input' placeholder='e.g. Stephen King'  {...register('name')} />
+            <form aria-label='personal info form'>
+                <label className="label">Name</label>
+                <input
+                    className="input"
+                    placeholder="e.g. Stephen King"
+                    {...register('name')}
+                />
             </form>
         </div>
     );
