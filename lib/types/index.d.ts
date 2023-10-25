@@ -1,4 +1,5 @@
 export interface Step {
+    name: string;
     valid: boolean;
     dirty: boolean;
 }

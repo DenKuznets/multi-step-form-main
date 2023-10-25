@@ -1,10 +1,12 @@
+import { redirect } from "next/navigation";
 
 export default function Home() {
-    return (
-        <>
-            <main className="">
-               hello world
-            </main>
-        </>
-    );
+    redirect('./step1')
+    // return (
+    //     <>
+    //         <main className="">
+    //            hello world
+    //         </main>
+    //     </>
+    // );
 }

@@ -1,7 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
-import { AddonsStep, PersonalInfoStep, SelectPlanStep, SummaryStep } from '@/lib/types';
+import {
+    AddonsStep,
+    PersonalInfoStep,
+    SelectPlanStep,
+    Step,
+    SummaryStep
+} from '@/lib/types';
 
 export enum Steps {
     personalInfo = 1,
@@ -21,22 +27,20 @@ export const SUBSCRIBTION = {
     YEARLY: 'yearly'
 };
 
+type stepsType = PersonalInfoStep | SelectPlanStep | AddonsStep | SummaryStep;
+
 // Define a type for the slice state
 interface AppState {
     currentStep: number;
-    steps: {
-        personalInfo: PersonalInfoStep;
-        selectPlan: SelectPlanStep;
-        addons: AddonsStep;
-        summary: SummaryStep;
-    };
+    steps: stepsType[]
 }
 
 // Define the initial state using that type
 const initialState: AppState = {
     currentStep: Steps.personalInfo,
-    steps: {
-        personalInfo: {
+    steps: [
+        {
+            name:"YOUR INFO",
             valid: false,
             dirty: true,
             value: {
@@ -45,7 +49,8 @@ const initialState: AppState = {
                 phone: ''
             }
         },
-        selectPlan: {
+        {
+            name:"SELECT PLAN",
             valid: false,
             dirty: false,
             value: {
@@ -53,7 +58,8 @@ const initialState: AppState = {
                 subscribtion: SUBSCRIBTION.MONTHLY
             }
         },
-        addons: {
+        {
+            name:"ADD-ONS",
             valid: false,
             dirty: true,
             value: {
@@ -62,11 +68,12 @@ const initialState: AppState = {
                 onlineService: false
             }
         },
-        summary: {
+        {
+            name:"SUMMARY",
             valid: false,
             dirty: false
         }
-    }
+    ]
 };
 
 export const appSlice = createSlice({
@@ -88,5 +95,6 @@ export const { increment, incrementByAmount } = appSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectCurrentStep = (state: RootState) => state.app.currentStep;
+export const selectSteps = (state: RootState) => state.app.steps;
 
 export default appSlice.reducer;
