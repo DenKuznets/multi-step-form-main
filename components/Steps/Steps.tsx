@@ -19,7 +19,7 @@ const Steps = (props: PropsWithChildren) => {
                 >
                     {stepNumber}
                 </div>
-                <div className="hidden flex-col justify-center sm:flex">
+                <div className="hidden flex-col justify-center sm:flex gap-y-1">
                     <div className="text-lightGray text-[0.8rem] uppercase leading-none ">
                         Step {stepNumber}
                     </div>

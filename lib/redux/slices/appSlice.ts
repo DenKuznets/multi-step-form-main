@@ -36,7 +36,7 @@ interface AppState {
 }
 
 // Define the initial state using that type
-const initialState: AppState = {
+export const initialState: AppState = {
     currentStep: Steps.personalInfo,
     steps: [
         {
