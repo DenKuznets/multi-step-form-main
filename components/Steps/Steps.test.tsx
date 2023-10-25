@@ -1,9 +1,9 @@
-import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Steps from './Steps';
+import { renderWithProviders, screen } from '@/lib/redux/utils-for-tests';
 
 test('renders correctly', () => {
-    render(<Steps />);
-    const steps = screen.getAllByRole('list-item')
-    expect(steps).toHaveLength(4)
+    renderWithProviders(<Steps />);
+    const steps = screen.getAllByRole('listitem');
+    expect(steps).toHaveLength(4);
 });
