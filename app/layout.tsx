@@ -22,7 +22,7 @@ export default function RootLayout({
                 className={`${ubuntu.variable} font-sans`}
                 lang="ru"
             >
-                <body>
+                <body className='sm:p-4'>
                     <Steps>{children}</Steps>
                 </body>
             </html>

@@ -8,7 +8,7 @@
     }
 
     .step {
-        @apply p-4 rounded-lg
+        @apply p-4 rounded-lg bg-white
     }
 
     .step-info {
