@@ -12,7 +12,7 @@
     }
 
     .step-header {
-        @apply mb-2 text-[1.55rem];
+        @apply mb-2 text-[1.55rem] sm:text-[2.05rem];
     }
 
     .step-info {
