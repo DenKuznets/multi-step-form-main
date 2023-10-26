@@ -43,8 +43,8 @@ const Step1 = () => {
                         placeholder="e.g. Stephen King"
                         {...register(`email`, {
                             pattern: {
-                                value: / /,
-                                message: ''
+                                value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
+                                message: 'Invalid email'
                             }
                         })}
                     />
@@ -55,10 +55,7 @@ const Step1 = () => {
                         className="input"
                         placeholder="e.g. +1 234 567 890"
                         {...register(`phone`, {
-                            pattern: {
-                                value: / /,
-                                message: ''
-                            }
+                            required: 'This field is required'
                         })}
                     />
                 </div>
