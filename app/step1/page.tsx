@@ -9,11 +9,12 @@ interface FormValues extends FieldValues {
 }
 
 const Step1 = () => {
-    const { control, register, handleSubmit } = useForm<FormValues>();
-
+    const { control, formState, register, handleSubmit } =
+        useForm<FormValues>();
+    const { errors } = formState;
     const onSubmit: SubmitHandler<FormValues> = (data) =>
         console.log('submit', data);
-
+    console.log(errors);
     return (
         <div className="step sm:relative sm:h-full">
             <h1 className="step-header">Personal info</h1>
@@ -26,22 +27,39 @@ const Step1 = () => {
                 aria-label="personal info form"
                 onSubmit={handleSubmit(onSubmit)}
             >
-                <div>
-                    <label className="label">Name</label>
+                <div className="relative">
+                    <p
+                        className="text-strawberryRed absolute
+right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
+                    >
+                        {errors.name?.message}
+                    </p>
+                    <label className={`label`}>Name</label>
                     <input
-                        className="input"
+                        className={`input  ${
+                            errors.name ? 'border-strawberryRed' : ''
+                        }`}
                         placeholder="e.g. stephenking@lorem.com"
                         {...register(`name`, {
                             required: 'This field is required'
                         })}
                     />
                 </div>
-                <div>
+                <div className="relative">
+                    <p
+                        className="text-strawberryRed absolute
+right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
+                    >
+                        {errors.email?.message}
+                    </p>
                     <label className="label">Email Address</label>
                     <input
-                        className="input"
+                        className={`input  ${
+                            errors.email ? 'border-strawberryRed' : ''
+                        }`}
                         placeholder="e.g. Stephen King"
                         {...register(`email`, {
+                            required: 'This field is required',
                             pattern: {
                                 value: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g,
                                 message: 'Invalid email'
@@ -49,10 +67,18 @@ const Step1 = () => {
                         })}
                     />
                 </div>
-                <div>
+                <div className="relative">
+                    <p
+                        className="text-strawberryRed absolute
+right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
+                    >
+                        {errors.phone?.message}
+                    </p>
                     <label className="label">Phone Number</label>
                     <input
-                        className="input"
+                        className={`input  ${
+                            errors.phone ? 'border-strawberryRed' : ''
+                        }`}
                         placeholder="e.g. +1 234 567 890"
                         {...register(`phone`, {
                             required: 'This field is required'
@@ -65,7 +91,7 @@ const Step1 = () => {
                 </div>
             </form>
 
-            <DevTool control={control} />
+            {/* <DevTool control={control} /> */}
         </div>
     );
 };
