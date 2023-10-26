@@ -5,6 +5,7 @@ import {
     screen,
     within
 } from '@/lib/redux/utils-for-tests';
+import userEvent from '@testing-library/user-event';
 
 test('renders correctly', () => {
     renderWithProviders(<Step1 />);
@@ -23,7 +24,7 @@ test('renders correctly', () => {
     const nextStepButton = screen.getByRole('button', {
         name: /next step/i
     });
-    
+
     expect(h1).toBeInTheDocument();
     expect(info).toBeInTheDocument();
     expect(form).toBeInTheDocument();
@@ -39,4 +40,15 @@ test('renders correctly', () => {
 test('renders Home unchanged', () => {
     const { container } = renderWithProviders(<Step1 />);
     expect(container).toMatchSnapshot();
+});
+
+test('required message pops up at empty required fields when submit button clicked', async () => {
+    const user = userEvent.setup();
+    renderWithProviders(<Step1 />);
+    const nextStepButton = screen.getByRole('button', {
+        name: /next step/i
+    });
+    await user.click(nextStepButton);
+    const requiredMessages = screen.getAllByText('This field is required');
+    expect(requiredMessages).toHaveLength(3);
 });
