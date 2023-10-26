@@ -50,11 +50,12 @@ const Step1 = () => {
 
     return (
         <div className="step">
-            <h1 className="">Personal info</h1>
+            <h1 className="step-header">Personal info</h1>
             <p className="step-info">
                 Please provide your name, email address, and phone number.
             </p>
             <form
+                className='flex flex-col gap-2'
                 aria-label="personal info form"
                 onSubmit={handleSubmit(onSubmit)}
             >
@@ -62,10 +63,12 @@ const Step1 = () => {
                     // console.log(field);
                     return (
                         <div key={field.label}>
-                            <label className="label">{field.label}</label>
+                            <label className="text-[0.75rem] font-bold tracking-[-.015em]">
+                                {field.label}
+                            </label>
                             <input
                                 // name={field.label}
-                                className="input"
+                                className="placeholder:text-coolGray block w-full min-w-0 rounded border px-3 py-2 font-bold placeholder:text-[.95rem] placeholder:tracking-[-.015em]"
                                 placeholder={field.placeholder}
                                 {...register(`Step1.${index}.value`)}
                             />

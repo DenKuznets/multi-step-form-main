@@ -8,20 +8,17 @@
     }
 
     .step {
-        @apply p-4 rounded-lg bg-white
+        @apply rounded-lg bg-white px-6 py-8;
+    }
+
+    .step-header {
+        @apply mb-2 text-[1.55rem];
     }
 
     .step-info {
-        @apply text-coolGray font-medium tracking-[-.015em];
+        @apply text-coolGray font-medium text-[1.03rem] tracking-[-.01em] mb-4;
     }
 
-    .label {
-        @apply text-[0.75rem] font-bold tracking-[-.015em]
-    }
-
-    .input {
-        @apply font-bold placeholder:text-[.95rem] block placeholder:text-coolGray placeholder:tracking-[-.015em] border rounded px-3 py-1 w-full min-w-0
-    }
     img,
     svg {
         user-select: none;

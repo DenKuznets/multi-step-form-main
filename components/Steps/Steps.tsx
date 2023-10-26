@@ -31,11 +31,13 @@ const Steps = (props: PropsWithChildren) => {
         );
     });
     return (
-        <div className=" relative flex flex-col items-center sm:items-start sm:flex-row">
-            <ul className="w-full min-h-44 flex h-44 flex-row justify-center gap-x-[1.1rem] bg-[url('/images/bg-sidebar-mobile.svg')] bg-[length:100%_100%] bg-no-repeat pt-8 sm:h-auto sm:min-h-[35rem] sm:max-w-[17.4rem] sm:flex-col sm:gap-y-8 sm:bg-[url('/images/bg-sidebar-desktop.svg')] sm:justify-normal sm:pl-8 sm:pt-10">
+        <div className="relative flex min-h-[100vh] flex-col items-center sm:flex-row sm:items-start bg-magnolia">
+            <ul className="min-h-44 flex h-44 w-full flex-row justify-center gap-x-[1.1rem] bg-[url('/images/bg-sidebar-mobile.svg')] bg-[length:100%_100%] bg-no-repeat pt-8 sm:h-auto sm:min-h-[35rem] sm:max-w-[17.4rem] sm:flex-col sm:justify-normal sm:gap-y-8 sm:bg-[url('/images/bg-sidebar-desktop.svg')] sm:pl-8 sm:pt-10">
                 {stepsList}
             </ul>
-            <div className="px-4 relative top-[-5rem] max-w-sm sm:static">{props.children}</div>
+            <div className="relative top-[-5rem] max-w-sm px-4 sm:static">
+                {props.children}
+            </div>
         </div>
     );
 };
