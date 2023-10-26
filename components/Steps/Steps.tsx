@@ -15,7 +15,7 @@ const Steps = (props: PropsWithChildren) => {
                         stepNumber === currentStep
                             ? 'bg-lightBlue text-marineBlue'
                             : 'bg-transparent text-white'
-                    } flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border text-center font-bold `}
+                    } flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border text-center font-bold transition-all`}
                 >
                     {stepNumber}
                 </div>
