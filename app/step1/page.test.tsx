@@ -7,6 +7,8 @@ import {
 } from '@/lib/redux/utils-for-tests';
 import userEvent from '@testing-library/user-event';
 import { initialState } from '@/lib/redux/slices/appSlice';
+import { produce } from 'immer';
+import { PersonalInfoStep } from '@/lib/types';
 
 test('renders correctly', () => {
     renderWithProviders(<Step1 />);
@@ -56,19 +58,15 @@ test('required message pops up at empty required fields when submit button click
 
 test('invalid email message pops up at incorrectly filled email field when submit button clicked', async () => {
     const user = userEvent.setup();
-    const newState = initialState;
+    const newState = produce(initialState, (drafState) => {
+        const step = drafState.steps[0] as PersonalInfoStep;
+        step.value.email = 'asdas';
+    });
 
     renderWithProviders(<Step1 />, {
         preloadedState: {
             app: {
-                ...initialState,
-                steps: [
-                    {
-                        value: {
-                            email: 'asdas'
-                        }
-                    },
-                ]
+                ...newState
             }
         }
     });
