@@ -23,7 +23,7 @@ const Steps = (props: PropsWithChildren) => {
                     <div className="text-lightGray text-[0.8rem] uppercase leading-none ">
                         Step {stepNumber}
                     </div>
-                    <div className="font-bold leading-none text-white">
+                    <div className="font-bold leading-none text-white uppercase">
                         {step.name}
                     </div>
                 </div>

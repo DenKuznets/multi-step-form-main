@@ -7,3 +7,8 @@ test('renders correctly', () => {
     const steps = screen.getAllByRole('listitem');
     expect(steps).toHaveLength(4);
 });
+
+test('renders Home unchanged', () => {
+    const { container } = renderWithProviders(<Steps />);
+    expect(container).toMatchSnapshot();
+});
