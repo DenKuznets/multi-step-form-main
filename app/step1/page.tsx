@@ -55,7 +55,7 @@ const Step1 = () => {
                 Please provide your name, email address, and phone number.
             </p>
             <form
-                className='flex flex-col gap-2'
+                className="flex flex-col gap-2"
                 aria-label="personal info form"
                 onSubmit={handleSubmit(onSubmit)}
             >
@@ -75,8 +75,9 @@ const Step1 = () => {
                         </div>
                     );
                 })}
-                <button>next step</button>
+                <button className="btn btn-next">next step</button>
             </form>
+            <div className="h-[4.5rem] bg-white fixed left-0 bottom-0 w-full"></div>
             {/* <DevTool control={control} /> */}
         </div>
     );
