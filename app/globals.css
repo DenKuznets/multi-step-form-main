@@ -8,19 +8,19 @@
     }
 
     .step {
-        @apply rounded-lg bg-white px-6 py-8;
+        @apply rounded-lg bg-white px-6 py-8 sm:py-10 md:pl-[6rem] md:pr-[5.5rem];
     }
 
     .step-header {
-        @apply mb-2 text-[1.55rem] sm:text-[2.05rem];
+        @apply mb-2 text-[1.55rem] sm:text-[2.05rem] sm:mb-[0.9rem];
     }
 
     .step-info {
-        @apply text-coolGray mb-4 text-[1.03rem] font-medium tracking-[-.01em];
+        @apply text-coolGray mb-4 text-[1.03rem] font-medium tracking-[-.01em] sm:tracking-tight sm:mb-8;
     }
 
     .btn {
-        @apply text-white border capitalize py-[0.8rem] px-[1.1rem] leading-none rounded-md text-[0.9rem] font-medium z-10;
+        @apply text-white border capitalize py-[0.8rem] px-[1.1rem] leading-none rounded-md text-[0.9rem] font-medium z-10 sm:text-[1rem] sm:px-[1.5rem] sm:py-[1rem];
     }
 
     .btn-next{

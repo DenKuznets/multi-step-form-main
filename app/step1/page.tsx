@@ -49,33 +49,33 @@ const Step1 = () => {
     // console.log('fields', fields);
 
     return (
-        <div className="step">
+        <div className="step sm:relative sm:h-full">
             <h1 className="step-header">Personal info</h1>
             <p className="step-info">
                 Please provide your name, email address, and phone number.
             </p>
             <form
-                className="flex flex-col gap-2"
+                className="flex w-full flex-col gap-2 sm:gap-4 "
                 aria-label="personal info form"
                 onSubmit={handleSubmit(onSubmit)}
             >
                 {formFields.map((field, index) => {
                     // console.log(field);
                     return (
-                        <div key={field.label}>
-                            <label className="text-[0.75rem] font-bold tracking-[-.015em]">
+                        <div className="" key={field.label}>
+                            <label className="text-[0.75rem] font-bold tracking-[-.015em] sm:text-[0.9rem] ">
                                 {field.label}
                             </label>
                             <input
                                 // name={field.label}
-                                className="placeholder:text-coolGray block w-full min-w-0 rounded border px-3 py-2 font-bold placeholder:text-[.95rem] placeholder:tracking-[-.015em]"
+                                className="placeholder:text-coolGray block w-full min-w-0 rounded border px-3 py-2 font-bold placeholder:text-[.95rem] placeholder:tracking-[-.015em] sm:mt-1 sm:px-4 sm:py-3 sm:placeholder:text-[1rem]"
                                 placeholder={field.placeholder}
                                 {...register(`Step1.${index}.value`)}
                             />
                         </div>
                     );
                 })}
-                <div className="fixed sm:static flex justify-end bottom-0 w-full p-4 left-0 h-[4.5rem] bg-white">
+                <div className="fixed bottom-0 left-0 flex h-[4.5rem] w-full justify-end bg-white p-4 sm:absolute sm:min-h-[6rem] sm:items-center md:pr-[5.5rem] sm:pt-6 sm:pb-0">
                     <button className="btn btn-next ">next step</button>
                 </div>
             </form>
