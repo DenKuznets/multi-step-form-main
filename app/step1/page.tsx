@@ -14,7 +14,7 @@ const Step1 = () => {
     const { errors } = formState;
     const onSubmit: SubmitHandler<FormValues> = (data) =>
         console.log('submit', data);
-    console.log(errors);
+    // console.log(errors);
     return (
         <div className="step sm:relative sm:h-full">
             <h1 className="step-header">Personal info</h1>
