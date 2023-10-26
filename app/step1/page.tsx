@@ -34,8 +34,9 @@ right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
                     >
                         {errors.name?.message}
                     </p>
-                    <label className={`label`}>Name</label>
+                    <label htmlFor='name' className={`label`}>Name</label>
                     <input
+                        id='name'
                         className={`input  ${
                             errors.name ? 'border-strawberryRed' : ''
                         }`}
@@ -52,8 +53,8 @@ right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
                     >
                         {errors.email?.message}
                     </p>
-                    <label className="label">Email Address</label>
-                    <input
+                    <label htmlFor='email' className="label">Email Address</label>
+                    <input id='email'
                         className={`input  ${
                             errors.email ? 'border-strawberryRed' : ''
                         }`}
@@ -74,8 +75,8 @@ right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
                     >
                         {errors.phone?.message}
                     </p>
-                    <label className="label">Phone Number</label>
-                    <input
+                    <label htmlFor='phone' className="label">Phone Number</label>
+                    <input id='phone'
                         className={`input  ${
                             errors.phone ? 'border-strawberryRed' : ''
                         }`}
