@@ -1,6 +1,9 @@
 'use client';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
+import { useAppSelector } from '@/lib/redux/hooks';
+import { selectStep1State } from '@/lib/redux/slices/appSlice';
+import { PersonalInfoStep } from '@/lib/types';
 
 interface FormValues extends FieldValues {
     name: string;
@@ -9,15 +12,21 @@ interface FormValues extends FieldValues {
 }
 
 const Step1 = () => {
-    const { control, formState, register, handleSubmit } =
-        useForm<FormValues>();
+    const stepState = useAppSelector(selectStep1State) as PersonalInfoStep;
+    const { control, formState, register, handleSubmit } = useForm<FormValues>({
+        defaultValues: {
+            name: stepState.value.name,
+            email: stepState.value.email,
+            phone: stepState.value.phone,
+        }
+    });
     const { errors } = formState;
     const onSubmit: SubmitHandler<FormValues> = (data) =>
         console.log('submit', data);
     // console.log(errors);
     return (
         <div className="step sm:relative sm:h-full">
-            <h1 className="step-header">Personal info</h1>
+            <h1 className="step-header">{stepState.name}</h1>
             <p className="step-info">
                 Please provide your name, email address, and phone number.
             </p>
@@ -34,9 +43,11 @@ right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
                     >
                         {errors.name?.message}
                     </p>
-                    <label htmlFor='name' className={`label`}>Name</label>
+                    <label htmlFor="name" className={`label`}>
+                        Name
+                    </label>
                     <input
-                        id='name'
+                        id="name"
                         className={`input  ${
                             errors.name ? 'border-strawberryRed' : ''
                         }`}
@@ -53,8 +64,11 @@ right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
                     >
                         {errors.email?.message}
                     </p>
-                    <label htmlFor='email' className="label">Email Address</label>
-                    <input id='email'
+                    <label htmlFor="email" className="label">
+                        Email Address
+                    </label>
+                    <input
+                        id="email"
                         className={`input  ${
                             errors.email ? 'border-strawberryRed' : ''
                         }`}
@@ -75,8 +89,11 @@ right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
                     >
                         {errors.phone?.message}
                     </p>
-                    <label htmlFor='phone' className="label">Phone Number</label>
-                    <input id='phone'
+                    <label htmlFor="phone" className="label">
+                        Phone Number
+                    </label>
+                    <input
+                        id="phone"
                         className={`input  ${
                             errors.phone ? 'border-strawberryRed' : ''
                         }`}

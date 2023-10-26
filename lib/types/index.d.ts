@@ -23,7 +23,7 @@ export interface AddonsStep extends Step {
     value: {
         onlineService: boolean;
         largerStorage: boolean;
-        cuustomProfile: boolean;
+        customProfile: boolean;
     };
 }
 

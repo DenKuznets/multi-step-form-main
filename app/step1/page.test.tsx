@@ -6,6 +6,7 @@ import {
     within
 } from '@/lib/redux/utils-for-tests';
 import userEvent from '@testing-library/user-event';
+import { initialState } from '@/lib/redux/slices/appSlice';
 
 test('renders correctly', () => {
     renderWithProviders(<Step1 />);
@@ -51,4 +52,30 @@ test('required message pops up at empty required fields when submit button click
     await user.click(nextStepButton);
     const requiredMessages = screen.getAllByText('This field is required');
     expect(requiredMessages).toHaveLength(3);
+});
+
+test('invalid email message pops up at incorrectly filled email field when submit button clicked', async () => {
+    const user = userEvent.setup();
+    const newState = initialState;
+
+    renderWithProviders(<Step1 />, {
+        preloadedState: {
+            app: {
+                ...initialState,
+                steps: [
+                    {
+                        value: {
+                            email: 'asdas'
+                        }
+                    },
+                ]
+            }
+        }
+    });
+    const nextStepButton = screen.getByRole('button', {
+        name: /next step/i
+    });
+    await user.click(nextStepButton);
+    const requiredMessages = screen.getByText('Invalid email');
+    expect(requiredMessages).toBeInTheDocument();
 });

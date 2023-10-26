@@ -12,7 +12,7 @@
     }
 
     .step-header {
-        @apply mb-2 text-[1.55rem] sm:mb-[0.9rem] sm:text-[2.05rem];
+        @apply mb-2 text-[1.55rem] sm:mb-[0.9rem] sm:text-[2.05rem] capitalize;
     }
 
     .step-info {

@@ -5,7 +5,6 @@ import {
     AddonsStep,
     PersonalInfoStep,
     SelectPlanStep,
-    Step,
     SummaryStep
 } from '@/lib/types';
 
@@ -40,7 +39,7 @@ export const initialState: AppState = {
     currentStep: Steps.personalInfo,
     steps: [
         {
-            name:"YOUR INFO",
+            name:"personal info",
             valid: false,
             dirty: true,
             value: {
@@ -63,7 +62,7 @@ export const initialState: AppState = {
             valid: false,
             dirty: true,
             value: {
-                cuustomProfile: false,
+                customProfile: false,
                 largerStorage: false,
                 onlineService: false
             }
@@ -96,5 +95,6 @@ export const { increment, incrementByAmount } = appSlice.actions;
 // Other code such as selectors can use the imported `RootState` type
 export const selectCurrentStep = (state: RootState) => state.app.currentStep;
 export const selectSteps = (state: RootState) => state.app.steps;
+export const selectStep1State = (state: RootState) => state.app.steps[0];
 
 export default appSlice.reducer;
