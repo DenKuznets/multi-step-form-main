@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Home unchanged 1`] = `
+<div>
+  <div
+    class="step sm:relative sm:h-full"
+  >
+    <h1
+      class="step-header"
+    >
+      Personal info
+    </h1>
+    <p
+      class="step-info"
+    >
+      Please provide your name, email address, and phone number.
+    </p>
+    <form
+      aria-label="personal info form"
+      class="flex w-full flex-col gap-2 sm:gap-4 "
+      novalidate=""
+    >
+      <div
+        class="relative"
+      >
+        <p
+          class="text-strawberryRed absolute   right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
+        />
+        <label
+          class="label"
+          for="name"
+        >
+          Name
+        </label>
+        <input
+          class="input  "
+          id="name"
+          name="name"
+          placeholder="e.g. stephenking@lorem.com"
+        />
+      </div>
+      <div
+        class="relative"
+      >
+        <p
+          class="text-strawberryRed absolute   right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
+        />
+        <label
+          class="label"
+          for="email"
+        >
+          Email Address
+        </label>
+        <input
+          class="input  "
+          id="email"
+          name="email"
+          placeholder="e.g. Stephen King"
+        />
+      </div>
+      <div
+        class="relative"
+      >
+        <p
+          class="text-strawberryRed absolute   right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
+        />
+        <label
+          class="label"
+          for="phone"
+        >
+          Phone Number
+        </label>
+        <input
+          class="input  "
+          id="phone"
+          name="phone"
+          placeholder="e.g. +1 234 567 890"
+        />
+      </div>
+      <div
+        class="fixed bottom-0 left-0 flex h-[4.5rem] w-full justify-end bg-white p-4 sm:absolute sm:min-h-[6rem] sm:items-center sm:pb-0 sm:pt-6 md:pr-[5.5rem]"
+      >
+        <button
+          class="btn btn-next "
+        >
+          next step
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
