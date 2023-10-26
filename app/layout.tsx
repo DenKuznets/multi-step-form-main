@@ -7,8 +7,7 @@ import Steps from '@/components/Steps/Steps';
 
 export const metadata: Metadata = {
     title: 'Frontend Mentor | Multi-step form',
-    description:
-        'challenge designed by frontend-mentor, made by DenKuznets'
+    description: 'challenge designed by frontend-mentor, made by DenKuznets'
 };
 
 export default function RootLayout({
@@ -18,12 +17,11 @@ export default function RootLayout({
 }) {
     return (
         <Providers>
-            <html
-                className={`${ubuntu.variable} font-sans`}
-                lang="ru"
-            >
-                <body className='sm:p-4'>
-                    <Steps>{children}</Steps>
+            <html className={`${ubuntu.variable} font-sans`} lang="ru">
+                <body className=" ">
+                    <main className="bg-magnolia sm:p-4 min-h-screen flex">
+                        <Steps>{children}</Steps>
+                    </main>
                 </body>
             </html>
         </Providers>

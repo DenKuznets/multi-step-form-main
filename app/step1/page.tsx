@@ -75,9 +75,11 @@ const Step1 = () => {
                         </div>
                     );
                 })}
-                <button className="btn btn-next">next step</button>
+                <div className="fixed sm:static flex justify-end bottom-0 w-full p-4 left-0 h-[4.5rem] bg-white">
+                    <button className="btn btn-next ">next step</button>
+                </div>
             </form>
-            <div className="h-[4.5rem] bg-white fixed left-0 bottom-0 w-full"></div>
+
             {/* <DevTool control={control} /> */}
         </div>
     );

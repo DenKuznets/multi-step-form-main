@@ -20,7 +20,7 @@
     }
 
     .btn {
-        @apply fixed bottom-4 text-white border capitalize py-[0.8rem] px-[1.1rem] leading-none rounded-md right-4 text-[0.9rem] font-medium z-10;
+        @apply text-white border capitalize py-[0.8rem] px-[1.1rem] leading-none rounded-md text-[0.9rem] font-medium z-10;
     }
 
     .btn-next{
