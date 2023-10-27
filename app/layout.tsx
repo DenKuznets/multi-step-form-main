@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { ubuntu } from './fonts';
 import React from 'react';
 import { Providers } from '../lib/providers';
-import Steps from '@/components/Steps/Steps';
 
 export const metadata: Metadata = {
     title: 'Frontend Mentor | Multi-step form',
@@ -18,11 +17,7 @@ export default function RootLayout({
     return (
         <Providers>
             <html className={`${ubuntu.variable} font-sans`} lang="ru">
-                <body className=" ">
-                    <main className="bg-magnolia sm:p-4 min-h-screen flex">
-                        <Steps>{children}</Steps>
-                    </main>
-                </body>
+                <body className=" ">{children}</body>
             </html>
         </Providers>
     );

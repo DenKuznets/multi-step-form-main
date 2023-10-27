@@ -1,10 +1,14 @@
 'use client';
 import { useAppSelector } from '@/lib/redux/hooks';
-import { selectCurrentStep, selectSteps } from '@/lib/redux/slices/appSlice';
+import {
+    selectCurrentStepIndex,
+    selectSteps
+} from '@/lib/redux/slices/appSlice';
+import { stepsText } from '@/utils/text';
 import { PropsWithChildren } from 'react';
 
 const Steps = (props: PropsWithChildren) => {
-    const currentStep = useAppSelector(selectCurrentStep);
+    const currentStepIndex = useAppSelector(selectCurrentStepIndex);
     const steps = useAppSelector(selectSteps);
     const stepsList = steps.map((step, index) => {
         const stepNumber = index + 1;
@@ -12,7 +16,7 @@ const Steps = (props: PropsWithChildren) => {
             <li className={`items-center sm:flex sm:gap-x-4`} key={step.name}>
                 <div
                     className={`${
-                        stepNumber === currentStep
+                        stepNumber === currentStepIndex+1
                             ? 'bg-lightBlue text-marineBlue'
                             : 'bg-transparent text-white'
                     } flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border text-center font-bold transition-all`}
@@ -23,8 +27,8 @@ const Steps = (props: PropsWithChildren) => {
                     <div className="text-lightGray text-[0.8rem] uppercase leading-none ">
                         Step {stepNumber}
                     </div>
-                    <div className="font-bold leading-none text-white uppercase">
-                        {step.name}
+                    <div className="font-bold uppercase leading-none text-white">
+                        {stepsText[index].name}
                     </div>
                 </div>
             </li>
@@ -36,7 +40,15 @@ const Steps = (props: PropsWithChildren) => {
                 {stepsList}
             </ul>
             <div className="relative top-[-5rem] px-4 sm:static sm:h-full sm:w-full sm:p-0">
-                {props.children}
+                <div className="step sm:relative sm:h-full">
+                    <h1 className="mb-2 text-[1.55rem] capitalize sm:mb-[0.9rem] sm:text-[2.05rem]">
+                        {stepsText[currentStepIndex].nameExt}
+                    </h1>
+                    <p className="text-coolGray mb-4 text-[1.03rem] font-medium tracking-[-.01em] sm:mb-8 sm:tracking-tight">
+                        {stepsText[currentStepIndex].description}
+                    </p>
+                    {props.children}
+                </div>
             </div>
         </div>
     );

@@ -1,37 +1,5 @@
- <!-- Sidebar start -->
-
-  Step 1
-  Your info
-
-  Step 2
-  Select plan
-
-  Step 3
-  Add-ons
-
-  Step 4
-  Summary
-
-  <!-- Sidebar end -->
-
-  <!-- Step 1 start -->
 
 
-
-  
-  
-
-  
-  
-
-  Next Step
-
-  <!-- Step 1 end -->
-
-  <!-- Step 2 start -->
-
-  Select your plan
-  You have the option of monthly or yearly billing.
 
   Arcade
   $9/mo
@@ -52,8 +20,6 @@
 
   <!-- Step 3 start -->
 
-  Pick add-ons
-  Add-ons help enhance your gaming experience.
 
   Online service
   Access to multiplayer games
@@ -73,9 +39,6 @@
   <!-- Step 3 end -->
 
   <!-- Step 4 start -->
-
-  Finishing up
-  Double-check everything looks OK before confirming.
 
   <!-- Dynamically add subscription and add-on selections here -->
 

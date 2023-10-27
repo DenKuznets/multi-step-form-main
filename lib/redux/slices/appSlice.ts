@@ -9,7 +9,7 @@ import {
 } from '@/lib/types';
 
 export enum Steps {
-    personalInfo = 1,
+    personalInfo,
     selectPlan,
     addons,
     summary
@@ -30,16 +30,16 @@ type stepsType = PersonalInfoStep | SelectPlanStep | AddonsStep | SummaryStep;
 
 // Define a type for the slice state
 interface AppState {
-    currentStep: number;
-    steps: stepsType[]
+    currentStepIndex: number;
+    steps: stepsType[];
 }
 
 // Define the initial state using that type
 export const initialState: AppState = {
-    currentStep: Steps.personalInfo,
+    currentStepIndex: Steps.personalInfo,
     steps: [
         {
-            name:"personal info",
+            name: 'personal info',
             valid: false,
             dirty: true,
             value: {
@@ -49,7 +49,7 @@ export const initialState: AppState = {
             }
         },
         {
-            name:"SELECT PLAN",
+            name: 'SELECT PLAN',
             valid: false,
             dirty: false,
             value: {
@@ -58,7 +58,7 @@ export const initialState: AppState = {
             }
         },
         {
-            name:"ADD-ONS",
+            name: 'ADD-ONS',
             valid: false,
             dirty: true,
             value: {
@@ -68,7 +68,7 @@ export const initialState: AppState = {
             }
         },
         {
-            name:"SUMMARY",
+            name: 'SUMMARY',
             valid: false,
             dirty: false
         }
@@ -93,8 +93,11 @@ export const appSlice = createSlice({
 export const { increment, incrementByAmount } = appSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectCurrentStep = (state: RootState) => state.app.currentStep;
+export const selectCurrentStepIndex = (state: RootState) =>
+    state.app.currentStepIndex;
+export const selectCurrentStep = (state: RootState) =>
+    state.app.steps[state.app.currentStepIndex - 1];
 export const selectSteps = (state: RootState) => state.app.steps;
-export const selectStep1State = (state: RootState) => state.app.steps[0];
+export const selectStep1 = (state: RootState) => state.app.steps[0];
 
 export default appSlice.reducer;
