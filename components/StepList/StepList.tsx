@@ -1,13 +1,11 @@
 'use client';
 import { useAppSelector } from '@/lib/redux/hooks';
 import {
-    selectCurrentStepIndex,
-    selectSteps
+    selectCurrentStepIndex
 } from '@/lib/redux/slices/appSlice';
-import { stepsText } from '@/utils/text';
+import { steps } from '@/utils/steps';
 
 const StepsList = () => {
-    const steps = useAppSelector(selectSteps);
     const currentStepIndex = useAppSelector(selectCurrentStepIndex);
     const stepListItems = steps.map((step, index) => {
         const stepNumber = index + 1;
@@ -27,7 +25,7 @@ const StepsList = () => {
                         Step {stepNumber}
                     </div>
                     <div className="font-bold uppercase leading-none text-white">
-                        {stepsText[index].name}
+                        {steps[index].name}
                     </div>
                 </div>
             </li>

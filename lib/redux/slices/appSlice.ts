@@ -7,24 +7,7 @@ import {
     SelectPlanStep,
     SummaryStep
 } from '@/lib/types';
-
-export enum Steps {
-    personalInfo,
-    selectPlan,
-    addons,
-    summary
-}
-
-export const PLANS = {
-    ARCADE: 'arcade',
-    ADVANCED: 'advanced',
-    PRO: 'pro'
-};
-
-export const SUBSCRIBTION = {
-    MONTHLY: 'monthly',
-    YEARLY: 'yearly'
-};
+import { PLANS, SUBSCRIBTION } from '@/utils/steps';
 
 type stepsType = PersonalInfoStep | SelectPlanStep | AddonsStep | SummaryStep;
 
@@ -36,10 +19,9 @@ interface AppState {
 
 // Define the initial state using that type
 export const initialState: AppState = {
-    currentStepIndex: Steps.personalInfo,
+    currentStepIndex: 0,
     steps: [
         {
-            name: 'personal info',
             valid: false,
             dirty: true,
             value: {
@@ -49,7 +31,6 @@ export const initialState: AppState = {
             }
         },
         {
-            name: 'SELECT PLAN',
             valid: false,
             dirty: false,
             value: {
@@ -58,7 +39,6 @@ export const initialState: AppState = {
             }
         },
         {
-            name: 'ADD-ONS',
             valid: false,
             dirty: true,
             value: {
@@ -68,7 +48,6 @@ export const initialState: AppState = {
             }
         },
         {
-            name: 'SUMMARY',
             valid: false,
             dirty: false
         }
