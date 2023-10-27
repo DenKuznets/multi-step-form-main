@@ -32,10 +32,7 @@ const Step1 = () => {
             onSubmit={handleSubmit(onSubmit)}
         >
             <div className="relative">
-                <p
-                    className="absolute right-0
-text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
-                >
+                <p className="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]">
                     {errors.name?.message}
                 </p>
                 <label htmlFor="name" className={`label`}>
@@ -54,8 +51,7 @@ text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
             </div>
             <div className="relative">
                 <p
-                    className="absolute right-0
-text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
+                    className="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
                 >
                     {errors.email?.message}
                 </p>
@@ -79,8 +75,7 @@ text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
             </div>
             <div className="relative">
                 <p
-                    className="absolute right-0
-text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
+                    className="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
                 >
                     {errors.phone?.message}
                 </p>
