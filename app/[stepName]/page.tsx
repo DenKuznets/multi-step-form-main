@@ -33,8 +33,8 @@ const Step1 = () => {
         >
             <div className="relative">
                 <p
-                    className="text-strawberryRed absolute
-right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
+                    className="absolute right-0
+text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
                 >
                     {errors.name?.message}
                 </p>
@@ -54,8 +54,8 @@ right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
             </div>
             <div className="relative">
                 <p
-                    className="text-strawberryRed absolute
-right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
+                    className="absolute right-0
+text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
                 >
                     {errors.email?.message}
                 </p>
@@ -79,8 +79,8 @@ right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
             </div>
             <div className="relative">
                 <p
-                    className="text-strawberryRed absolute
-right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
+                    className="absolute right-0
+text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
                 >
                     {errors.phone?.message}
                 </p>
@@ -99,7 +99,7 @@ right-0 text-[0.75rem] font-bold sm:text-[0.9rem]"
                 />
             </div>
 
-            <div className="fixed bottom-0 left-0 flex h-[4.5rem] w-full justify-end bg-white p-4 sm:absolute sm:min-h-[6rem] sm:items-center sm:pb-0 sm:pt-6 md:pr-[5.5rem]">
+            <div className="fixed bottom-0 left-0 flex h-[4.5rem] w-full justify-end bg-white p-4 sm:absolute sm:min-h-[6rem] sm:items-center sm:pb-0 sm:pt-6 sm:px-0">
                 <button className="btn btn-next ">next step</button>
             </div>
         </form>
