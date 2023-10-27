@@ -17,7 +17,9 @@ export default function RootLayout({
     return (
         <Providers>
             <html className={`${ubuntu.variable} font-sans`} lang="ru">
-                <body className=" ">{children}</body>
+                <body className="flex min-h-screen bg-magnolia sm:p-4 ">
+                    {children}
+                </body>
             </html>
         </Providers>
     );
