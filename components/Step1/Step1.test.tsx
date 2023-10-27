@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import Step1 from './page';
+import Step1 from '../../app/[stepName]/page';
 import {
     renderWithProviders,
     screen,
@@ -13,10 +13,6 @@ import { PersonalInfoStep } from '@/lib/types';
 test('renders correctly', () => {
     renderWithProviders(<Step1 />);
 
-    const h1 = screen.getByRole('heading', { level: 1 });
-    const info = screen.getByText(
-        'Please provide your name, email address, and phone number.'
-    );
     const form = screen.getByRole('form', { name: /personal info form/i });
     const nameLabel = within(form).getByText(/name/i);
     const emailLabel = within(form).getByText(/email address/i);
@@ -28,8 +24,6 @@ test('renders correctly', () => {
         name: /next step/i
     });
 
-    expect(h1).toBeInTheDocument();
-    expect(info).toBeInTheDocument();
     expect(form).toBeInTheDocument();
     expect(nameLabel).toBeInTheDocument();
     expect(emailLabel).toBeInTheDocument();
@@ -76,4 +70,9 @@ test('invalid email message pops up at incorrectly filled email field when submi
     await user.click(nextStepButton);
     const requiredMessages = screen.getByText('Invalid email');
     expect(requiredMessages).toBeInTheDocument();
+});
+
+test('renders Step1 unchanged', () => {
+    const { container } = renderWithProviders(<Step1 />);
+    expect(container).toMatchSnapshot();
 });
