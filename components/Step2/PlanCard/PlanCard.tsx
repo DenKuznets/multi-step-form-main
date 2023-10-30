@@ -21,7 +21,7 @@ const PlanCard = ({imgUrl, planName, planInfo }: PlanCardProps) => {
               alt="icon"
           />
           <div>
-              <div className="font-bold">{ planName }</div>
+              <div className="font-bold text-marineBlue">{ planName }</div>
               <div className="text-coolGray">{ planInfo }</div>
           </div>
       </div>
