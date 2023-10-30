@@ -1,6 +1,4 @@
-import React from 'react';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
-import { DevTool } from '@hookform/devtools';
 import { useAppSelector } from '@/lib/redux/hooks';
 import { selectStep1 } from '@/lib/redux/slices/appSlice';
 import { PersonalInfoStep } from '@/lib/types';
@@ -13,7 +11,7 @@ interface FormValues extends FieldValues {
 
 const Step1 = () => {
     const stepState = useAppSelector(selectStep1) as PersonalInfoStep;
-    const { control, formState, register, handleSubmit } = useForm<FormValues>({
+    const { formState, register, handleSubmit } = useForm<FormValues>({
         defaultValues: {
             name: stepState.value.name,
             email: stepState.value.email,
