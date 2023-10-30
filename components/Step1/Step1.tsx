@@ -27,7 +27,7 @@ const Step1 = () => {
     return (
         <form
             noValidate
-            className="flex w-full flex-col gap-2 sm:gap-4 "
+            className="flex w-full flex-col gap-2 sm:gap-4"
             aria-label="personal info form"
             onSubmit={handleSubmit(onSubmit)}
         >
@@ -94,7 +94,7 @@ const Step1 = () => {
                 />
             </div>
 
-            <div className="fixed bottom-0 left-0 flex h-[4.5rem] w-full justify-end bg-white p-4 sm:absolute sm:min-h-[6rem] sm:items-center sm:px-0 sm:pb-0 sm:pt-6">
+            <div className="fixed bottom-0 left-0 flex w-full justify-end bg-white p-4 sm:absolute sm:p-0 sm:mb-4">
                 <button className="btn btn-next ">next step</button>
             </div>
         </form>
