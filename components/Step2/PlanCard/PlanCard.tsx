@@ -1,22 +1,31 @@
 import Image from 'next/image'
 import React from 'react'
 
-export interface PlanCardProps extends HTMLDivElement {
-    imgUrl?: string;
+export interface PlanCardProps extends React.HTMLAttributes<HTMLDivElement> {
+    imgUrl: string;
     planName: string;
+    planInfo: string;
 }
 
-const PlanCard = ({imgUrl, planName }: PlanCardProps) => {
+const PlanCard = ({imgUrl, planName, planInfo }: PlanCardProps) => {
   return (
-      <div>
-          { imgUrl && <Image src={imgUrl} alt='icon' />}
+      <div
+          tabIndex={-1}
+          className="flex cursor-pointer rounded-md p-4 outline outline-1 outline-lightGray focus:bg-alabaster focus:outline-marineBlue"
+      >
+          <Image
+              className="mr-4"
+              src={imgUrl}
+              width={40}
+              height={40}
+              alt="icon"
+          />
           <div>
-              <div>
-                  {planName}
-              </div>
+              <div className="font-bold">{ planName }</div>
+              <div className="text-coolGray">{ planInfo }</div>
           </div>
-    </div>
-  )
+      </div>
+  );
 }
 
 export default PlanCard
