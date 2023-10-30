@@ -1,5 +1,4 @@
 import '@testing-library/jest-dom';
-// import Step1 from '../../app/[stepName]/page';
 import {
     renderWithProviders,
     screen,
