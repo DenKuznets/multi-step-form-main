@@ -12,7 +12,7 @@ const layout = ({ params, children }: LayoutProps) => {
                 <h1 className="mb-2 text-[1.55rem] capitalize sm:mb-[0.9rem] sm:text-[2.05rem]">
                     {stepText?.header}
                 </h1>
-                <p className="first-letter:capitalize mb-4 text-[1.03rem] font-medium tracking-[-.01em] text-coolGray sm:mb-8 sm:tracking-tight">
+                <p className="first-letter:capitalize mb-4 text-[1.03rem] tracking-[-.01em] text-coolGray sm:mb-8 sm:tracking-tight">
                     {stepText?.description}
                 </p>
                 {children}
