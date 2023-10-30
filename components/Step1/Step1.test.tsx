@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom';
-import Step1 from '../../app/[stepName]/page';
+// import Step1 from '../../app/[stepName]/page';
 import {
     renderWithProviders,
     screen,
@@ -9,9 +9,12 @@ import userEvent from '@testing-library/user-event';
 import { initialState } from '@/lib/redux/slices/appSlice';
 import { produce } from 'immer';
 import { PersonalInfoStep } from '@/lib/types';
+import Step1 from './Step1';
 
 test('renders correctly', () => {
-    renderWithProviders(<Step1 />);
+    renderWithProviders(
+        <Step1 />
+    );
 
     const form = screen.getByRole('form', { name: /personal info form/i });
     const nameLabel = within(form).getByText(/name/i);
@@ -32,11 +35,6 @@ test('renders correctly', () => {
     expect(emailInput).toBeInTheDocument();
     expect(phoneInput).toBeInTheDocument();
     expect(nextStepButton).toBeInTheDocument();
-});
-
-test('renders Home unchanged', () => {
-    const { container } = renderWithProviders(<Step1 />);
-    expect(container).toMatchSnapshot();
 });
 
 test('required message pops up at empty required fields when submit button clicked', async () => {

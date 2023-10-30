@@ -7,7 +7,7 @@ const page = ({ params }: PageProps) => {
     switch (params.stepName) {
         case 'personal-info':
             return <Step1 />;
-            
+
             default:
                 break;
             }
