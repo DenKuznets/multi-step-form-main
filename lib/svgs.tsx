@@ -1,15 +1,11 @@
-import React, { FC, PropsWithChildren, SVGProps } from 'react';
-
-export interface SvgProps
-    extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
-
-export const Checkmark = () => (
+export const Checkmark = ({className }:{className:string}) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={24}
-        height={24}
+        width={20}
+        height={20}
         fill="none"
         viewBox="0 0 24 24"
+        className={className}
     >
         <path
             fill="hsl(243, 100%, 62%)"
