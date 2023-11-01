@@ -8,7 +8,7 @@ const Step2 = () => {
     const multiplier = monthly ? 1 : 10;
     const period = monthly ? "mo" : "yr";
     return (
-        <div>
+        <form>
             <div className="flex flex-col gap-4">
                 <PlanCard
                     imgUrl="./images/icon-arcade.svg"
@@ -51,7 +51,7 @@ const Step2 = () => {
                 <button className="btn btn-back text-coolGray">Go Back</button>
                 <button className="btn btn-next ">next step</button>
             </div>
-        </div>
+        </form>
     );
 };
 
