@@ -23,11 +23,15 @@
 
 
     .btn {
-        @apply hover:bg-blue-900 transition-all z-10 rounded-md border px-[1.1rem] py-[0.8rem] text-[0.9rem] font-medium capitalize leading-none text-white sm:px-[1.5rem] sm:py-[1rem] sm:text-[1rem];
+        @apply  transition-all z-10 rounded-md border px-[1.1rem] py-[0.8rem] text-[0.9rem] font-medium capitalize leading-none text-white sm:px-[1.5rem] sm:py-[1rem] sm:text-[1rem];
     }
 
     .btn-next {
-        @apply bg-marineBlue;
+        @apply bg-marineBlue hover:bg-blue-900;
+    }
+
+    .btn-back {
+        @apply text-coolGray border-none hover:text-marineBlue
     }
 
     img,

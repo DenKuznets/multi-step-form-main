@@ -47,8 +47,8 @@ const Step2 = () => {
                     Yearly
                 </div>
             </div>
-            <div className="shadow fixed bottom-0 left-0 flex w-full justify-end bg-white p-4 sm:absolute sm:mb-4 sm:p-0">
-                <button>Go Back</button>
+            <div className="fixed bottom-0 left-0 flex w-full justify-between shadow sm:shadow-none bg-white p-4 sm:absolute sm:mb-4 sm:p-0">
+                <button className="btn btn-back text-coolGray">Go Back</button>
                 <button className="btn btn-next ">next step</button>
             </div>
         </div>
