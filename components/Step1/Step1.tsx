@@ -1,7 +1,9 @@
+'use client';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
 import { useAppSelector } from '@/lib/redux/hooks';
 import { selectStep1 } from '@/lib/redux/slices/appSlice';
 import { PersonalInfoStep } from '@/lib/types';
+import { useRouter } from 'next/navigation';
 
 interface FormValues extends FieldValues {
     name: string;
@@ -10,6 +12,7 @@ interface FormValues extends FieldValues {
 }
 
 const Step1 = () => {
+    const router = useRouter();
     const stepState = useAppSelector(selectStep1) as PersonalInfoStep;
     const { formState, register, handleSubmit } = useForm<FormValues>({
         defaultValues: {
@@ -48,9 +51,7 @@ const Step1 = () => {
                 />
             </div>
             <div className="relative">
-                <p
-                    className="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
-                >
+                <p className="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]">
                     {errors.email?.message}
                 </p>
                 <label htmlFor="email" className="label">
@@ -72,9 +73,7 @@ const Step1 = () => {
                 />
             </div>
             <div className="relative">
-                <p
-                    className="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
-                >
+                <p className="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]">
                     {errors.phone?.message}
                 </p>
                 <label htmlFor="phone" className="label">
@@ -92,8 +91,16 @@ const Step1 = () => {
                 />
             </div>
 
-            <div className="fixed bottom-0 left-0 flex w-full justify-end bg-white p-4 sm:absolute sm:p-0 sm:mb-4">
-                <button className="btn btn-next ">next step</button>
+            <div className="fixed bottom-0 left-0 flex w-full justify-end bg-white p-4 sm:absolute sm:mb-4 sm:p-0">
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        router.push('/select-plan');
+                    }}
+                    className="btn btn-next "
+                >
+                    next step
+                </button>
             </div>
         </form>
     );

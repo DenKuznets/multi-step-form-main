@@ -1,15 +1,17 @@
 'use client';
 import { useState } from 'react';
 import PlanCard from './PlanCard/PlanCard';
+import { useRouter } from 'next/navigation';
 
 const Step2 = () => {
+    const router = useRouter();
     const [monthly, setMonthly] = useState(true);
     const [yearly, setYearly] = useState(false);
     const multiplier = monthly ? 1 : 10;
-    const period = monthly ? "mo" : "yr";
+    const period = monthly ? 'mo' : 'yr';
     return (
         <form>
-            <div className="flex flex-col md:flex-row gap-4">
+            <div className="flex flex-col gap-4 md:flex-row">
                 <PlanCard
                     imgUrl="./images/icon-arcade.svg"
                     planName="Arcade"
@@ -47,9 +49,25 @@ const Step2 = () => {
                     Yearly
                 </div>
             </div>
-            <div className="fixed sm:mt-8  bottom-0 left-0 flex w-full justify-between shadow sm:shadow-none bg-white p-4 sm:static sm:mb-4 sm:p-0">
-                <button className="btn btn-back text-coolGray">Go Back</button>
-                <button className="btn btn-next ">next step</button>
+            <div className="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:static sm:mb-4 sm:mt-8 sm:p-0 sm:shadow-none">
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        router.push('/personal-info');
+                    }}
+                    className="btn btn-back text-coolGray"
+                >
+                    Go Back
+                </button>
+                <button
+                    onClick={(e) => {
+                        e.preventDefault();
+                        router.push('/add-ons');
+                    }}
+                    className="btn btn-next "
+                >
+                    next step
+                </button>
             </div>
         </form>
     );
