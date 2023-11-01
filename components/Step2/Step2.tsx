@@ -9,7 +9,7 @@ const Step2 = () => {
     const period = monthly ? "mo" : "yr";
     return (
         <form>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col md:flex-row gap-4">
                 <PlanCard
                     imgUrl="./images/icon-arcade.svg"
                     planName="Arcade"
@@ -47,7 +47,7 @@ const Step2 = () => {
                     Yearly
                 </div>
             </div>
-            <div className="fixed bottom-0 left-0 flex w-full justify-between shadow sm:shadow-none bg-white p-4 sm:absolute sm:mb-4 sm:p-0">
+            <div className="fixed sm:mt-8  bottom-0 left-0 flex w-full justify-between shadow sm:shadow-none bg-white p-4 sm:static sm:mb-4 sm:p-0">
                 <button className="btn btn-back text-coolGray">Go Back</button>
                 <button className="btn btn-next ">next step</button>
             </div>
