@@ -18,10 +18,7 @@ const preview: Preview = {
 
 export const decorators = [
     (Story) => (
-        <div
-            className={`${ubuntu.variable} font-serif`}
-        >
-            
+        <div className={`${ubuntu.variable} font-sans`}>
             <Story />
         </div>
     )

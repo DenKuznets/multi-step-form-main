@@ -22,7 +22,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Arcade: Story = {
+export const OnlineService: Story = {
     args: {
         imgUrl: './images/icon-arcade.svg',
         planName: 'Arcade',
