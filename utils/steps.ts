@@ -1,7 +1,7 @@
 export const steps = [
     {
         id: 0,
-        name: 'personal info',
+        name: 'your info',
         header: 'personal info',
         description:
             'please provide your name, email address, and phone number.',

@@ -11,7 +11,7 @@ const PlanCard = ({imgUrl, planName, planInfo }: PlanCardProps) => {
   return (
       <div
           tabIndex={-1}
-          className="flex md:flex-col cursor-pointer rounded-md p-4 outline outline-1 outline-lightGray focus:bg-alabaster focus:outline-marineBlue"
+          className="flex md:flex-col cursor-pointer rounded-md p-4 outline outline-1 outline-lightGray focus:bg-alabaster focus:outline-marineBlue w-full"
       >
           <Image
               className="mr-4 md:mb-12"

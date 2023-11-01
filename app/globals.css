@@ -17,11 +17,11 @@
     }
 
     .btn {
-        @apply z-10 rounded-md border px-[1.1rem] py-[0.8rem] text-[0.9rem] font-medium capitalize leading-none text-white transition-all sm:px-[1.5rem] sm:py-[1rem] sm:text-[1rem];
+        @apply z-10 rounded-md border  text-[0.9rem] font-medium capitalize leading-none text-white transition-all  sm:text-[1rem];
     }
 
     .btn-next {
-        @apply bg-marineBlue hover:bg-blue-900;
+        @apply bg-marineBlue px-[1.1rem] py-[0.8rem] hover:bg-blue-900 sm:px-[1.5rem] sm:py-[1rem];
     }
 
     .btn-back {
