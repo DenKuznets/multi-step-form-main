@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Addon from './Addon/Addon';
 
 const Step3 = () => {
     const router = useRouter();
@@ -11,7 +12,7 @@ const Step3 = () => {
             aria-label="select plan form"
             // onSubmit={handleSubmit(onSubmit)}
         >
-            
+            <Addon />
             <div className="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4">
                 <button
                     onClick={(e) => {

@@ -20,23 +20,30 @@ const Step2 = () => {
                     imgUrl="./images/icon-arcade.svg"
                     planName="Arcade"
                     planInfo={`$${9 * multiplier}/${period}`}
+                    offer={yearly ? '2 months free' : ''}
                 />
                 <PlanCard
                     imgUrl="./images/icon-advanced.svg"
                     planName="Advanced"
                     planInfo={`$${12 * multiplier}/${period}`}
+                    offer={yearly ? '2 months free' : ''}
                 />
                 <PlanCard
                     imgUrl="./images/icon-pro.svg"
                     planName="Pro"
                     planInfo={`$${15 * multiplier}/${period}`}
+                    offer={yearly ? '2 months free' : ''}
                 />
             </div>
-            <div data-testid="payment-switch" className="mt-4 flex items-center justify-center gap-5 rounded-md bg-alabaster p-4 font-medium">
+            <div
+                data-testid="payment-switch"
+                className="mt-4 flex items-center justify-center gap-5 rounded-md bg-alabaster p-4 font-medium"
+            >
                 <div className={monthly ? 'text-marineBlue' : 'text-coolGray'}>
                     Monthly
                 </div>
-                <div data-testid="payment-switch-toggle"
+                <div
+                    data-testid="payment-switch-toggle"
                     onClick={() => {
                         setMonthly(!monthly);
                         setYearly(!yearly);
