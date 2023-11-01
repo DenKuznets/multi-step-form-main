@@ -10,8 +10,12 @@ const Step2 = () => {
     const multiplier = monthly ? 1 : 10;
     const period = monthly ? 'mo' : 'yr';
     return (
-        <form>
-            <div className="flex flex-col md:justify-evenly gap-4 md:flex-row">
+        <form
+            noValidate
+            aria-label="select plan form"
+            // onSubmit={handleSubmit(onSubmit)}
+        >
+            <div className="flex flex-col gap-4 md:flex-row md:justify-evenly">
                 <PlanCard
                     imgUrl="./images/icon-arcade.svg"
                     planName="Arcade"
@@ -28,11 +32,11 @@ const Step2 = () => {
                     planInfo={`$${15 * multiplier}/${period}`}
                 />
             </div>
-            <div className="mt-4 flex items-center justify-center gap-5 rounded-md bg-alabaster p-4 font-medium">
+            <div data-testid="payment-switch" className="mt-4 flex items-center justify-center gap-5 rounded-md bg-alabaster p-4 font-medium">
                 <div className={monthly ? 'text-marineBlue' : 'text-coolGray'}>
                     Monthly
                 </div>
-                <div
+                <div data-testid="payment-switch-toggle"
                     onClick={() => {
                         setMonthly(!monthly);
                         setYearly(!yearly);
@@ -49,7 +53,7 @@ const Step2 = () => {
                     Yearly
                 </div>
             </div>
-            <div className="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute md:mb-4 sm:mt-8 sm:p-0 sm:shadow-none">
+            <div className="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4">
                 <button
                     onClick={(e) => {
                         e.preventDefault();

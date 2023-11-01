@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Step2 unchanged 1`] = `
+<div>
+  <form
+    aria-label="select plan form"
+    novalidate=""
+  >
+    <div
+      class="flex flex-col gap-4 md:flex-row md:justify-evenly"
+    >
+      <div
+        class="flex md:flex-col cursor-pointer rounded-md p-4 outline outline-1 outline-lightGray focus:bg-alabaster focus:outline-marineBlue w-full"
+        data-testid="plan-card"
+        tabindex="-1"
+      >
+        <img
+          alt="icon"
+          class="mr-4 md:mb-12"
+          data-nimg="1"
+          decoding="async"
+          height="40"
+          loading="lazy"
+          src="./images/icon-arcade.svg"
+          style="color: transparent;"
+          width="40"
+        />
+        <div>
+          <div
+            class="font-bold text-marineBlue"
+          >
+            Arcade
+          </div>
+          <div
+            class="text-coolGray"
+          >
+            $9/mo
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex md:flex-col cursor-pointer rounded-md p-4 outline outline-1 outline-lightGray focus:bg-alabaster focus:outline-marineBlue w-full"
+        data-testid="plan-card"
+        tabindex="-1"
+      >
+        <img
+          alt="icon"
+          class="mr-4 md:mb-12"
+          data-nimg="1"
+          decoding="async"
+          height="40"
+          loading="lazy"
+          src="./images/icon-advanced.svg"
+          style="color: transparent;"
+          width="40"
+        />
+        <div>
+          <div
+            class="font-bold text-marineBlue"
+          >
+            Advanced
+          </div>
+          <div
+            class="text-coolGray"
+          >
+            $12/mo
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex md:flex-col cursor-pointer rounded-md p-4 outline outline-1 outline-lightGray focus:bg-alabaster focus:outline-marineBlue w-full"
+        data-testid="plan-card"
+        tabindex="-1"
+      >
+        <img
+          alt="icon"
+          class="mr-4 md:mb-12"
+          data-nimg="1"
+          decoding="async"
+          height="40"
+          loading="lazy"
+          src="./images/icon-pro.svg"
+          style="color: transparent;"
+          width="40"
+        />
+        <div>
+          <div
+            class="font-bold text-marineBlue"
+          >
+            Pro
+          </div>
+          <div
+            class="text-coolGray"
+          >
+            $15/mo
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="mt-4 flex items-center justify-center gap-5 rounded-md bg-alabaster p-4 font-medium"
+      data-testid="payment-switch"
+    >
+      <div
+        class="text-marineBlue"
+      >
+        Monthly
+      </div>
+      <div
+        class="relative flex h-5 w-10 cursor-pointer items-center rounded-full bg-marineBlue px-1 "
+        data-testid="payment-switch-toggle"
+      >
+        <div
+          class="relative h-3 w-3 rounded-full bg-white transition-all left-0"
+        />
+      </div>
+      <div
+        class="text-coolGray"
+      >
+        Yearly
+      </div>
+    </div>
+    <div
+      class="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4"
+    >
+      <button
+        class="btn btn-back text-coolGray"
+      >
+        Go Back
+      </button>
+      <button
+        class="btn btn-next "
+      >
+        next step
+      </button>
+    </div>
+  </form>
+</div>
+`;

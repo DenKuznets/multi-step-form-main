@@ -10,6 +10,7 @@ export interface PlanCardProps extends React.HTMLAttributes<HTMLDivElement> {
 const PlanCard = ({imgUrl, planName, planInfo }: PlanCardProps) => {
   return (
       <div
+          data-testid="plan-card"
           tabIndex={-1}
           className="flex md:flex-col cursor-pointer rounded-md p-4 outline outline-1 outline-lightGray focus:bg-alabaster focus:outline-marineBlue w-full"
       >
