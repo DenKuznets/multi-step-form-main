@@ -4,8 +4,7 @@ import {
     screen,
     within
 } from '@/lib/redux/utils-for-tests';
-import Step2 from './Step2';
-import userEvent from '@testing-library/user-event';
+import Step3 from './Step3';
 
 jest.mock('next/navigation', () => ({
     useRouter() {
@@ -16,11 +15,11 @@ jest.mock('next/navigation', () => ({
 }));
 
 test('renders correctly', () => {
-    renderWithProviders(<Step2 />);
+    renderWithProviders(<Step3 />);
 
-    const form = screen.getByRole('form', { name: /select plan form/i });
-    const planCards = within(form).getAllByTestId('plan-card');
-    const paymentSwitch = within(form).getByTestId('payment-switch');
+    const form = screen.getByRole('form', { name: /select add-ons form/i });
+    const addons = within(form).getAllByTestId('add-on');
+    
     const backbutton = screen.getByRole('button', {
         name: /go back/i
     });
@@ -29,25 +28,12 @@ test('renders correctly', () => {
     });
 
     expect(form).toBeInTheDocument();
-    expect(planCards).toHaveLength(3);
-    expect(paymentSwitch).toBeInTheDocument();
+    expect(addons).toHaveLength(3);
     expect(backbutton).toBeInTheDocument();
     expect(nextStepButton).toBeInTheDocument();
 });
 
-test('renders Step2 unchanged', () => {
-    const { container } = renderWithProviders(<Step2 />);
+test('snapshot Step3 unchanged', () => {
+    const { container } = renderWithProviders(<Step3 />);
     expect(container).toMatchSnapshot();
-});
-
-test('pressing payment switch should change plan price from month to year and back', async () => {
-    const user = userEvent.setup();
-    renderWithProviders(<Step2 />);
-    const arcadePlanPrice = screen.getByText(/\$9\/mo/i);
-    expect(arcadePlanPrice).toHaveTextContent('$9/mo');
-    const toggle = screen.getByTestId('payment-switch-toggle');
-    await user.click(toggle);
-    expect(arcadePlanPrice).toHaveTextContent('$90/yr');
-    await user.click(toggle);
-    expect(arcadePlanPrice).toHaveTextContent('$9/mo');
 });

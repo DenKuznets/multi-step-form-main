@@ -13,7 +13,7 @@ const Step3 = () => {
     return (
         <form
             noValidate
-            aria-label="select plan form"
+            aria-label="select add-ons form"
             // onSubmit={handleSubmit(onSubmit)}
         >
             <div className="flex flex-col gap-4">

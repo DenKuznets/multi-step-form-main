@@ -1,0 +1,188 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot Step3 unchanged 1`] = `
+<div>
+  <form
+    aria-label="select add-ons form"
+    novalidate=""
+  >
+    <div
+      class="flex flex-col gap-4"
+    >
+      <div
+        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5"
+        data-testid="add-on"
+      >
+        <label
+          class=" absolute left-0 top-0 z-10 h-full w-full cursor-pointer"
+          for="online"
+        />
+        <input
+          class="peer appearance-none checked:border-0"
+          id="online"
+          name="online"
+          type="checkbox"
+        />
+        <div
+          class="relative mr-4 h-5 w-5 rounded-[4px] border border-lightGray peer-checked:border-none [&>svg]:hidden peer-checked:[&>svg]:block"
+        >
+          <svg
+            class="absolute left-0 top-0 h-full w-full"
+            fill="none"
+            height="20"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M2 4.5A2.5 2.5 0 0 1 4.5 2h15A2.5 2.5 0 0 1 22 4.5v15a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 19.5v-15Zm16.787 5.075a1 1 0 0 0-.003-1.414l-.709-.705a1 1 0 0 0-1.414.003l-5.772 5.796L7.57 9.98a1 1 0 0 0-1.415.01l-.702.712a1 1 0 0 0 .01 1.414L10.2 16.79a1 1 0 0 0 1.411-.007l7.176-7.207Z"
+              fill="hsl(243, 100%, 62%)"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          class="mr-auto"
+        >
+          <div
+            class="text-sm lg:text-base font-bold text-marineBlue"
+          >
+            Online service
+          </div>
+          <div
+            class="text-xs lg:text-sm lg:font-medium text-coolGray"
+          >
+            Access to multiplayer games
+          </div>
+        </div>
+        <div
+          class="text-xs lg:text-sm lg:font-bold font-bold text-blue-700"
+        >
+          +$1/mo
+        </div>
+      </div>
+      <div
+        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5"
+        data-testid="add-on"
+      >
+        <label
+          class=" absolute left-0 top-0 z-10 h-full w-full cursor-pointer"
+          for="storage"
+        />
+        <input
+          class="peer appearance-none checked:border-0"
+          id="storage"
+          name="storage"
+          type="checkbox"
+        />
+        <div
+          class="relative mr-4 h-5 w-5 rounded-[4px] border border-lightGray peer-checked:border-none [&>svg]:hidden peer-checked:[&>svg]:block"
+        >
+          <svg
+            class="absolute left-0 top-0 h-full w-full"
+            fill="none"
+            height="20"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M2 4.5A2.5 2.5 0 0 1 4.5 2h15A2.5 2.5 0 0 1 22 4.5v15a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 19.5v-15Zm16.787 5.075a1 1 0 0 0-.003-1.414l-.709-.705a1 1 0 0 0-1.414.003l-5.772 5.796L7.57 9.98a1 1 0 0 0-1.415.01l-.702.712a1 1 0 0 0 .01 1.414L10.2 16.79a1 1 0 0 0 1.411-.007l7.176-7.207Z"
+              fill="hsl(243, 100%, 62%)"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          class="mr-auto"
+        >
+          <div
+            class="text-sm lg:text-base font-bold text-marineBlue"
+          >
+            Larger storage
+          </div>
+          <div
+            class="text-xs lg:text-sm lg:font-medium text-coolGray"
+          >
+            Extra 1TB of cloud save
+          </div>
+        </div>
+        <div
+          class="text-xs lg:text-sm lg:font-bold font-bold text-blue-700"
+        >
+          +$2/mo
+        </div>
+      </div>
+      <div
+        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5"
+        data-testid="add-on"
+      >
+        <label
+          class=" absolute left-0 top-0 z-10 h-full w-full cursor-pointer"
+          for="customize"
+        />
+        <input
+          class="peer appearance-none checked:border-0"
+          id="customize"
+          name="customize"
+          type="checkbox"
+        />
+        <div
+          class="relative mr-4 h-5 w-5 rounded-[4px] border border-lightGray peer-checked:border-none [&>svg]:hidden peer-checked:[&>svg]:block"
+        >
+          <svg
+            class="absolute left-0 top-0 h-full w-full"
+            fill="none"
+            height="20"
+            viewBox="0 0 24 24"
+            width="20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clip-rule="evenodd"
+              d="M2 4.5A2.5 2.5 0 0 1 4.5 2h15A2.5 2.5 0 0 1 22 4.5v15a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 19.5v-15Zm16.787 5.075a1 1 0 0 0-.003-1.414l-.709-.705a1 1 0 0 0-1.414.003l-5.772 5.796L7.57 9.98a1 1 0 0 0-1.415.01l-.702.712a1 1 0 0 0 .01 1.414L10.2 16.79a1 1 0 0 0 1.411-.007l7.176-7.207Z"
+              fill="hsl(243, 100%, 62%)"
+              fill-rule="evenodd"
+            />
+          </svg>
+        </div>
+        <div
+          class="mr-auto"
+        >
+          <div
+            class="text-sm lg:text-base font-bold text-marineBlue"
+          >
+            Customizable Profile
+          </div>
+          <div
+            class="text-xs lg:text-sm lg:font-medium text-coolGray"
+          >
+            Custom theme on your profile
+          </div>
+        </div>
+        <div
+          class="text-xs lg:text-sm lg:font-bold font-bold text-blue-700"
+        >
+          +$2/mo
+        </div>
+      </div>
+    </div>
+    <div
+      class="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4"
+    >
+      <button
+        class="btn btn-back text-coolGray"
+      >
+        Go Back
+      </button>
+      <button
+        class="btn btn-next "
+      >
+        next step
+      </button>
+    </div>
+  </form>
+</div>
+`;

@@ -11,7 +11,7 @@ const meta = {
         layout: 'centered'
     },
     // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
-    tags: ['autodocs'],
+    tags: ['autodocs']
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     // argTypes: {
     //     backgroundColor: { control: 'color' }
@@ -24,8 +24,9 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const OnlineService: Story = {
     args: {
-        imgUrl: './images/icon-arcade.svg',
-        planName: 'Arcade',
-        planInfo: '$9/mo'
+        header: 'Online service',
+        info: 'Access to multiplayer games',
+        price: '+1$/mo',
+        name: 'online'
     }
 };
