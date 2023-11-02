@@ -7,7 +7,7 @@ import Step3 from '@/components/Step3/Step3';
 import Step4 from '@/components/Step4/Step4';
 
 const page = ({ params }: PageProps) => {
-    switch (params.stepName) {
+    switch (params.stepUrl) {
         case 'personal-info':
             return <Step1 />;
         case 'select-plan':
