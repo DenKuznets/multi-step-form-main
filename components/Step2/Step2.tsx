@@ -2,19 +2,39 @@
 import { useState } from 'react';
 import PlanCard from './PlanCard/PlanCard';
 import { useRouter } from 'next/navigation';
+import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
+import { useAppSelector } from '@/lib/redux/hooks';
+import { selectPlan } from '@/lib/redux/slices/appSlice';
+
+interface FormValues extends FieldValues {
+    selectedPlan: string;
+}
 
 const Step2 = () => {
+    const currentPlan = useAppSelector(selectPlan);
     const router = useRouter();
     const [monthly, setMonthly] = useState(true);
     const [yearly, setYearly] = useState(false);
     const multiplier = monthly ? 1 : 10;
     const period = monthly ? 'mo' : 'yr';
+    const { formState, register, handleSubmit } = useForm<FormValues>({
+        defaultValues: {
+            selectedPlan: currentPlan
+        }
+    });
+    const onSubmit: SubmitHandler<FormValues> = (data) => {
+        console.log('submit', data);
+        // dispatch(setName(data.name));
+        // dispatch(setPhone(data.phone));
+        // dispatch(setEmail(data.email));
+        // router.push('/select-plan');
+    };
+
     return (
         <form
             noValidate
             aria-label="select plan form"
-            // onSubmit={handleSubmit(onSubmit)}
-            
+            onSubmit={handleSubmit(onSubmit)}
         >
             <div className="flex flex-col gap-4 md:flex-row md:justify-evenly">
                 <PlanCard
@@ -66,8 +86,8 @@ const Step2 = () => {
             <div className="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4">
                 <button
                     onClick={(e) => {
-                        e.preventDefault();
-                        router.push('/personal-info');
+                        // e.preventDefault();
+                        // router.push('/personal-info');
                     }}
                     className="btn btn-back text-coolGray"
                 >
@@ -75,8 +95,8 @@ const Step2 = () => {
                 </button>
                 <button
                     onClick={(e) => {
-                        e.preventDefault();
-                        router.push('/add-ons');
+                        // e.preventDefault();
+                        // router.push('/add-ons');
                     }}
                     className="btn btn-next "
                 >
