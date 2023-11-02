@@ -10,7 +10,7 @@ export type AddonProps = {
 
 const Addon = ({header, info, price, name, }: AddonProps) => {
     return (
-        <div className="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue">
+        <div className="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5">
             <label
                 htmlFor={name}
                 className=" absolute left-0 top-0 z-10 h-full w-full cursor-pointer"
@@ -27,12 +27,12 @@ const Addon = ({header, info, price, name, }: AddonProps) => {
                 <Checkmark className="absolute left-0 top-0 h-full w-full" />
             </div>
             <div className="mr-auto">
-                <div className="text-sm font-bold text-marineBlue">
+                <div className="text-sm lg:text-base font-bold text-marineBlue">
                     {header}
                 </div>
-                <div className="text-xs text-coolGray">{info}</div>
+                <div className="text-xs lg:text-sm lg:font-medium text-coolGray">{info}</div>
             </div>
-            <div className="text-xs font-bold text-blue-700">{price}</div>
+            <div className="text-xs lg:text-sm lg:font-bold font-bold text-blue-700">{price}</div>
         </div>
     );
 };
