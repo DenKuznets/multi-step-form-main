@@ -42,7 +42,7 @@ const Step1 = () => {
                 <input
                     id="name"
                     className={`input  ${
-                        errors.name ? 'border-strawberryRed' : ''
+                        errors.name ? 'outline-strawberryRed' : ''
                     }`}
                     placeholder="e.g. stephenking@lorem.com"
                     {...register(`name`, {
@@ -60,7 +60,7 @@ const Step1 = () => {
                 <input
                     id="email"
                     className={`input  ${
-                        errors.email ? 'border-strawberryRed' : ''
+                        errors.email ? 'outline-strawberryRed' : ''
                     }`}
                     placeholder="e.g. Stephen King"
                     {...register(`email`, {
@@ -82,7 +82,7 @@ const Step1 = () => {
                 <input
                     id="phone"
                     className={`input  ${
-                        errors.phone ? 'border-strawberryRed' : ''
+                        errors.phone ? 'outline-strawberryRed' : ''
                     }`}
                     placeholder="e.g. +1 234 567 890"
                     {...register(`phone`, {
@@ -94,8 +94,9 @@ const Step1 = () => {
             <div className="fixed bottom-0 left-0 flex w-full justify-end bg-white p-4 sm:absolute sm:mb-4 sm:p-0">
                 <button
                     onClick={(e) => {
-                        e.preventDefault();
-                        router.push('/select-plan');
+                        // e.preventDefault();
+
+                        // router.push('/select-plan');
                     }}
                     className="btn btn-next "
                 >
