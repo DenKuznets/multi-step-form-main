@@ -22,9 +22,11 @@ const Step1 = () => {
         }
     });
     const { errors } = formState;
-    const onSubmit: SubmitHandler<FormValues> = (data) =>
+    const onSubmit: SubmitHandler<FormValues> = (data) => {
         console.log('submit', data);
-    // console.log(errors);
+        router.push('/select-plan');
+    };
+
     return (
         <form
             noValidate
@@ -44,7 +46,7 @@ const Step1 = () => {
                     className={`input  ${
                         errors.name ? 'outline-strawberryRed' : ''
                     }`}
-                    placeholder="e.g. stephenking@lorem.com"
+                    placeholder="e.g. Stephen King"
                     {...register(`name`, {
                         required: 'This field is required'
                     })}
@@ -59,10 +61,10 @@ const Step1 = () => {
                 </label>
                 <input
                     id="email"
+                    placeholder="e.g. stephenking@lorem.com"
                     className={`input  ${
                         errors.email ? 'outline-strawberryRed' : ''
                     }`}
-                    placeholder="e.g. Stephen King"
                     {...register(`email`, {
                         required: 'This field is required',
                         pattern: {
@@ -95,7 +97,6 @@ const Step1 = () => {
                 <button
                     onClick={(e) => {
                         // e.preventDefault();
-
                         // router.push('/select-plan');
                     }}
                     className="btn btn-next "
