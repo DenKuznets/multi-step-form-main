@@ -9,11 +9,16 @@ exports[`snapshot 1`] = `
     <div
       class="flex flex-col gap-4 md:flex-row md:justify-evenly"
     >
-      <div
-        class="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray focus:bg-alabaster transition-all hover:outline-marineBlue focus:outline-marineBlue md:flex-col"
+      <label
+        class="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray transition-all hover:outline-marineBlue md:flex-col [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue"
         data-testid="plan-card"
         tabindex="-1"
       >
+        <input
+          checked=""
+          class="appearance-none"
+          type="checkbox"
+        />
         <img
           alt="icon"
           class="mr-4 md:mb-12"
@@ -36,13 +41,20 @@ exports[`snapshot 1`] = `
           >
             $9/mo
           </div>
+          <div
+            class="overflow-hidden text-marineBlue transition-all first-letter:capitalize max-h-0 "
+          />
         </div>
-      </div>
-      <div
-        class="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray focus:bg-alabaster transition-all hover:outline-marineBlue focus:outline-marineBlue md:flex-col"
+      </label>
+      <label
+        class="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray transition-all hover:outline-marineBlue md:flex-col [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue"
         data-testid="plan-card"
         tabindex="-1"
       >
+        <input
+          class="appearance-none"
+          type="checkbox"
+        />
         <img
           alt="icon"
           class="mr-4 md:mb-12"
@@ -65,13 +77,20 @@ exports[`snapshot 1`] = `
           >
             $12/mo
           </div>
+          <div
+            class="overflow-hidden text-marineBlue transition-all first-letter:capitalize max-h-0 "
+          />
         </div>
-      </div>
-      <div
-        class="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray focus:bg-alabaster transition-all hover:outline-marineBlue focus:outline-marineBlue md:flex-col"
+      </label>
+      <label
+        class="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray transition-all hover:outline-marineBlue md:flex-col [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue"
         data-testid="plan-card"
         tabindex="-1"
       >
+        <input
+          class="appearance-none"
+          type="checkbox"
+        />
         <img
           alt="icon"
           class="mr-4 md:mb-12"
@@ -94,11 +113,14 @@ exports[`snapshot 1`] = `
           >
             $15/mo
           </div>
+          <div
+            class="overflow-hidden text-marineBlue transition-all first-letter:capitalize max-h-0 "
+          />
         </div>
-      </div>
+      </label>
     </div>
     <div
-      class="mt-4 flex items-center justify-center gap-5 rounded-md bg-alabaster p-4 font-medium"
+      class="mt-4 flex items-center justify-center gap-5 rounded-md bg-alabaster p-4 font-medium "
       data-testid="payment-switch"
     >
       <div

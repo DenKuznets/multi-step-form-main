@@ -6,15 +6,27 @@ export interface PlanCardProps extends React.HTMLAttributes<HTMLDivElement> {
     planName: string;
     planInfo: string;
     offer?: string;
+    defaultChecked?: boolean;
 }
 
-const PlanCard = ({ offer, imgUrl, planName, planInfo }: PlanCardProps) => {
+const PlanCard = ({
+    defaultChecked = false,
+    offer,
+    imgUrl,
+    planName,
+    planInfo
+}: PlanCardProps) => {
     return (
         <label
             data-testid="plan-card"
             tabIndex={-1}
-            className="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray focus:bg-alabaster transition-all hover:outline-marineBlue focus:outline-marineBlue md:flex-col"
+            className="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray transition-all hover:outline-marineBlue md:flex-col [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue"
         >
+            <input
+                defaultChecked={defaultChecked}
+                type="checkbox"
+                className="appearance-none"
+            />
             <Image
                 className="mr-4 md:mb-12"
                 src={imgUrl}
@@ -25,7 +37,13 @@ const PlanCard = ({ offer, imgUrl, planName, planInfo }: PlanCardProps) => {
             <div>
                 <div className="font-bold text-marineBlue">{planName}</div>
                 <div className="text-coolGray">{planInfo}</div>
-                {offer && <div className='text-marineBlue first-letter:capitalize'>{offer}</div>}
+                <div
+                    className={`overflow-hidden text-marineBlue transition-all first-letter:capitalize ${
+                        offer ? 'max-h-10' : 'max-h-0 '
+                    }`}
+                >
+                    {offer}
+                </div>
             </div>
         </label>
     );
