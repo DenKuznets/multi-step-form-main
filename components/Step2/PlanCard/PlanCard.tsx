@@ -10,7 +10,7 @@ export interface PlanCardProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const PlanCard = ({ offer, imgUrl, planName, planInfo }: PlanCardProps) => {
     return (
-        <div
+        <label
             data-testid="plan-card"
             tabIndex={-1}
             className="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray focus:bg-alabaster transition-all hover:outline-marineBlue focus:outline-marineBlue md:flex-col"
@@ -27,7 +27,7 @@ const PlanCard = ({ offer, imgUrl, planName, planInfo }: PlanCardProps) => {
                 <div className="text-coolGray">{planInfo}</div>
                 {offer && <div className='text-marineBlue first-letter:capitalize'>{offer}</div>}
             </div>
-        </div>
+        </label>
     );
 };
 
