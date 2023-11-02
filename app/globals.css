@@ -21,7 +21,7 @@
     }
 
     .btn-next {
-        @apply bg-marineBlue px-[1.1rem] py-[0.8rem] hover:bg-blue-900 sm:px-[1.5rem] sm:py-[1rem];
+        @apply bg-marineBlue h-10 w-24 hover:bg-blue-900 lg:h-12 lg:w-32;
     }
 
     .btn-back {
