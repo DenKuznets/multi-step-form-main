@@ -18,8 +18,8 @@ const Step3 = () => {
         >
             <div className="flex flex-col gap-4">
                 <Addon
-                    info="Access to multiplayer games"
                     header="Online service"
+                    info="Access to multiplayer games"
                     price={`+$${1 * multiplier}/${period}`}
                     name="online"
                 />
