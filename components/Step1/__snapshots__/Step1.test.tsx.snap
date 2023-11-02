@@ -1,82 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders Step1 unchanged 1`] = `
-<div>
-  <form
-    aria-label="personal info form"
-    class="flex w-full flex-col gap-2 sm:gap-4"
-    novalidate=""
-  >
-    <div
-      class="relative"
-    >
-      <p
-        class="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
-      />
-      <label
-        class="label"
-        for="name"
-      >
-        Name
-      </label>
-      <input
-        class="input  "
-        id="name"
-        name="name"
-        placeholder="e.g. stephenking@lorem.com"
-      />
-    </div>
-    <div
-      class="relative"
-    >
-      <p
-        class="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
-      />
-      <label
-        class="label"
-        for="email"
-      >
-        Email Address
-      </label>
-      <input
-        class="input  "
-        id="email"
-        name="email"
-        placeholder="e.g. Stephen King"
-      />
-    </div>
-    <div
-      class="relative"
-    >
-      <p
-        class="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
-      />
-      <label
-        class="label"
-        for="phone"
-      >
-        Phone Number
-      </label>
-      <input
-        class="input  "
-        id="phone"
-        name="phone"
-        placeholder="e.g. +1 234 567 890"
-      />
-    </div>
-    <div
-      class="fixed bottom-0 left-0 flex w-full justify-end bg-white p-4 sm:absolute sm:p-0 sm:mb-4"
-    >
-      <button
-        class="btn btn-next "
-      >
-        next step
-      </button>
-    </div>
-  </form>
-</div>
-`;
-
 exports[`snapshot 1`] = `
 <div>
   <form
@@ -100,7 +23,7 @@ exports[`snapshot 1`] = `
         class="input  "
         id="name"
         name="name"
-        placeholder="e.g. stephenking@lorem.com"
+        placeholder="e.g. Stephen King"
       />
     </div>
     <div
@@ -119,84 +42,7 @@ exports[`snapshot 1`] = `
         class="input  "
         id="email"
         name="email"
-        placeholder="e.g. Stephen King"
-      />
-    </div>
-    <div
-      class="relative"
-    >
-      <p
-        class="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
-      />
-      <label
-        class="label"
-        for="phone"
-      >
-        Phone Number
-      </label>
-      <input
-        class="input  "
-        id="phone"
-        name="phone"
-        placeholder="e.g. +1 234 567 890"
-      />
-    </div>
-    <div
-      class="fixed bottom-0 left-0 flex w-full justify-end bg-white p-4 sm:absolute sm:mb-4 sm:p-0"
-    >
-      <button
-        class="btn btn-next "
-      >
-        next step
-      </button>
-    </div>
-  </form>
-</div>
-`;
-
-exports[`snapshot Step1 unchanged 1`] = `
-<div>
-  <form
-    aria-label="personal info form"
-    class="flex w-full flex-col gap-2 sm:gap-4"
-    novalidate=""
-  >
-    <div
-      class="relative"
-    >
-      <p
-        class="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
-      />
-      <label
-        class="label"
-        for="name"
-      >
-        Name
-      </label>
-      <input
-        class="input  "
-        id="name"
-        name="name"
         placeholder="e.g. stephenking@lorem.com"
-      />
-    </div>
-    <div
-      class="relative"
-    >
-      <p
-        class="absolute right-0 text-[0.75rem] font-bold text-strawberryRed sm:text-[0.9rem]"
-      />
-      <label
-        class="label"
-        for="email"
-      >
-        Email Address
-      </label>
-      <input
-        class="input  "
-        id="email"
-        name="email"
-        placeholder="e.g. Stephen King"
       />
     </div>
     <div

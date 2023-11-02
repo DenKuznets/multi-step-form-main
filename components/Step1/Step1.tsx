@@ -1,9 +1,13 @@
 'use client';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
-import { useAppSelector } from '@/lib/redux/hooks';
-import { selectStep1 } from '@/lib/redux/slices/appSlice';
-import { PersonalInfoStep } from '@/lib/types';
+import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
+// import { selectStep1 } from '@/lib/redux/slices/appSlice';
+import { selectName } from '@/lib/redux/slices/appSlice';
+import { selectPhone } from '@/lib/redux/slices/appSlice';
+import { selectEmail } from '@/lib/redux/slices/appSlice';
+// import { PersonalInfoStep } from '@/lib/types';
 import { useRouter } from 'next/navigation';
+import { setName, setEmail, setPhone } from '@/lib/redux/slices/appSlice';
 
 interface FormValues extends FieldValues {
     name: string;
@@ -13,17 +17,24 @@ interface FormValues extends FieldValues {
 
 const Step1 = () => {
     const router = useRouter();
-    const stepState = useAppSelector(selectStep1) as PersonalInfoStep;
+    // const stepState = useAppSelector(selectStep1) as PersonalInfoStep;
+    const name = useAppSelector(selectName);
+    const phone = useAppSelector(selectPhone);
+    const email = useAppSelector(selectEmail);
+    const dispatch = useAppDispatch();
     const { formState, register, handleSubmit } = useForm<FormValues>({
         defaultValues: {
-            name: stepState.value.name,
-            email: stepState.value.email,
-            phone: stepState.value.phone
+            name: name,
+            email: email,
+            phone: phone
         }
     });
     const { errors } = formState;
     const onSubmit: SubmitHandler<FormValues> = (data) => {
         console.log('submit', data);
+        dispatch(setName(data.name));
+        dispatch(setPhone(data.phone));
+        dispatch(setEmail(data.email));
         router.push('/select-plan');
     };
 
@@ -94,15 +105,7 @@ const Step1 = () => {
             </div>
 
             <div className="fixed bottom-0 left-0 flex w-full justify-end bg-white p-4 sm:absolute sm:mb-4 sm:p-0">
-                <button
-                    onClick={(e) => {
-                        // e.preventDefault();
-                        // router.push('/select-plan');
-                    }}
-                    className="btn btn-next "
-                >
-                    next step
-                </button>
+                <button className="btn btn-next ">next step</button>
             </div>
         </form>
     );
