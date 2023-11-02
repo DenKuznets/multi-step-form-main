@@ -14,8 +14,8 @@ const Step4 = () => {
     return (
         <form
             noValidate
-            aria-label="select add-ons form"
-            className="text-sm text-coolGray  [&_*]:first-letter:capitalize"
+            aria-label="select summary form"
+            className="text-sm text-coolGray [&_*]:first-letter:capitalize"
             // onSubmit={handleSubmit(onSubmit)}
         >
             <div className="mb-6 bg-alabaster p-4 lg:p-6">
@@ -36,8 +36,8 @@ const Step4 = () => {
                         9 * multiplier
                     }/${period}`}</span>
                 </div>
-                <hr className="my-3 lg:my-6" />
-                <div className="mb-3 flex justify-between">
+                <hr className="my-3 lg:mt-6 lg:mb-4" />
+                <div className="mb-3 lg:mb-4 flex justify-between">
                     <span>online service</span>
                     <span className='text-marineBlue'>{`+$${1 * multiplier}/${period}`}</span>
                 </div>
@@ -46,7 +46,7 @@ const Step4 = () => {
                     <span className='text-marineBlue'>{`+$${2 * multiplier}/${period}`}</span>
                 </div>
             </div>
-            <div className="flex justify-between px-4">
+            <div className="flex justify-between px-4 lg:px-6">
                 <span>total (per month)</span>
                 <span className="text-base font-bold text-blue-700 lg:text-xl">
                     {`+$${12 * multiplier}/${period}`}
