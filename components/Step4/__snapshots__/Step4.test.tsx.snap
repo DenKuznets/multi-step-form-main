@@ -17,27 +17,29 @@ exports[`snapshot Step4 unchanged 1`] = `
           <span
             class="font-bold capitalize text-marineBlue lg:text-base"
           >
-            arcade (monthly)
+            arcade (
+            yearly
+            )
           </span>
           <br />
           <a
-            class="capitalize underline hover:text-purplishBlue transition-all"
+            class="capitalize underline transition-all hover:text-purplishBlue"
             href="/select-plan"
           >
             change
           </a>
         </span>
         <span
-          class="lg:text-base font-bold text-marineBlue"
+          class="font-bold text-marineBlue lg:text-base"
         >
           $90/yr
         </span>
       </div>
       <hr
-        class="my-3 lg:mt-6 lg:mb-4"
+        class="my-3 lg:mb-4 lg:mt-6"
       />
       <div
-        class="mb-3 lg:mb-4 flex justify-between"
+        class="mb-3 flex justify-between lg:mb-4"
       >
         <span>
           online service
@@ -65,7 +67,9 @@ exports[`snapshot Step4 unchanged 1`] = `
       class="flex justify-between px-4 lg:px-6"
     >
       <span>
-        total (per month)
+        total (per 
+        year
+        )
       </span>
       <span
         class="text-base font-bold text-blue-700 lg:text-xl"
@@ -82,7 +86,7 @@ exports[`snapshot Step4 unchanged 1`] = `
         Go Back
       </button>
       <button
-        class="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white lg:h-12 lg:w-32 lg:rounded-lg hover:bg-pastelBlue transition-all"
+        class="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white transition-all hover:bg-pastelBlue lg:h-12 lg:w-32 lg:rounded-lg"
       >
         Confirm
       </button>

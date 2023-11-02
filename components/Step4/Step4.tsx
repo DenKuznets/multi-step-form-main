@@ -22,32 +22,36 @@ const Step4 = () => {
                 <div className="flex items-center justify-between">
                     <span>
                         <span className="font-bold capitalize text-marineBlue lg:text-base">
-                            arcade (monthly)
+                            arcade ({monthly ? 'monthly' : 'yearly'})
                         </span>
                         <br />
                         <Link
-                            className="capitalize underline hover:text-purplishBlue transition-all"
+                            className="capitalize underline transition-all hover:text-purplishBlue"
                             href={'/select-plan'}
                         >
                             change
                         </Link>
                     </span>
-                    <span className="lg:text-base font-bold text-marineBlue">{`$${
+                    <span className="font-bold text-marineBlue lg:text-base">{`$${
                         9 * multiplier
                     }/${period}`}</span>
                 </div>
-                <hr className="my-3 lg:mt-6 lg:mb-4" />
-                <div className="mb-3 lg:mb-4 flex justify-between">
+                <hr className="my-3 lg:mb-4 lg:mt-6" />
+                <div className="mb-3 flex justify-between lg:mb-4">
                     <span>online service</span>
-                    <span className='text-marineBlue'>{`+$${1 * multiplier}/${period}`}</span>
+                    <span className="text-marineBlue">{`+$${
+                        1 * multiplier
+                    }/${period}`}</span>
                 </div>
                 <div className="flex justify-between">
                     <span>larger storage</span>
-                    <span className='text-marineBlue'>{`+$${2 * multiplier}/${period}`}</span>
+                    <span className="text-marineBlue">{`+$${
+                        2 * multiplier
+                    }/${period}`}</span>
                 </div>
             </div>
             <div className="flex justify-between px-4 lg:px-6">
-                <span>total (per month)</span>
+                <span>total (per {monthly ? 'month' : 'year'})</span>
                 <span className="text-base font-bold text-blue-700 lg:text-xl">
                     {`+$${12 * multiplier}/${period}`}
                 </span>
@@ -67,7 +71,7 @@ const Step4 = () => {
                         e.preventDefault();
                         // router.push('/summary');
                     }}
-                    className="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white lg:h-12 lg:w-32 lg:rounded-lg hover:bg-pastelBlue transition-all"
+                    className="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white transition-all hover:bg-pastelBlue lg:h-12 lg:w-32 lg:rounded-lg"
                 >
                     Confirm
                 </button>
