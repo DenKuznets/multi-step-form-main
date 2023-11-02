@@ -15,13 +15,13 @@ const Step4 = () => {
         <form
             noValidate
             aria-label="select add-ons form"
-            className="text-sm text-coolGray lg:text-base [&_*]:first-letter:capitalize"
+            className="text-sm text-coolGray  [&_*]:first-letter:capitalize"
             // onSubmit={handleSubmit(onSubmit)}
         >
-            <div className="mb-6 bg-alabaster p-4">
+            <div className="mb-6 bg-alabaster p-4 lg:p-6">
                 <div className="flex items-center justify-between">
                     <span>
-                        <span className="font-bold capitalize text-marineBlue">
+                        <span className="font-bold capitalize text-marineBlue lg:text-base">
                             arcade (monthly)
                         </span>
                         <br />
@@ -32,18 +32,18 @@ const Step4 = () => {
                             change
                         </Link>
                     </span>
-                    <span className="font-bold text-marineBlue">{`$${
+                    <span className="lg:text-base font-bold text-marineBlue">{`$${
                         9 * multiplier
                     }/${period}`}</span>
                 </div>
-                <hr className="my-3" />
+                <hr className="my-3 lg:my-6" />
                 <div className="mb-3 flex justify-between">
                     <span>online service</span>
-                    <span>{`+$${1 * multiplier}/${period}`}</span>
+                    <span className='text-marineBlue'>{`+$${1 * multiplier}/${period}`}</span>
                 </div>
                 <div className="flex justify-between">
                     <span>larger storage</span>
-                    <span>{`+$${2 * multiplier}/${period}`}</span>
+                    <span className='text-marineBlue'>{`+$${2 * multiplier}/${period}`}</span>
                 </div>
             </div>
             <div className="flex justify-between px-4">
