@@ -77,7 +77,7 @@ test('renders correctly', () => {
 //     expect(requiredMessages).toBeInTheDocument();
 // });
 
-// test('renders Step1 unchanged', () => {
-//     const { container } = renderWithProviders(<Step1 />);
-//     expect(container).toMatchSnapshot();
-// });
+test('snapshot', () => {
+    const { container } = renderWithProviders(<Step1 />);
+    expect(container).toMatchSnapshot();
+});

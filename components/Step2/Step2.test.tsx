@@ -35,7 +35,7 @@ test('renders correctly', () => {
     expect(nextStepButton).toBeInTheDocument();
 });
 
-test('renders Step2 unchanged', () => {
+test('snapshot', () => {
     const { container } = renderWithProviders(<Step2 />);
     expect(container).toMatchSnapshot();
 });

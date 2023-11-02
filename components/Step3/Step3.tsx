@@ -5,14 +5,37 @@ import Addon from './Addon/Addon';
 
 const Step3 = () => {
     const router = useRouter();
-
+    // const [monthly, setMonthly] = useState(false);
+    const monthly = true;
+    // const [yearly, setYearly] = useState(false);
+    const multiplier = monthly ? 1 : 10;
+    const period = monthly ? 'mo' : 'yr';
     return (
         <form
             noValidate
             aria-label="select plan form"
             // onSubmit={handleSubmit(onSubmit)}
         >
-            <Addon />
+            <div className="flex flex-col gap-4">
+                <Addon
+                    info="Access to multiplayer games"
+                    header="Online service"
+                    price={`+$${1 * multiplier}/${period}`}
+                    name="online"
+                />
+                <Addon
+                    header="Larger storage"
+                    info="Extra 1TB of cloud save"
+                    price={`+$${2 * multiplier}/${period}`}
+                    name="storage"
+                />
+                <Addon
+                    header="Customizable Profile"
+                    info="Custom theme on your profile"
+                    price={`+$${2 * multiplier}/${period}`}
+                    name="customize"
+                />
+            </div>
 
             <div className="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4">
                 <button
