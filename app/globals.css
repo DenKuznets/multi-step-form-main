@@ -8,8 +8,8 @@
     }
 
     .input {
-        @apply block w-full min-w-0 rounded border px-3 py-2 font-bold transition-all placeholder:text-[.95rem] placeholder:tracking-[-.015em] placeholder:text-coolGray focus:outline-purplishBlue sm:mt-1 sm:px-4
-        sm:py-3 sm:placeholder:text-[1rem];
+        @apply block w-full min-w-0 rounded outline px-3 py-2 font-bold transition-all placeholder:text-[.95rem] placeholder:tracking-[-.015em] placeholder:text-coolGray hover:outline-purplishBlue focus:outline-purplishBlue sm:mt-1 sm:px-4 outline-1 outline-lightGray
+        sm:py-3 sm:placeholder:text-[1rem] ;
     }
 
     .label {

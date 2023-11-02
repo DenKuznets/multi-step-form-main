@@ -26,7 +26,7 @@ const Step4 = () => {
                         </span>
                         <br />
                         <Link
-                            className="capitalize underline"
+                            className="capitalize underline hover:text-purplishBlue transition-all"
                             href={'/select-plan'}
                         >
                             change
@@ -67,7 +67,7 @@ const Step4 = () => {
                         e.preventDefault();
                         // router.push('/summary');
                     }}
-                    className="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white lg:h-12 lg:w-32 lg:rounded-lg"
+                    className="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white lg:h-12 lg:w-32 lg:rounded-lg hover:bg-pastelBlue transition-all"
                 >
                     Confirm
                 </button>

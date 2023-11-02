@@ -10,7 +10,7 @@ exports[`snapshot Step3 unchanged 1`] = `
       class="flex flex-col gap-4"
     >
       <div
-        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5"
+        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5 transition-all hover:outline-marineBlue"
         data-testid="add-on"
       >
         <label
@@ -63,7 +63,7 @@ exports[`snapshot Step3 unchanged 1`] = `
         </div>
       </div>
       <div
-        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5"
+        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5 transition-all hover:outline-marineBlue"
         data-testid="add-on"
       >
         <label
@@ -116,7 +116,7 @@ exports[`snapshot Step3 unchanged 1`] = `
         </div>
       </div>
       <div
-        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5"
+        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5 transition-all hover:outline-marineBlue"
         data-testid="add-on"
       >
         <label

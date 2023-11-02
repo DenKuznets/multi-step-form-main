@@ -13,7 +13,7 @@ const PlanCard = ({ offer, imgUrl, planName, planInfo }: PlanCardProps) => {
         <div
             data-testid="plan-card"
             tabIndex={-1}
-            className="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray focus:bg-alabaster focus:outline-marineBlue md:flex-col"
+            className="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray focus:bg-alabaster transition-all hover:outline-marineBlue focus:outline-marineBlue md:flex-col"
         >
             <Image
                 className="mr-4 md:mb-12"

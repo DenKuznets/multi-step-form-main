@@ -10,7 +10,7 @@ export type AddonProps = {
 
 const Addon = ({header, info, price, name, }: AddonProps) => {
     return (
-        <div data-testid="add-on" className="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5">
+        <div data-testid="add-on" className="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5 transition-all hover:outline-marineBlue">
             <label
                 htmlFor={name}
                 className=" absolute left-0 top-0 z-10 h-full w-full cursor-pointer"
