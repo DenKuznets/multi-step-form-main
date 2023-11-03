@@ -63,7 +63,7 @@ export const PAYMENT = {
     YEARLY: 'yearly'
 };
 
-export const ADDONS = {
+export const Addons = {
     ONLINE: 'online',
     STORAGE: 'storage',
     CUSTOMIZE: 'customize'

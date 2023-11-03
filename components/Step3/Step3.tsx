@@ -8,7 +8,7 @@ import {
     selectPaymentMethod,
     setAddons
 } from '@/lib/redux/slices/appSlice';
-import { ADDONS, PAYMENT } from '@/utils/steps';
+import { Addons, PAYMENT } from '@/utils/steps';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
 export interface FormValues extends FieldValues, AddonsType {}
@@ -45,7 +45,7 @@ const Step3 = () => {
                     header="Online service"
                     info="Access to multiplayer games"
                     price={`+$${1 * multiplier}/${period}`}
-                    name={ADDONS.ONLINE}
+                    name={Addons.ONLINE}
                     defaultChecked={currentAddons.online}
                     register={register}
                 />
@@ -53,7 +53,7 @@ const Step3 = () => {
                     header="Larger storage"
                     info="Extra 1TB of cloud save"
                     price={`+$${2 * multiplier}/${period}`}
-                    name={ADDONS.STORAGE}
+                    name={Addons.STORAGE}
                     defaultChecked={currentAddons.storage}
                     register={register}
                 />
@@ -61,7 +61,7 @@ const Step3 = () => {
                     header="Customizable Profile"
                     info="Custom theme on your profile"
                     price={`+$${2 * multiplier}/${period}`}
-                    name={ADDONS.CUSTOMIZE}
+                    name={Addons.CUSTOMIZE}
                     defaultChecked={currentAddons.customize}
                     register={register}
                 />
