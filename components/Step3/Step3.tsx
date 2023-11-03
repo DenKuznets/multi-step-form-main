@@ -1,42 +1,70 @@
 'use client';
-import { useState } from 'react';
+// import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Addon from './Addon/Addon';
-import { useAppDispatch } from '@/lib/redux/hooks';
+import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
+import {
+    Addons,
+    selectAddons,
+    selectPaymentMethod,
+    setAddons
+} from '@/lib/redux/slices/appSlice';
+import { ADDONS, PAYMENT } from '@/utils/steps';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+
+export interface FormValues extends FieldValues, Addons {}
 
 const Step3 = () => {
-    
     const dispatch = useAppDispatch();
+    const currentAddons = useAppSelector(selectAddons);
+    const currentPaymentMethod = useAppSelector(selectPaymentMethod);
+    const { register, handleSubmit } = useForm<FormValues>({
+        defaultValues: {
+            online: currentAddons.online,
+            storage: currentAddons.storage,
+            customize: currentAddons.customize
+        }
+    });
+
+    const onSubmit: SubmitHandler<FormValues> = (data) => {
+        // console.log('submit', data);
+        dispatch(setAddons({...data}));
+        router.push('/summary');
+    };
+
     const router = useRouter();
-    // const [monthly, setMonthly] = useState(false);
-    const monthly = true;
-    // const [yearly, setYearly] = useState(false);
-    const multiplier = monthly ? 1 : 10;
-    const period = monthly ? 'mo' : 'yr';
+    const [multiplier, period] =
+        currentPaymentMethod === PAYMENT.MONTHLY ? [1, 'mo'] : [10, 'yr'];
     return (
         <form
             noValidate
             aria-label="select add-ons form"
-            // onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(onSubmit)}
         >
             <div className="flex flex-col gap-4">
                 <Addon
                     header="Online service"
                     info="Access to multiplayer games"
                     price={`+$${1 * multiplier}/${period}`}
-                    name="online"
+                    name={ADDONS.ONLINE}
+                    defaultChecked={currentAddons.online}
+                    register={register}
                 />
                 <Addon
                     header="Larger storage"
                     info="Extra 1TB of cloud save"
                     price={`+$${2 * multiplier}/${period}`}
-                    name="storage"
+                    name={ADDONS.STORAGE}
+                    defaultChecked={currentAddons.storage}
+                    register={register}
                 />
                 <Addon
                     header="Customizable Profile"
                     info="Custom theme on your profile"
                     price={`+$${2 * multiplier}/${period}`}
-                    name="customize"
+                    name={ADDONS.CUSTOMIZE}
+                    defaultChecked={currentAddons.customize}
+                    register={register}
                 />
             </div>
 
@@ -52,8 +80,8 @@ const Step3 = () => {
                 </button>
                 <button
                     onClick={(e) => {
-                        e.preventDefault();
-                        router.push('/summary');
+                        // e.preventDefault();
+                        // router.push('/summary');
                     }}
                     className="btn btn-next "
                 >

@@ -10,7 +10,7 @@ exports[`snapshot Step3 unchanged 1`] = `
       class="flex flex-col gap-4"
     >
       <div
-        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5 transition-all hover:outline-marineBlue"
+        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray transition-all hover:outline-marineBlue lg:px-6 lg:py-5 [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue"
         data-testid="add-on"
       >
         <label
@@ -46,24 +46,24 @@ exports[`snapshot Step3 unchanged 1`] = `
           class="mr-auto"
         >
           <div
-            class="text-sm lg:text-base font-bold text-marineBlue"
+            class="text-sm font-bold text-marineBlue lg:text-base"
           >
             Online service
           </div>
           <div
-            class="text-xs lg:text-sm lg:font-medium text-coolGray"
+            class="text-xs text-coolGray lg:text-sm lg:font-medium"
           >
             Access to multiplayer games
           </div>
         </div>
         <div
-          class="text-xs lg:text-sm lg:font-bold font-bold text-blue-700"
+          class="text-xs font-bold text-blue-700 lg:text-sm lg:font-bold"
         >
           +$1/mo
         </div>
       </div>
       <div
-        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5 transition-all hover:outline-marineBlue"
+        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray transition-all hover:outline-marineBlue lg:px-6 lg:py-5 [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue"
         data-testid="add-on"
       >
         <label
@@ -99,24 +99,24 @@ exports[`snapshot Step3 unchanged 1`] = `
           class="mr-auto"
         >
           <div
-            class="text-sm lg:text-base font-bold text-marineBlue"
+            class="text-sm font-bold text-marineBlue lg:text-base"
           >
             Larger storage
           </div>
           <div
-            class="text-xs lg:text-sm lg:font-medium text-coolGray"
+            class="text-xs text-coolGray lg:text-sm lg:font-medium"
           >
             Extra 1TB of cloud save
           </div>
         </div>
         <div
-          class="text-xs lg:text-sm lg:font-bold font-bold text-blue-700"
+          class="text-xs font-bold text-blue-700 lg:text-sm lg:font-bold"
         >
           +$2/mo
         </div>
       </div>
       <div
-        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue lg:px-6 lg:py-5 transition-all hover:outline-marineBlue"
+        class="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray transition-all hover:outline-marineBlue lg:px-6 lg:py-5 [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue"
         data-testid="add-on"
       >
         <label
@@ -152,18 +152,18 @@ exports[`snapshot Step3 unchanged 1`] = `
           class="mr-auto"
         >
           <div
-            class="text-sm lg:text-base font-bold text-marineBlue"
+            class="text-sm font-bold text-marineBlue lg:text-base"
           >
             Customizable Profile
           </div>
           <div
-            class="text-xs lg:text-sm lg:font-medium text-coolGray"
+            class="text-xs text-coolGray lg:text-sm lg:font-medium"
           >
             Custom theme on your profile
           </div>
         </div>
         <div
-          class="text-xs lg:text-sm lg:font-bold font-bold text-blue-700"
+          class="text-xs font-bold text-blue-700 lg:text-sm lg:font-bold"
         >
           +$2/mo
         </div>

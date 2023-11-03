@@ -12,6 +12,12 @@ import { PAYMENT, PLANS } from '@/utils/steps';
 
 // type stepsType = PersonalInfoStep | SelectPlanStep | AddonsStep | SummaryStep;
 
+export interface Addons {
+    online: boolean;
+    storage: boolean;
+    customize: boolean;
+}
+
 // Define a type for the slice state
 interface AppState {
     // currentStepIndex: number;
@@ -20,11 +26,7 @@ interface AppState {
     email: string;
     plan: string;
     paymentMethod: string;
-    addons: {
-        online: boolean;
-        storage: boolean;
-        customize: boolean;
-    };
+    addons: Addons;
     // steps: stepsType[];
 }
 
@@ -32,14 +34,14 @@ interface AppState {
 export const initialState: AppState = {
     // currentStepIndex: 0,
     name: 'den',
-    phone: 'den@mail.ru',
-    email: '123456789',
-    plan: PLANS.ARCADE,
-    paymentMethod: PAYMENT.MONTHLY,
+    email: 'den@mail.ru',
+    phone: '123456789',
+    plan: PLANS.PRO,
+    paymentMethod: PAYMENT.YEARLY,
     addons: {
         online: false,
-        storage: false,
-        customize: false
+        storage: true,
+        customize: true
     }
     // steps: [
     //     {
@@ -99,11 +101,14 @@ export const appSlice = createSlice({
         },
         setPaymentMethod: (state, action: PayloadAction<string>) => {
             state.paymentMethod = action.payload;
-        }
+        },
+        setAddons: (state, action: PayloadAction<Addons>) => {
+            state.addons = action.payload;
+        },
     }
 });
 
-export const { setPhone, setEmail, setName, setPlan, setPaymentMethod } =
+export const { setPhone, setEmail, setName, setPlan, setPaymentMethod, setAddons } =
     appSlice.actions;
 
 export const selectName = (state: RootState) => state.app.name;

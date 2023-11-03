@@ -40,3 +40,9 @@ export const PAYMENT = {
     MONTHLY: 'monthly',
     YEARLY: 'yearly'
 };
+
+export const ADDONS = {
+    ONLINE: 'online',
+    STORAGE: 'storage',
+    CUSTOMIZE: 'customize'
+};
