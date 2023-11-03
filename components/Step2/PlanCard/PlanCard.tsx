@@ -36,7 +36,7 @@ const PlanCard = ({
                 alt="icon"
             />
             <div>
-                <div className="font-bold text-marineBlue">{planName}</div>
+                <div className="font-bold text-marineBlue capitalize">{planName}</div>
                 <div className="text-coolGray">{planInfo}</div>
                 <div
                     className={`overflow-hidden text-marineBlue transition-all first-letter:capitalize ${

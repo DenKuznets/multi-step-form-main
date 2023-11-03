@@ -40,20 +40,20 @@ const Step2 = () => {
                 <PlanCard
                     defaultChecked
                     imgUrl="./images/icon-arcade.svg"
-                    planName="Arcade"
+                    planName="arcade"
                     planInfo={`$${9 * multiplier}/${period}`}
                     offer={yearly ? '2 months free' : ''}
                 />
 
                 <PlanCard
                     imgUrl="./images/icon-advanced.svg"
-                    planName="Advanced"
+                    planName="advanced"
                     planInfo={`$${12 * multiplier}/${period}`}
                     offer={yearly ? '2 months free' : ''}
                 />
                 <PlanCard
                     imgUrl="./images/icon-pro.svg"
-                    planName="Pro"
+                    planName="pro"
                     planInfo={`$${15 * multiplier}/${period}`}
                     offer={yearly ? '2 months free' : ''}
                 />
