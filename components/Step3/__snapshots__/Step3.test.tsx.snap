@@ -59,7 +59,7 @@ exports[`snapshot Step3 unchanged 1`] = `
         <div
           class="text-xs font-bold text-blue-700 lg:text-sm lg:font-bold"
         >
-          +$1/mo
+          +$10/yr
         </div>
       </div>
       <div
@@ -71,6 +71,7 @@ exports[`snapshot Step3 unchanged 1`] = `
           for="storage"
         />
         <input
+          checked=""
           class="peer appearance-none checked:border-0"
           id="storage"
           name="storage"
@@ -112,7 +113,7 @@ exports[`snapshot Step3 unchanged 1`] = `
         <div
           class="text-xs font-bold text-blue-700 lg:text-sm lg:font-bold"
         >
-          +$2/mo
+          +$20/yr
         </div>
       </div>
       <div
@@ -124,6 +125,7 @@ exports[`snapshot Step3 unchanged 1`] = `
           for="customize"
         />
         <input
+          checked=""
           class="peer appearance-none checked:border-0"
           id="customize"
           name="customize"
@@ -165,7 +167,7 @@ exports[`snapshot Step3 unchanged 1`] = `
         <div
           class="text-xs font-bold text-blue-700 lg:text-sm lg:font-bold"
         >
-          +$2/mo
+          +$20/yr
         </div>
       </div>
     </div>

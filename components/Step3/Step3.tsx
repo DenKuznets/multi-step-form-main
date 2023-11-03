@@ -1,5 +1,4 @@
 'use client';
-// import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Addon from './Addon/Addon';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
@@ -28,7 +27,7 @@ const Step3 = () => {
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
         // console.log('submit', data);
-        dispatch(setAddons({...data}));
+        dispatch(setAddons({ ...data }));
         router.push('/summary');
     };
 
@@ -78,15 +77,7 @@ const Step3 = () => {
                 >
                     Go Back
                 </button>
-                <button
-                    onClick={(e) => {
-                        // e.preventDefault();
-                        // router.push('/summary');
-                    }}
-                    className="btn btn-next "
-                >
-                    next step
-                </button>
+                <button className="btn btn-next ">next step</button>
             </div>
         </form>
     );
