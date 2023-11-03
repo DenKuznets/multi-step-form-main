@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+
 import PlanCard from './PlanCard/PlanCard';
 import { useRouter } from 'next/navigation';
 import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
@@ -7,7 +7,7 @@ import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import {
     selectPaymentMethod,
     selectPlan,
-    setPaymentMethod,
+    togglePaymentMethod,
     setPlan
 } from '@/lib/redux/slices/appSlice';
 import { PAYMENT, Plans } from '@/utils/steps';
@@ -27,37 +27,14 @@ const Step2 = () => {
             plan: currentPlan
         }
     });
-    // local state used to avoid changing app state to often that causes unnecesary rerendering
-    const [monthly, setMonthly] = useState(
-        PAYMENT.MONTHLY === currentPaymentMethod
-    );
-    const [yearly, setYearly] = useState(
-        PAYMENT.YEARLY === currentPaymentMethod
-    );
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
-        console.log('submit', data);
         dispatch(setPlan(data.plan));
-        dispatch(setPaymentMethod(monthly ? PAYMENT.MONTHLY : PAYMENT.YEARLY));
         router.push('/add-ons');
     };
 
-    const plansList = Plans.map((plan, index) => {
-        const [price, offer] =
-            currentPaymentMethod === PAYMENT.MONTHLY
-                ? [`$${plan.priceMonth}/mo`, '']
-                : [`$${plan.priceYear}/yr`, '2 months free'];
-        return (
-            <PlanCard
-                key={plan.name}
-                checked={currentPlan === plan.name}
-                imgUrl={`./images/${plan.imgUrl}`}
-                planName={plan.name}
-                planPrice={price}
-                offer={offer}
-                register={register}
-            />
-        );
+    const plansList = Plans.map((plan) => {
+        return <PlanCard plan={plan} key={plan.name} register={register} />;
     });
     return (
         <>
@@ -75,7 +52,9 @@ const Step2 = () => {
                 >
                     <div
                         className={
-                            monthly ? 'text-marineBlue' : 'text-coolGray'
+                            currentPaymentMethod === PAYMENT.MONTHLY
+                                ? 'text-marineBlue'
+                                : 'text-coolGray'
                         }
                     >
                         Monthly
@@ -83,21 +62,24 @@ const Step2 = () => {
                     <div
                         data-testid="payment-switch-toggle"
                         onClick={() => {
-                            setMonthly(!monthly);
-                            setYearly(!yearly);
+                            dispatch(togglePaymentMethod());
                         }}
                         className={`relative flex h-5 w-10 cursor-pointer items-center rounded-full bg-marineBlue px-1 `}
                     >
                         <div
                             className={`relative h-3 w-3 rounded-full bg-white transition-all ${
-                                monthly
+                                currentPaymentMethod === PAYMENT.MONTHLY
                                     ? 'left-0'
                                     : 'left-full -translate-x-full'
                             }`}
                         ></div>
                     </div>
                     <div
-                        className={yearly ? 'text-marineBlue' : 'text-coolGray'}
+                        className={
+                            currentPaymentMethod === PAYMENT.YEARLY
+                                ? 'text-marineBlue'
+                                : 'text-coolGray'
+                        }
                     >
                         Yearly
                     </div>
@@ -112,15 +94,7 @@ const Step2 = () => {
                     >
                         Go Back
                     </button>
-                    <button
-                        onClick={(e) => {
-                            // e.preventDefault();
-                            // router.push('/add-ons');
-                        }}
-                        className="btn btn-next "
-                    >
-                        next step
-                    </button>
+                    <button className="btn btn-next ">next step</button>
                 </div>
             </form>
             <DevTool control={control} />

@@ -30,7 +30,14 @@ export const steps = [
     }
 ];
 
-export const Plans = [
+export interface Plan {
+    name: string;
+    priceMonth: number;
+    priceYear: number;
+    imgUrl: string;
+}
+
+export const Plans: Plan[] = [
     {
         name: 'arcade',
         priceMonth: 9,

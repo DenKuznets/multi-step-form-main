@@ -2,23 +2,25 @@ import Image from 'next/image';
 import React from 'react';
 import { UseFormRegister } from 'react-hook-form';
 import { FormValues } from '../Step2';
+import { useAppSelector } from '@/lib/redux/hooks';
+import { selectPaymentMethod } from '@/lib/redux/slices/appSlice';
+import { PAYMENT, Plan } from '@/utils/steps';
 
 export interface PlanCardProps extends React.HTMLAttributes<HTMLDivElement> {
-    imgUrl: string;
-    planName: string;
-    planPrice: string;
-    offer?: string;
-    checked?: boolean;
     register: UseFormRegister<FormValues>;
+    plan: Plan;
 }
 
 const PlanCard = ({
-    offer,
-    imgUrl,
-    planName,
-    planPrice,
-    register
+    register,
+    plan
 }: PlanCardProps) => {
+    const currentPaymentMethod = useAppSelector(selectPaymentMethod);
+    const [price, offer] =
+        currentPaymentMethod === PAYMENT.MONTHLY
+            ? [`$${plan.priceMonth}/mo`, '']
+            : [`$${plan.priceYear}/yr`, '2 months free'];
+
     return (
         <label
             data-testid="plan-card"
@@ -28,21 +30,21 @@ const PlanCard = ({
             <input
                 type="radio"
                 className="appearance-none"
-                value={planName}
+                value={plan.name}
                 {...register('plan')}
             />
             <Image
                 className="mr-4 md:mb-12"
-                src={imgUrl}
+                src={`./images/${plan.imgUrl}`}
                 width={40}
                 height={40}
                 alt="icon"
             />
             <div>
                 <div className="font-bold capitalize text-marineBlue">
-                    {planName}
+                    {plan.name}
                 </div>
-                <div className="text-coolGray">{planPrice}</div>
+                <div className="text-coolGray">{price}</div>
                 <div
                     className={`overflow-hidden text-marineBlue transition-all first-letter:capitalize ${
                         offer ? 'max-h-10' : 'max-h-0 '

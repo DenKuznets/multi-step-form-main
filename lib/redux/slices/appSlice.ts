@@ -99,24 +99,33 @@ export const appSlice = createSlice({
         setPlan: (state, action: PayloadAction<string>) => {
             state.plan = action.payload;
         },
-        setPaymentMethod: (state, action: PayloadAction<string>) => {
-            state.paymentMethod = action.payload;
+        togglePaymentMethod: (state) => {
+            state.paymentMethod =
+                state.paymentMethod === PAYMENT.MONTHLY
+                    ? PAYMENT.YEARLY
+                    : PAYMENT.MONTHLY;
         },
         setAddons: (state, action: PayloadAction<Addons>) => {
             state.addons = action.payload;
-        },
+        }
     }
 });
 
-export const { setPhone, setEmail, setName, setPlan, setPaymentMethod, setAddons } =
-    appSlice.actions;
+export const {
+    setPhone,
+    setEmail,
+    setName,
+    setPlan,
+    togglePaymentMethod,
+    setAddons
+} = appSlice.actions;
 
 export const selectName = (state: RootState) => state.app.name;
 export const selectEmail = (state: RootState) => state.app.email;
 export const selectPhone = (state: RootState) => state.app.phone;
 export const selectPlan = (state: RootState) => state.app.plan;
 export const selectPaymentMethod = (state: RootState) =>
-state.app.paymentMethod;
+    state.app.paymentMethod;
 export const selectAddons = (state: RootState) => state.app.addons;
 // Other code such as selectors can use the imported `RootState` type
 // export const selectCurrentStepIndex = (state: RootState) =>
