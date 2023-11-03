@@ -30,26 +30,26 @@ export const steps = [
     }
 ];
 
-export const Plans = {
-    arcade: {
+export const Plans = [
+    {
         name: 'arcade',
         priceMonth: 9,
         priceYear: 90,
         imgUrl: 'icon-arcade.svg'
     },
-    advanced: {
+    {
         name: 'advanced',
         priceMonth: 12,
         priceYear: 120,
         imgUrl: 'icon-advanced.svg'
     },
-    pro: {
+    {
         name: 'pro',
         priceMonth: 15,
         priceYear: 150,
         imgUrl: 'icon-pro.svg'
     }
-};
+];
 
 export const PAYMENT = {
     MONTHLY: 'monthly',

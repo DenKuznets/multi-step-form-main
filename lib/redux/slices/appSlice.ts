@@ -36,7 +36,7 @@ export const initialState: AppState = {
     name: 'den',
     email: 'den@mail.ru',
     phone: '123456789',
-    plan: Plans.pro.name,
+    plan: Plans[2].name,
     paymentMethod: PAYMENT.YEARLY,
     addons: {
         online: false,

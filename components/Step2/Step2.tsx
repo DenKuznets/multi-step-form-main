@@ -44,7 +44,23 @@ const Step2 = () => {
         router.push('/add-ons');
     };
 
-    
+    const plansList = Plans.map((plan, index) => {
+        const [price, offer] =
+            currentPaymentMethod === PAYMENT.MONTHLY
+                ? [`$${plan.priceMonth}/mo`, '']
+                : [`$${plan.priceYear}/yr`, '2 months free'];
+        return (
+            <PlanCard
+                key={plan.name}
+                checked={currentPlan === plan.name}
+                imgUrl={`./images/${plan.imgUrl}`}
+                planName={plan.name}
+                planPrice={price}
+                offer={offer}
+                register={register}
+            />
+        );
+    })    
     return (
         <>
             <form
@@ -54,26 +70,26 @@ const Step2 = () => {
             >
                 <div className="flex flex-col gap-4 md:flex-row md:justify-evenly">
                     <PlanCard
-                        checked={currentPlan === Plans.arcade.name}
+                        checked={currentPlan === Plans[0].name}
                         imgUrl="./images/icon-arcade.svg"
-                        planName={Plans.arcade.name}
+                        planName={Plans[0].name}
                         planPrice={`$${9 * multiplier}/${period}`}
                         offer={yearly ? '2 months free' : ''}
                         register={register}
                     />
 
                     <PlanCard
-                        checked={currentPlan === Plans.advanced.name}
+                        checked={currentPlan === Plans[1].name}
                         imgUrl="./images/icon-advanced.svg"
-                        planName={Plans.advanced.name}
+                        planName={Plans[1].name}
                         planPrice={`$${12 * multiplier}/${period}`}
                         offer={yearly ? '2 months free' : ''}
                         register={register}
                     />
                     <PlanCard
-                        checked={currentPlan === Plans.pro.name}
+                        checked={currentPlan === Plans[2].name}
                         imgUrl="./images/icon-pro.svg"
-                        planName={Plans.pro.name}
+                        planName={Plans[2].name}
                         planPrice={`$${15 * multiplier}/${period}`}
                         offer={yearly ? '2 months free' : ''}
                         register={register}
