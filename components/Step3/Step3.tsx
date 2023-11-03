@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import Addon from './Addon/Addon';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import {
-    Addons,
+    AddonsType,
     selectAddons,
     selectPaymentMethod,
     setAddons
@@ -12,7 +12,7 @@ import {
 import { ADDONS, PAYMENT } from '@/utils/steps';
 import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
-export interface FormValues extends FieldValues, Addons {}
+export interface FormValues extends FieldValues, AddonsType {}
 
 const Step3 = () => {
     const dispatch = useAppDispatch();

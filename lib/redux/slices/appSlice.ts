@@ -12,7 +12,7 @@ import { PAYMENT, Plans } from '@/utils/steps';
 
 // type stepsType = PersonalInfoStep | SelectPlanStep | AddonsStep | SummaryStep;
 
-export interface Addons {
+export interface AddonsType {
     online: boolean;
     storage: boolean;
     customize: boolean;
@@ -20,14 +20,12 @@ export interface Addons {
 
 // Define a type for the slice state
 interface AppState {
-    // currentStepIndex: number;
     name: string;
     phone: string;
     email: string;
     plan: string;
     paymentMethod: string;
-    addons: Addons;
-    // steps: stepsType[];
+    addons: AddonsType;
 }
 
 // Define the initial state using that type
@@ -43,49 +41,14 @@ export const initialState: AppState = {
         storage: true,
         customize: true
     }
-    // steps: [
-    //     {
-    //         valid: false,
-    //         dirty: true,
-    //         value: {
-    //             name: '',
-    //             email: '',
-    //             phone: ''
-    //         }
-    //     },
-    //     {
-    //         valid: false,
-    //         dirty: false,
-    //         value: {
-    //             plan: PLANS.ARCADE,
-    //             subscribtion: SUBSCRIBTION.MONTHLY
-    //         }
-    //     },
-    //     {
-    //         valid: false,
-    //         dirty: true,
-    //         value: {
-    //             customProfile: false,
-    //             largerStorage: false,
-    //             onlineService: false
-    //         }
-    //     },
-    //     {
-    //         valid: false,
-    //         dirty: false
-    //     }
-    // ]
-};
+    };
 
 export const appSlice = createSlice({
     name: 'app',
     // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
-        // setName: (state) => {
-        //     // state.valu
-        //     state.name =
-        // },
+       
         // Use the PayloadAction type to declare the contents of `action.payload`
         setName: (state, action: PayloadAction<string>) => {
             state.name = action.payload;
@@ -105,7 +68,7 @@ export const appSlice = createSlice({
                     ? PAYMENT.YEARLY
                     : PAYMENT.MONTHLY;
         },
-        setAddons: (state, action: PayloadAction<Addons>) => {
+        setAddons: (state, action: PayloadAction<AddonsType>) => {
             state.addons = action.payload;
         }
     }
@@ -127,12 +90,5 @@ export const selectPlan = (state: RootState) => state.app.plan;
 export const selectPaymentMethod = (state: RootState) =>
     state.app.paymentMethod;
 export const selectAddons = (state: RootState) => state.app.addons;
-// Other code such as selectors can use the imported `RootState` type
-// export const selectCurrentStepIndex = (state: RootState) =>
-//     state.app.currentStepIndex;
-// export const selectCurrentStep = (state: RootState) =>
-//     state.app.steps[state.app.currentStepIndex - 1];
-// export const selectSteps = (state: RootState) => state.app.steps;
-// export const selectStep1 = (state: RootState) => state.app.steps[0];
 
 export default appSlice.reducer;
