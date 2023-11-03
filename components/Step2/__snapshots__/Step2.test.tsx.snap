@@ -17,7 +17,8 @@ exports[`snapshot 1`] = `
         <input
           checked=""
           class="appearance-none"
-          type="checkbox"
+          name="plan"
+          type="radio"
         />
         <img
           alt="icon"
@@ -53,7 +54,8 @@ exports[`snapshot 1`] = `
       >
         <input
           class="appearance-none"
-          type="checkbox"
+          name="plan"
+          type="radio"
         />
         <img
           alt="icon"
@@ -89,7 +91,8 @@ exports[`snapshot 1`] = `
       >
         <input
           class="appearance-none"
-          type="checkbox"
+          name="plan"
+          type="radio"
         />
         <img
           alt="icon"

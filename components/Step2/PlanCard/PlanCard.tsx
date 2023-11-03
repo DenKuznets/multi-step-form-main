@@ -24,8 +24,9 @@ const PlanCard = ({
         >
             <input
                 defaultChecked={defaultChecked}
-                type="checkbox"
+                type="radio"
                 className="appearance-none"
+                name="plan"
             />
             <Image
                 className="mr-4 md:mb-12"
