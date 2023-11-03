@@ -43,6 +43,7 @@ const Step2 = () => {
         dispatch(setPaymentMethod(monthly ? PAYMENT.MONTHLY : PAYMENT.YEARLY));
         router.push('/add-ons');
     };
+
     
     return (
         <>
@@ -56,7 +57,7 @@ const Step2 = () => {
                         checked={currentPlan === Plans.arcade.name}
                         imgUrl="./images/icon-arcade.svg"
                         planName={Plans.arcade.name}
-                        planInfo={`$${9 * multiplier}/${period}`}
+                        planPrice={`$${9 * multiplier}/${period}`}
                         offer={yearly ? '2 months free' : ''}
                         register={register}
                     />
@@ -65,7 +66,7 @@ const Step2 = () => {
                         checked={currentPlan === Plans.advanced.name}
                         imgUrl="./images/icon-advanced.svg"
                         planName={Plans.advanced.name}
-                        planInfo={`$${12 * multiplier}/${period}`}
+                        planPrice={`$${12 * multiplier}/${period}`}
                         offer={yearly ? '2 months free' : ''}
                         register={register}
                     />
@@ -73,7 +74,7 @@ const Step2 = () => {
                         checked={currentPlan === Plans.pro.name}
                         imgUrl="./images/icon-pro.svg"
                         planName={Plans.pro.name}
-                        planInfo={`$${15 * multiplier}/${period}`}
+                        planPrice={`$${15 * multiplier}/${period}`}
                         offer={yearly ? '2 months free' : ''}
                         register={register}
                     />

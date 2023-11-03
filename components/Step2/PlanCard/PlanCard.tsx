@@ -6,7 +6,7 @@ import { FormValues } from '../Step2';
 export interface PlanCardProps extends React.HTMLAttributes<HTMLDivElement> {
     imgUrl: string;
     planName: string;
-    planInfo: string;
+    planPrice: string;
     offer?: string;
     checked?: boolean;
     register: UseFormRegister<FormValues>;
@@ -16,7 +16,7 @@ const PlanCard = ({
     offer,
     imgUrl,
     planName,
-    planInfo,
+    planPrice,
     register
 }: PlanCardProps) => {
     return (
@@ -42,7 +42,7 @@ const PlanCard = ({
                 <div className="font-bold capitalize text-marineBlue">
                     {planName}
                 </div>
-                <div className="text-coolGray">{planInfo}</div>
+                <div className="text-coolGray">{planPrice}</div>
                 <div
                     className={`overflow-hidden text-marineBlue transition-all first-letter:capitalize ${
                         offer ? 'max-h-10' : 'max-h-0 '

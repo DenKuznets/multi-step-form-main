@@ -26,6 +26,6 @@ export const Arcade: Story = {
     args: {
         imgUrl: './images/icon-arcade.svg',
         planName: 'Arcade',
-        planInfo: '$9/mo'
+        planPrice: '$9/mo'
     }
 };

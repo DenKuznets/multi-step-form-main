@@ -34,17 +34,20 @@ export const Plans = {
     arcade: {
         name: 'arcade',
         priceMonth: 9,
-        priceYear: 90
+        priceYear: 90,
+        imgUrl: 'icon-arcade.svg'
     },
     advanced: {
         name: 'advanced',
         priceMonth: 12,
-        priceYear: 120
+        priceYear: 120,
+        imgUrl: 'icon-advanced.svg'
     },
     pro: {
         name: 'pro',
         priceMonth: 15,
-        priceYear: 150
+        priceYear: 150,
+        imgUrl: 'icon-pro.svg'
     }
 };
 
