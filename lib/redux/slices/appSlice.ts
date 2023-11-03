@@ -20,6 +20,11 @@ interface AppState {
     email: string;
     plan: string;
     paymentMethod: string;
+    addons: {
+        online: boolean;
+        storage: boolean;
+        customize: boolean;
+    };
     // steps: stepsType[];
 }
 
@@ -31,6 +36,11 @@ export const initialState: AppState = {
     email: '123456789',
     plan: PLANS.ARCADE,
     paymentMethod: PAYMENT.MONTHLY,
+    addons: {
+        online: false,
+        storage: false,
+        customize: false
+    }
     // steps: [
     //     {
     //         valid: false,
@@ -100,7 +110,9 @@ export const selectName = (state: RootState) => state.app.name;
 export const selectEmail = (state: RootState) => state.app.email;
 export const selectPhone = (state: RootState) => state.app.phone;
 export const selectPlan = (state: RootState) => state.app.plan;
-export const selectPaymentMethod = (state: RootState) => state.app.paymentMethod;
+export const selectPaymentMethod = (state: RootState) =>
+state.app.paymentMethod;
+export const selectAddons = (state: RootState) => state.app.addons;
 // Other code such as selectors can use the imported `RootState` type
 // export const selectCurrentStepIndex = (state: RootState) =>
 //     state.app.currentStepIndex;

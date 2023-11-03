@@ -2,8 +2,11 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Addon from './Addon/Addon';
+import { useAppDispatch } from '@/lib/redux/hooks';
 
 const Step3 = () => {
+    
+    const dispatch = useAppDispatch();
     const router = useRouter();
     // const [monthly, setMonthly] = useState(false);
     const monthly = true;
