@@ -40,11 +40,13 @@ exports[`snapshot 1`] = `
           <div
             class="text-coolGray"
           >
-            $9/mo
+            $90/yr
           </div>
           <div
-            class="overflow-hidden text-marineBlue transition-all first-letter:capitalize max-h-0 "
-          />
+            class="overflow-hidden text-marineBlue transition-all first-letter:capitalize max-h-10"
+          >
+            2 months free
+          </div>
         </div>
       </label>
       <label
@@ -78,11 +80,13 @@ exports[`snapshot 1`] = `
           <div
             class="text-coolGray"
           >
-            $12/mo
+            $120/yr
           </div>
           <div
-            class="overflow-hidden text-marineBlue transition-all first-letter:capitalize max-h-0 "
-          />
+            class="overflow-hidden text-marineBlue transition-all first-letter:capitalize max-h-10"
+          >
+            2 months free
+          </div>
         </div>
       </label>
       <label
@@ -116,11 +120,13 @@ exports[`snapshot 1`] = `
           <div
             class="text-coolGray"
           >
-            $15/mo
+            $150/yr
           </div>
           <div
-            class="overflow-hidden text-marineBlue transition-all first-letter:capitalize max-h-0 "
-          />
+            class="overflow-hidden text-marineBlue transition-all first-letter:capitalize max-h-10"
+          >
+            2 months free
+          </div>
         </div>
       </label>
     </div>
@@ -129,7 +135,7 @@ exports[`snapshot 1`] = `
       data-testid="payment-switch"
     >
       <div
-        class="text-marineBlue"
+        class="text-coolGray"
       >
         Monthly
       </div>
@@ -138,11 +144,11 @@ exports[`snapshot 1`] = `
         data-testid="payment-switch-toggle"
       >
         <div
-          class="relative h-3 w-3 rounded-full bg-white transition-all left-0"
+          class="relative h-3 w-3 rounded-full bg-white transition-all left-full -translate-x-full"
         />
       </div>
       <div
-        class="text-coolGray"
+        class="text-marineBlue"
       >
         Yearly
       </div>

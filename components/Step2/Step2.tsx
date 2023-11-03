@@ -10,7 +10,7 @@ import {
     setPaymentMethod,
     setPlan
 } from '@/lib/redux/slices/appSlice';
-import { PAYMENT, PLANS } from '@/utils/steps';
+import { PAYMENT, Plans } from '@/utils/steps';
 import { DevTool } from '@hookform/devtools';
 
 export interface FormValues extends FieldValues {
@@ -53,26 +53,26 @@ const Step2 = () => {
             >
                 <div className="flex flex-col gap-4 md:flex-row md:justify-evenly">
                     <PlanCard
-                        checked={currentPlan === PLANS.ARCADE}
+                        checked={currentPlan === Plans.arcade.name}
                         imgUrl="./images/icon-arcade.svg"
-                        planName={PLANS.ARCADE}
+                        planName={Plans.arcade.name}
                         planInfo={`$${9 * multiplier}/${period}`}
                         offer={yearly ? '2 months free' : ''}
                         register={register}
                     />
 
                     <PlanCard
-                        checked={currentPlan === PLANS.ADVANCED}
+                        checked={currentPlan === Plans.advanced.name}
                         imgUrl="./images/icon-advanced.svg"
-                        planName={PLANS.ADVANCED}
+                        planName={Plans.advanced.name}
                         planInfo={`$${12 * multiplier}/${period}`}
                         offer={yearly ? '2 months free' : ''}
                         register={register}
                     />
                     <PlanCard
-                        checked={currentPlan === PLANS.PRO}
+                        checked={currentPlan === Plans.pro.name}
                         imgUrl="./images/icon-pro.svg"
-                        planName={PLANS.PRO}
+                        planName={Plans.pro.name}
                         planInfo={`$${15 * multiplier}/${period}`}
                         offer={yearly ? '2 months free' : ''}
                         register={register}

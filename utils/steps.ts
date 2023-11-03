@@ -30,10 +30,22 @@ export const steps = [
     }
 ];
 
-export const PLANS = {
-    ARCADE: 'arcade',
-    ADVANCED: 'advanced',
-    PRO: 'pro'
+export const Plans = {
+    arcade: {
+        name: 'arcade',
+        priceMonth: 9,
+        priceYear: 90
+    },
+    advanced: {
+        name: 'advanced',
+        priceMonth: 12,
+        priceYear: 120
+    },
+    pro: {
+        name: 'pro',
+        priceMonth: 15,
+        priceYear: 150
+    }
 };
 
 export const PAYMENT = {

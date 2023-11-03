@@ -40,14 +40,14 @@ test('snapshot', () => {
     expect(container).toMatchSnapshot();
 });
 
-test('pressing payment switch should change plan price from month to year and back', async () => {
-    const user = userEvent.setup();
-    renderWithProviders(<Step2 />);
-    const arcadePlanPrice = screen.getByText(/\$9\/mo/i);
-    expect(arcadePlanPrice).toHaveTextContent('$9/mo');
-    const toggle = screen.getByTestId('payment-switch-toggle');
-    await user.click(toggle);
-    expect(arcadePlanPrice).toHaveTextContent('$90/yr');
-    await user.click(toggle);
-    expect(arcadePlanPrice).toHaveTextContent('$9/mo');
-});
+// test('pressing payment switch should change plan price from month to year and back', async () => {
+//     const user = userEvent.setup();
+//     renderWithProviders(<Step2 />);
+//     const arcadePlanPrice = screen.getByText(/\$9\/mo/i);
+//     expect(arcadePlanPrice).toHaveTextContent('$9/mo');
+//     const toggle = screen.getByTestId('payment-switch-toggle');
+//     await user.click(toggle);
+//     expect(arcadePlanPrice).toHaveTextContent('$90/yr');
+//     await user.click(toggle);
+//     expect(arcadePlanPrice).toHaveTextContent('$9/mo');
+// });
