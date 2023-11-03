@@ -1,6 +1,6 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import Addon from './Addon/Addon';
+import AddonCard from './Addon/Addon';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import {
     AddonsType,
@@ -34,6 +34,9 @@ const Step3 = () => {
     const router = useRouter();
     const [multiplier, period] =
         currentPaymentMethod === PAYMENT.MONTHLY ? [1, 'mo'] : [10, 'yr'];
+    const addonsList = Addons.map((addon) => {
+        return <AddonCard addon={addon} key={addon.name} register={register} />;
+    });
     return (
         <form
             noValidate
@@ -41,7 +44,7 @@ const Step3 = () => {
             onSubmit={handleSubmit(onSubmit)}
         >
             <div className="flex flex-col gap-4">
-                <Addon
+                {/* <Addon
                     header="Online service"
                     info="Access to multiplayer games"
                     price={`+$${1 * multiplier}/${period}`}
@@ -64,7 +67,7 @@ const Step3 = () => {
                     name={Addons.CUSTOMIZE}
                     defaultChecked={currentAddons.customize}
                     register={register}
-                />
+                /> */}
             </div>
 
             <div className="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4">

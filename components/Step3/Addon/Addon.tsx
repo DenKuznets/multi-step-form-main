@@ -2,39 +2,29 @@ import { Checkmark } from '@/lib/svgs';
 import { PropsWithChildren } from 'react';
 import { UseFormRegister } from 'react-hook-form';
 import { FormValues } from '../Step3';
+import { Addon } from '@/utils/steps';
 
 export type AddonProps = {
-    header: string;
-    info: string;
-    price: string;
-    name: string;
-    defaultChecked?: boolean;
+    addon: Addon;
     register: UseFormRegister<FormValues>;
 } & PropsWithChildren;
 
-const Addon = ({
-    header,
-    info,
-    price,
-    name,
-    defaultChecked = false,
-    register
-}: AddonProps) => {
+const AddonCard = ({ addon, register }: AddonProps) => {
     return (
         <div
             data-testid="add-on"
             className="relative flex items-center rounded-md px-4 py-[11px] outline outline-1 outline-lightGray transition-all hover:outline-marineBlue lg:px-6 lg:py-5 [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue"
         >
             <label
-                htmlFor={name}
+                htmlFor={addon.name}
                 className=" absolute left-0 top-0 z-10 h-full w-full cursor-pointer"
             />
             <input
                 className={`peer appearance-none checked:border-0`}
                 type="checkbox"
-                id={name}
+                id={addon.name}
                 defaultChecked={defaultChecked}
-                {...register(name)}
+                {...register(addon.name)}
             />
             <div
                 className={`relative mr-4 h-5 w-5 rounded-[4px] border border-lightGray peer-checked:border-none [&>svg]:hidden peer-checked:[&>svg]:block`}
@@ -56,4 +46,4 @@ const Addon = ({
     );
 };
 
-export default Addon;
+export default AddonCard;

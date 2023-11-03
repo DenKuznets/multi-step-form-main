@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Addon from './Addon';
+import AddonCard from './Addon';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {
     title: 'Addon',
-    component: Addon,
+    component: AddonCard,
     parameters: {
         // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
         layout: 'centered'
@@ -16,7 +16,7 @@ const meta = {
     // argTypes: {
     //     backgroundColor: { control: 'color' }
     // }
-} satisfies Meta<typeof Addon>;
+} satisfies Meta<typeof AddonCard>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
