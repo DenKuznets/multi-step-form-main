@@ -15,10 +15,10 @@ exports[`snapshot 1`] = `
         tabindex="-1"
       >
         <input
-          checked=""
           class="appearance-none"
           name="plan"
           type="radio"
+          value="arcade"
         />
         <img
           alt="icon"
@@ -33,9 +33,9 @@ exports[`snapshot 1`] = `
         />
         <div>
           <div
-            class="font-bold text-marineBlue"
+            class="font-bold capitalize text-marineBlue"
           >
-            Arcade
+            arcade
           </div>
           <div
             class="text-coolGray"
@@ -56,6 +56,7 @@ exports[`snapshot 1`] = `
           class="appearance-none"
           name="plan"
           type="radio"
+          value="advanced"
         />
         <img
           alt="icon"
@@ -70,9 +71,9 @@ exports[`snapshot 1`] = `
         />
         <div>
           <div
-            class="font-bold text-marineBlue"
+            class="font-bold capitalize text-marineBlue"
           >
-            Advanced
+            advanced
           </div>
           <div
             class="text-coolGray"
@@ -93,6 +94,7 @@ exports[`snapshot 1`] = `
           class="appearance-none"
           name="plan"
           type="radio"
+          value="pro"
         />
         <img
           alt="icon"
@@ -107,9 +109,9 @@ exports[`snapshot 1`] = `
         />
         <div>
           <div
-            class="font-bold text-marineBlue"
+            class="font-bold capitalize text-marineBlue"
           >
-            Pro
+            pro
           </div>
           <div
             class="text-coolGray"

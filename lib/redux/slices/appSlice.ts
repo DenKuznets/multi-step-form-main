@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
-import { PLANS } from '@/utils/steps';
+import { PAYMENT, PLANS } from '@/utils/steps';
 // import {
 //     AddonsStep,
 //     PersonalInfoStep,
@@ -19,16 +19,18 @@ interface AppState {
     phone: string;
     email: string;
     plan: string;
+    paymentMethod: string;
     // steps: stepsType[];
 }
 
 // Define the initial state using that type
 export const initialState: AppState = {
     // currentStepIndex: 0,
-    name: '',
-    phone: '',
-    email: '',
-    plan: PLANS.ARCADE
+    name: 'den',
+    phone: 'den@mail.ru',
+    email: '123456789',
+    plan: PLANS.ARCADE,
+    paymentMethod: PAYMENT.MONTHLY,
     // steps: [
     //     {
     //         valid: false,
@@ -84,16 +86,21 @@ export const appSlice = createSlice({
         },
         setPlan: (state, action: PayloadAction<string>) => {
             state.plan = action.payload;
+        },
+        setPaymentMethod: (state, action: PayloadAction<string>) => {
+            state.paymentMethod = action.payload;
         }
     }
 });
 
-export const { setPhone, setEmail, setName, setPlan } = appSlice.actions;
+export const { setPhone, setEmail, setName, setPlan, setPaymentMethod } =
+    appSlice.actions;
 
 export const selectName = (state: RootState) => state.app.name;
 export const selectEmail = (state: RootState) => state.app.email;
 export const selectPhone = (state: RootState) => state.app.phone;
 export const selectPlan = (state: RootState) => state.app.plan;
+export const selectPaymentMethod = (state: RootState) => state.app.paymentMethod;
 // Other code such as selectors can use the imported `RootState` type
 // export const selectCurrentStepIndex = (state: RootState) =>
 //     state.app.currentStepIndex;

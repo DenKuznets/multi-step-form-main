@@ -1,20 +1,23 @@
 import Image from 'next/image';
 import React from 'react';
+import { UseFormRegister } from 'react-hook-form';
+import { FormValues } from '../Step2';
 
 export interface PlanCardProps extends React.HTMLAttributes<HTMLDivElement> {
     imgUrl: string;
     planName: string;
     planInfo: string;
     offer?: string;
-    defaultChecked?: boolean;
+    checked?: boolean;
+    register: UseFormRegister<FormValues>;
 }
 
 const PlanCard = ({
-    defaultChecked = false,
     offer,
     imgUrl,
     planName,
-    planInfo
+    planInfo,
+    register
 }: PlanCardProps) => {
     return (
         <label
@@ -23,10 +26,10 @@ const PlanCard = ({
             className="flex w-full cursor-pointer rounded-md p-[0.8rem] outline outline-1 outline-lightGray transition-all hover:outline-marineBlue md:flex-col [&:has(input:checked)]:bg-alabaster [&:has(input:checked)]:outline-marineBlue"
         >
             <input
-                defaultChecked={defaultChecked}
                 type="radio"
                 className="appearance-none"
-                name="plan"
+                value={planName}
+                {...register('plan')}
             />
             <Image
                 className="mr-4 md:mb-12"
@@ -36,7 +39,9 @@ const PlanCard = ({
                 alt="icon"
             />
             <div>
-                <div className="font-bold text-marineBlue capitalize">{planName}</div>
+                <div className="font-bold capitalize text-marineBlue">
+                    {planName}
+                </div>
                 <div className="text-coolGray">{planInfo}</div>
                 <div
                     className={`overflow-hidden text-marineBlue transition-all first-letter:capitalize ${

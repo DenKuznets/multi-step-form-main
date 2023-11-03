@@ -36,7 +36,7 @@ export const PLANS = {
     PRO: 'pro'
 };
 
-export const SUBSCRIBTION = {
+export const PAYMENT = {
     MONTHLY: 'monthly',
     YEARLY: 'yearly'
 };
