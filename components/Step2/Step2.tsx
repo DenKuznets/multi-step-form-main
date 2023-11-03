@@ -27,15 +27,13 @@ const Step2 = () => {
             plan: currentPlan
         }
     });
-    
+    // local state used to avoid changing app state to often that causes unnecesary rerendering
     const [monthly, setMonthly] = useState(
         PAYMENT.MONTHLY === currentPaymentMethod
     );
     const [yearly, setYearly] = useState(
         PAYMENT.YEARLY === currentPaymentMethod
     );
-    const multiplier = monthly ? 1 : 10;
-    const period = monthly ? 'mo' : 'yr';
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
         console.log('submit', data);
@@ -60,7 +58,7 @@ const Step2 = () => {
                 register={register}
             />
         );
-    })    
+    });
     return (
         <>
             <form
@@ -69,31 +67,7 @@ const Step2 = () => {
                 onSubmit={handleSubmit(onSubmit)}
             >
                 <div className="flex flex-col gap-4 md:flex-row md:justify-evenly">
-                    <PlanCard
-                        checked={currentPlan === Plans[0].name}
-                        imgUrl="./images/icon-arcade.svg"
-                        planName={Plans[0].name}
-                        planPrice={`$${9 * multiplier}/${period}`}
-                        offer={yearly ? '2 months free' : ''}
-                        register={register}
-                    />
-
-                    <PlanCard
-                        checked={currentPlan === Plans[1].name}
-                        imgUrl="./images/icon-advanced.svg"
-                        planName={Plans[1].name}
-                        planPrice={`$${12 * multiplier}/${period}`}
-                        offer={yearly ? '2 months free' : ''}
-                        register={register}
-                    />
-                    <PlanCard
-                        checked={currentPlan === Plans[2].name}
-                        imgUrl="./images/icon-pro.svg"
-                        planName={Plans[2].name}
-                        planPrice={`$${15 * multiplier}/${period}`}
-                        offer={yearly ? '2 months free' : ''}
-                        register={register}
-                    />
+                    {plansList}
                 </div>
                 <div
                     data-testid="payment-switch"
