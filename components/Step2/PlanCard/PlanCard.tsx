@@ -4,7 +4,7 @@ import { UseFormRegister } from 'react-hook-form';
 import { FormValues, PAYMENT } from '../Step2';
 import { useAppSelector } from '@/lib/redux/hooks';
 import { selectPaymentMethod } from '@/lib/redux/slices/appSlice';
-import { Plan } from './Plan';
+import { Plan } from './plans';
 
 export interface PlanCardProps extends React.HTMLAttributes<HTMLDivElement> {
     register?: UseFormRegister<FormValues>;

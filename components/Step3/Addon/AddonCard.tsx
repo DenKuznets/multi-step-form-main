@@ -5,43 +5,11 @@ import { FormValues } from '../Step3';
 import { useAppSelector } from '@/lib/redux/hooks';
 import { selectPaymentMethod } from '@/lib/redux/slices/appSlice';
 import { PAYMENT } from '@/components/Step2/Step2';
-
-export interface Addon {
-    name: string;
-    priceMonth: number;
-    priceYear: number;
-    header: string;
-    info: string;
-    selected?: boolean;
-}
-
-export const Addons: Addon[] = [
-    {
-        name: 'online',
-        priceMonth: 1,
-        priceYear: 10,
-        header: 'Online service',
-        info: 'Access to multiplayer games'
-    },
-    {
-        name: 'storage',
-        priceMonth: 2,
-        priceYear: 20,
-        header: 'Larger storage',
-        info: 'Extra 1TB of cloud save'
-    },
-    {
-        name: 'customize',
-        priceMonth: 2,
-        priceYear: 20,
-        header: 'Customizable Profile',
-        info: 'Custom theme on your profile'
-    }
-];
+import { Addon } from './addons';
 
 export type AddonProps = {
     addon: Addon;
-    register: UseFormRegister<FormValues>;
+    register?: UseFormRegister<FormValues>;
 } & PropsWithChildren;
 
 const AddonCard = ({ addon, register }: AddonProps) => {
@@ -63,7 +31,7 @@ const AddonCard = ({ addon, register }: AddonProps) => {
                 className={`peer appearance-none checked:border-0`}
                 type="checkbox"
                 id={addon.name}
-                {...register(addon.name)}
+                {...(register && register(addon.name))}
             />
             <div
                 className={`relative mr-4 h-5 w-5 rounded-[4px] border border-lightGray peer-checked:border-none [&>svg]:hidden peer-checked:[&>svg]:block`}

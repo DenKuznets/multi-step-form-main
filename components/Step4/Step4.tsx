@@ -9,9 +9,9 @@ import {
     setValid
 } from '@/lib/redux/slices/appSlice';
 import { useForm } from 'react-hook-form';
-import { Addons } from '../Step3/Addon/Addon';
+import { Addons } from '../Step3/Addon/addons';
 import { PAYMENT } from '../Step2/Step2';
-import { Plans } from '../Step2/PlanCard/Plan';
+import { Plans } from '../Step2/PlanCard/plans';
 
 const Step4 = () => {
     const dispatch = useAppDispatch();
