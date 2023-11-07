@@ -11,6 +11,7 @@ interface AppState {
     plan: string;
     paymentMethod: string;
     addons: string[];
+    valid: boolean;
 }
 
 // Define the initial state using that type
@@ -20,7 +21,8 @@ export const initialState: AppState = {
     phone: '',
     plan: Plans[0].name,
     paymentMethod: PAYMENT.MONTHLY,
-    addons: []
+    addons: [],
+    valid: false,
 };
 
 export const appSlice = createSlice({
@@ -49,7 +51,10 @@ export const appSlice = createSlice({
         },
         setAddons: (state, action: PayloadAction<string[]>) => {
             state.addons = action.payload;
-        }
+        },
+        setValid: (state, action: PayloadAction<boolean>) => {
+            state.valid = action.payload;
+        },
     }
 });
 
@@ -59,13 +64,15 @@ export const {
     setName,
     setPlan,
     togglePaymentMethod,
-    setAddons
+    setAddons,
+    setValid
 } = appSlice.actions;
 
 export const selectName = (state: RootState) => state.app.name;
 export const selectEmail = (state: RootState) => state.app.email;
 export const selectPhone = (state: RootState) => state.app.phone;
 export const selectPlan = (state: RootState) => state.app.plan;
+export const selectValid = (state: RootState) => state.app.valid;
 export const selectPaymentMethod = (state: RootState) =>
     state.app.paymentMethod;
 export const selectAddons = (state: RootState) => state.app.addons;
