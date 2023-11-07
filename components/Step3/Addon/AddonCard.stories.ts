@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import AddonCard from './AddonCard';
-import { Addons } from './addons';
+import { Addons } from '../../../utils/addons';
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 const meta = {

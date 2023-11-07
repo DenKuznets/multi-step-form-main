@@ -1,7 +1,7 @@
 'use client';
 
 import PlanCard from './PlanCard/PlanCard';
-import { Plans } from './PlanCard/plans';
+import { Plans } from '../../utils/plans';
 import { useRouter } from 'next/navigation';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
@@ -11,7 +11,6 @@ import {
     togglePaymentMethod,
     setPlan
 } from '@/lib/redux/slices/appSlice';
-import { DevTool } from '@hookform/devtools';
 
 export interface FormValues {
     plan: string;
@@ -27,7 +26,7 @@ const Step2 = () => {
     const dispatch = useAppDispatch();
     const currentPlan = useAppSelector(selectPlan);
     const currentPaymentMethod = useAppSelector(selectPaymentMethod);
-    const { register, handleSubmit, control } = useForm<FormValues>({
+    const { register, handleSubmit } = useForm<FormValues>({
         defaultValues: {
             plan: currentPlan
         }
@@ -102,7 +101,6 @@ const Step2 = () => {
                     <button className="btn btn-next ">next step</button>
                 </div>
             </form>
-            <DevTool control={control} />
         </>
     );
 };
