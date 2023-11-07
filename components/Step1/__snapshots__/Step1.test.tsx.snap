@@ -65,7 +65,7 @@ exports[`snapshot 1`] = `
       />
     </div>
     <div
-      class="fixed bottom-0 left-0 flex w-full justify-end bg-white p-4 sm:absolute sm:mb-4 sm:p-0"
+      class="form-btns-container justify-end"
     >
       <button
         class="btn btn-next "

@@ -64,7 +64,7 @@ exports[`snapshot Step4 unchanged 1`] = `
       </span>
     </div>
     <div
-      class="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4"
+      class="form-btns-container"
     >
       <button
         class="btn btn-back text-coolGray"
