@@ -2,16 +2,39 @@
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useAppSelector } from '@/lib/redux/hooks';
-import { selectPaymentMethod, selectPlan } from '@/lib/redux/slices/appSlice';
-import { PAYMENT } from '@/utils/steps';
+import {
+    selectAddons,
+    selectPaymentMethod,
+    selectPlan
+} from '@/lib/redux/slices/appSlice';
+import { Addons, PAYMENT, Plans } from '@/utils/steps';
 
 const Step4 = () => {
     const currentPaymentMethod = useAppSelector(selectPaymentMethod);
-    const currentPlan = useAppSelector(selectPlan);
+    const currentPlanName = useAppSelector(selectPlan);
+    const currentPlan = Plans.find((plan) => plan.name === currentPlanName);
+    const currentAddonsNames = useAppSelector(selectAddons);
+    const currentAddons = Addons.filter((addon) =>
+        currentAddonsNames.includes(addon.name)
+    );
+
     const router = useRouter();
     const monthly = currentPaymentMethod === PAYMENT.MONTHLY;
     const period = monthly ? 'mo' : 'yr';
-    const multiplier = monthly ? 1 : 10;
+    let totalPrice = currentPlan ? monthly ? currentPlan.priceMonth : currentPlan.priceYear : 0;
+
+    const addonsList = currentAddons.map((addon) => {
+        totalPrice += monthly ? addon.priceMonth : addon.priceYear;
+        return (
+            <div key={addon.name} className="flex justify-between">
+                <span>{addon.header}</span>
+                <span className="text-marineBlue">
+                    +${monthly ? `${addon.priceMonth}` : `${addon.priceYear}`}/
+                    {period}
+                </span>
+            </div>
+        );
+    });
 
     return (
         <form
@@ -21,45 +44,39 @@ const Step4 = () => {
             // onSubmit={handleSubmit(onSubmit)}
         >
             <div className="mb-6 bg-alabaster p-4 lg:p-6">
-                <div className="flex items-center justify-between">
-                    <span>
-                        <span className="font-bold capitalize text-marineBlue lg:text-base">
-                            {currentPlan.name} ({monthly ? 'monthly' : 'yearly'}
-                            )
+                {currentPlan ? (
+                    <div className="flex items-center justify-between">
+                        <span>
+                            <span className="font-bold capitalize text-marineBlue lg:text-base">
+                                {currentPlan.name} (
+                                {monthly ? 'monthly' : 'yearly'})
+                            </span>
+                            <br />
+                            <Link
+                                className="capitalize underline transition-all hover:text-purplishBlue"
+                                href={'/select-plan'}
+                            >
+                                change
+                            </Link>
                         </span>
-                        <br />
-                        <Link
-                            className="capitalize underline transition-all hover:text-purplishBlue"
-                            href={'/select-plan'}
-                        >
-                            change
-                        </Link>
-                    </span>
-                    <span className="font-bold text-marineBlue lg:text-base">
-                        {monthly
-                            ? `${currentPlan.priceMonth}`
-                            : `${currentPlan.priceYear}`}
-                        /{period}
-                    </span>
-                </div>
+                        <span className="font-bold text-marineBlue lg:text-base">
+                            ${monthly
+                                ? `${currentPlan.priceMonth}`
+                                : `${currentPlan.priceYear}`}
+                            /{period}
+                        </span>
+                    </div>
+                ) : (
+                    <Link href={'/select-plan'}>Select plan</Link>
+                )}
+
                 <hr className="my-3 lg:mb-4 lg:mt-6" />
-                <div className="mb-3 flex justify-between lg:mb-4">
-                    <span>online service</span>
-                    <span className="text-marineBlue">{`+$${
-                        1 * multiplier
-                    }/${period}`}</span>
-                </div>
-                <div className="flex justify-between">
-                    <span>larger storage</span>
-                    <span className="text-marineBlue">{`+$${
-                        2 * multiplier
-                    }/${period}`}</span>
-                </div>
+                <div className="flex flex-col gap-3 lg:gap-4">{addonsList}</div>
             </div>
             <div className="flex justify-between px-4 lg:px-6">
                 <span>total (per {monthly ? 'month' : 'year'})</span>
                 <span className="text-base font-bold text-blue-700 lg:text-xl">
-                    {`+$${12 * multiplier}/${period}`}
+                    ${totalPrice}/{period}
                 </span>
             </div>
             <div className="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4">

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
-import { PAYMENT, Plan, Plans } from '@/utils/steps';
+import { PAYMENT,  Plans } from '@/utils/steps';
 // import {
 //     AddonsStep,
 //     PersonalInfoStep,
@@ -23,9 +23,9 @@ interface AppState {
     name: string;
     phone: string;
     email: string;
-    plan: Plan;
+    plan: string;
     paymentMethod: string;
-    addons: AddonsType;
+    addons: string[];
 }
 
 // Define the initial state using that type
@@ -34,21 +34,16 @@ export const initialState: AppState = {
     name: 'den',
     email: 'den@mail.ru',
     phone: '123456789',
-    plan: Plans[2],
+    plan: Plans[2].name,
     paymentMethod: PAYMENT.YEARLY,
-    addons: {
-        online: false,
-        storage: true,
-        customize: true
-    }
-    };
+    addons: ["online", "storage"]
+};
 
 export const appSlice = createSlice({
     name: 'app',
     // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
-       
         // Use the PayloadAction type to declare the contents of `action.payload`
         setName: (state, action: PayloadAction<string>) => {
             state.name = action.payload;
@@ -59,7 +54,7 @@ export const appSlice = createSlice({
         setEmail: (state, action: PayloadAction<string>) => {
             state.email = action.payload;
         },
-        setPlan: (state, action: PayloadAction<Plan>) => {
+        setPlan: (state, action: PayloadAction<string>) => {
             state.plan = action.payload;
         },
         togglePaymentMethod: (state) => {
@@ -68,7 +63,7 @@ export const appSlice = createSlice({
                     ? PAYMENT.YEARLY
                     : PAYMENT.MONTHLY;
         },
-        setAddons: (state, action: PayloadAction<AddonsType>) => {
+        setAddons: (state, action: PayloadAction<string[]>) => {
             state.addons = action.payload;
         }
     }

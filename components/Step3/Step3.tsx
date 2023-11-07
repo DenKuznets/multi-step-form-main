@@ -17,14 +17,16 @@ const Step3 = () => {
     const currentAddons = useAppSelector(selectAddons);
     const { register, handleSubmit } = useForm<FormValues>({
         defaultValues: {
-            online: currentAddons.online,
-            storage: currentAddons.storage,
-            customize: currentAddons.customize
+            online: currentAddons.includes('online'),
+            storage: currentAddons.includes('storage'),
+            customize: currentAddons.includes('customize')
         }
     });
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
-        dispatch(setAddons({ ...data }));
+        // data is an array of input checkboxes names and their state (checked or not). If checkbox is checked, we add its name to array of selected addons
+        const selectedAddons = Object.keys(data).filter((key) => data[key]);
+        dispatch(setAddons(selectedAddons));
         router.push('/summary');
     };
     const router = useRouter();
@@ -37,9 +39,7 @@ const Step3 = () => {
             aria-label="select add-ons form"
             onSubmit={handleSubmit(onSubmit)}
         >
-            <div className="flex flex-col gap-4">
-                {addonsList}
-            </div>
+            <div className="flex flex-col gap-4">{addonsList}</div>
             <div className="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4">
                 <button
                     onClick={(e) => {

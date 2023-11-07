@@ -69,6 +69,7 @@ export interface Addon {
     priceYear: number;
     header: string;
     info: string;
+    selected?:boolean
 }
 
 export const Addons: Addon[] = [
