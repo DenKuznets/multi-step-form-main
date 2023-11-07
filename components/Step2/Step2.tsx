@@ -1,6 +1,7 @@
 'use client';
 
-import PlanCard, { Plans } from './PlanCard/PlanCard';
+import PlanCard from './PlanCard/PlanCard';
+import { Plans } from './PlanCard/Plan';
 import { useRouter } from 'next/navigation';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';

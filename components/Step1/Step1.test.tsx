@@ -4,10 +4,6 @@ import {
     screen,
     within
 } from '@/lib/redux/utils-for-tests';
-import userEvent from '@testing-library/user-event';
-import { initialState } from '@/lib/redux/slices/appSlice';
-import { produce } from 'immer';
-import { PersonalInfoStep } from '@/lib/types';
 import Step1 from './Step1';
 
 jest.mock('next/navigation', () => ({

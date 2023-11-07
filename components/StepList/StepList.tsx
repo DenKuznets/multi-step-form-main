@@ -1,13 +1,8 @@
 'use client';
-import { useAppSelector } from '@/lib/redux/hooks';
-// import {
-//     selectCurrentStepIndex
-// } from '@/lib/redux/slices/appSlice';
 import { steps } from '@/utils/steps';
 import Link from 'next/link';
 
 const StepsList = ({ currentStepUrl }: { currentStepUrl: string }) => {
-    // const currentStepIndex = useAppSelector(selectCurrentStepIndex);
     const stepListItems = steps.map((step, index) => {
         const stepNumber = index + 1;
         return (

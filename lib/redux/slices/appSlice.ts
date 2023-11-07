@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
 import { PAYMENT } from '@/components/Step2/Step2';
-import { Plans } from '@/components/Step2/PlanCard/PlanCard';
+import { Plans } from '@/components/Step2/PlanCard/Plan';
 
 // Define a type for the slice state
 interface AppState {

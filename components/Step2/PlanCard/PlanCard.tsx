@@ -4,44 +4,14 @@ import { UseFormRegister } from 'react-hook-form';
 import { FormValues, PAYMENT } from '../Step2';
 import { useAppSelector } from '@/lib/redux/hooks';
 import { selectPaymentMethod } from '@/lib/redux/slices/appSlice';
+import { Plan } from './Plan';
 
 export interface PlanCardProps extends React.HTMLAttributes<HTMLDivElement> {
-    register: UseFormRegister<FormValues>;
+    register?: UseFormRegister<FormValues>;
     plan: Plan;
 }
 
-export interface Plan {
-    name: string;
-    priceMonth: number;
-    priceYear: number;
-    imgUrl: string;
-}
-
-export const Plans: Plan[] = [
-    {
-        name: 'arcade',
-        priceMonth: 9,
-        priceYear: 90,
-        imgUrl: 'icon-arcade.svg'
-    },
-    {
-        name: 'advanced',
-        priceMonth: 12,
-        priceYear: 120,
-        imgUrl: 'icon-advanced.svg'
-    },
-    {
-        name: 'pro',
-        priceMonth: 15,
-        priceYear: 150,
-        imgUrl: 'icon-pro.svg'
-    }
-];
-
-const PlanCard = ({
-    register,
-    plan
-}: PlanCardProps) => {
+const PlanCard = ({ register, plan }: PlanCardProps) => {
     const currentPaymentMethod = useAppSelector(selectPaymentMethod);
     const [price, offer] =
         currentPaymentMethod === PAYMENT.MONTHLY
@@ -58,7 +28,7 @@ const PlanCard = ({
                 type="radio"
                 className="appearance-none"
                 value={plan.name}
-                {...register('plan')}
+                {...(register && register('plan'))}
             />
             <Image
                 className="mr-4 md:mb-12"

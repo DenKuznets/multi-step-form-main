@@ -1,11 +1,10 @@
 'use client';
-import { LayoutProps } from '@/.next/types/app/layout';
 import { steps } from '@/utils/steps';
 import StepsList from '@/components/StepList/StepList';
 import Thankyou from '@/components/Thankyou/Thankyou';
-
 import { useAppSelector } from '@/lib/redux/hooks';
 import { selectValid } from '@/lib/redux/slices/appSlice';
+import { LayoutProps } from '@/.next/types/app/page';
 
 const Layout = ({ params, children }: LayoutProps) => {
     const stepText = steps.find((step) => step.url === params.stepUrl);
