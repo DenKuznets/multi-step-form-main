@@ -17,9 +17,9 @@ exports[`snapshot Step4 unchanged 1`] = `
           <span
             class="font-bold capitalize text-marineBlue lg:text-base"
           >
-            pro
+            arcade
              (
-            yearly
+            monthly
             )
           </span>
           <br />
@@ -34,9 +34,9 @@ exports[`snapshot Step4 unchanged 1`] = `
           class="font-bold text-marineBlue lg:text-base"
         >
           $
-          150
+          9
           /
-          yr
+          mo
         </span>
       </div>
       <hr
@@ -44,54 +44,23 @@ exports[`snapshot Step4 unchanged 1`] = `
       />
       <div
         class="flex flex-col gap-3 lg:gap-4"
-      >
-        <div
-          class="flex justify-between"
-        >
-          <span>
-            Online service
-          </span>
-          <span
-            class="text-marineBlue"
-          >
-            +$
-            10
-            /
-            yr
-          </span>
-        </div>
-        <div
-          class="flex justify-between"
-        >
-          <span>
-            Larger storage
-          </span>
-          <span
-            class="text-marineBlue"
-          >
-            +$
-            20
-            /
-            yr
-          </span>
-        </div>
-      </div>
+      />
     </div>
     <div
       class="flex justify-between px-4 lg:px-6"
     >
       <span>
         total (per 
-        year
+        month
         )
       </span>
       <span
         class="text-base font-bold text-blue-700 lg:text-xl"
       >
         $
-        180
+        9
         /
-        yr
+        mo
       </span>
     </div>
     <div
@@ -103,7 +72,7 @@ exports[`snapshot Step4 unchanged 1`] = `
         Go Back
       </button>
       <button
-        class="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white transition-all hover:bg-pastelBlue lg:h-12 lg:w-32 lg:rounded-lg"
+        class="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white transition-all hover:bg-blue-500 lg:h-12 lg:w-32 lg:rounded-lg"
       >
         Confirm
       </button>

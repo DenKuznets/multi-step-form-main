@@ -1,9 +1,5 @@
 import '@testing-library/jest-dom';
-import {
-    renderWithProviders,
-    screen,
-    within
-} from '@/lib/redux/utils-for-tests';
+import { renderWithProviders, screen } from '@/lib/redux/utils-for-tests';
 import Step4 from './Step4';
 
 jest.mock('next/navigation', () => ({
@@ -18,7 +14,7 @@ test('renders correctly', () => {
     renderWithProviders(<Step4 />);
 
     const form = screen.getByRole('form', { name: /select summary form/i });
-    
+
     const backbutton = screen.getByRole('button', {
         name: /go back/i
     });

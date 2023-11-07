@@ -59,7 +59,7 @@ exports[`snapshot Step3 unchanged 1`] = `
         <div
           class="text-xs font-bold text-blue-700 lg:text-sm lg:font-bold"
         >
-          $10/yr
+          $1/mo
         </div>
       </div>
       <div
@@ -112,7 +112,7 @@ exports[`snapshot Step3 unchanged 1`] = `
         <div
           class="text-xs font-bold text-blue-700 lg:text-sm lg:font-bold"
         >
-          $20/yr
+          $2/mo
         </div>
       </div>
       <div
@@ -165,7 +165,7 @@ exports[`snapshot Step3 unchanged 1`] = `
         <div
           class="text-xs font-bold text-blue-700 lg:text-sm lg:font-bold"
         >
-          $20/yr
+          $2/mo
         </div>
       </div>
     </div>

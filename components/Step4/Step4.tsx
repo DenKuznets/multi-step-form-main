@@ -10,11 +10,8 @@ import {
 } from '@/lib/redux/slices/appSlice';
 import { Addons, PAYMENT, Plans } from '@/utils/steps';
 import { useForm } from 'react-hook-form';
-import { useState } from 'react';
-import Thankyou from '../Thankyou/Thankyou';
 
 const Step4 = () => {
-    const [showModal, setShowModal] = useState(false);
     const dispatch = useAppDispatch();
     const currentPaymentMethod = useAppSelector(selectPaymentMethod);
     const currentPlanName = useAppSelector(selectPlan);
@@ -35,7 +32,9 @@ const Step4 = () => {
             : currentPlan.priceYear
         : 0;
 
-    const onSubmit = () => {};
+    const onSubmit = () => {
+        dispatch(setValid(true));
+    };
 
     const addonsList = currentAddons.map((addon) => {
         totalPrice += monthly ? addon.priceMonth : addon.priceYear;
@@ -50,11 +49,7 @@ const Step4 = () => {
         );
     });
 
-    return showModal ? (
-        <div className="absolute left-0 top-0 h-full min-h-[400px] w-full overflow-hidden rounded-md bg-white">
-            <Thankyou />
-        </div>
-    ) : (
+    return (
         <form
             noValidate
             aria-label="select summary form"
@@ -108,15 +103,7 @@ const Step4 = () => {
                 >
                     Go Back
                 </button>
-                <button
-                    onClick={(e) => {
-                        e.preventDefault();
-                        // setShowModal(true);
-                        dispatch(setValid(true));
-                        // router.push('/summary');
-                    }}
-                    className="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white transition-all hover:bg-blue-500 lg:h-12 lg:w-32 lg:rounded-lg"
-                >
+                <button className="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white transition-all hover:bg-blue-500 lg:h-12 lg:w-32 lg:rounded-lg">
                     Confirm
                 </button>
             </div>
