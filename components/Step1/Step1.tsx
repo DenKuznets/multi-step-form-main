@@ -101,7 +101,7 @@ const Step1 = () => {
                 />
             </div>
 
-            <div className="fixed bottom-0 left-0 flex w-full justify-end bg-white p-4 sm:absolute sm:mb-4 sm:p-0">
+            <div className="form-btns-container justify-end">
                 <button className="btn btn-next ">next step</button>
             </div>
         </form>

@@ -95,7 +95,7 @@ const Step4 = () => {
                     ${totalPrice}/{period}
                 </span>
             </div>
-            <div className="fixed bottom-0  left-0 flex w-full justify-between bg-white p-4 shadow sm:absolute sm:mt-8 sm:p-0 sm:shadow-none md:mb-4">
+            <div className="form-btns-container">
                 <button
                     onClick={(e) => {
                         e.preventDefault();
