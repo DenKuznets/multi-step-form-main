@@ -1,15 +1,21 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { useAppSelector } from '@/lib/redux/hooks';
+import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import {
     selectAddons,
     selectPaymentMethod,
-    selectPlan
+    selectPlan,
+    setValid
 } from '@/lib/redux/slices/appSlice';
 import { Addons, PAYMENT, Plans } from '@/utils/steps';
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
+import Thankyou from '../Thankyou/Thankyou';
 
 const Step4 = () => {
+    const [showModal, setShowModal] = useState(false);
+    const dispatch = useAppDispatch();
     const currentPaymentMethod = useAppSelector(selectPaymentMethod);
     const currentPlanName = useAppSelector(selectPlan);
     const currentPlan = Plans.find((plan) => plan.name === currentPlanName);
@@ -18,10 +24,18 @@ const Step4 = () => {
         currentAddonsNames.includes(addon.name)
     );
 
+    const { handleSubmit } = useForm();
+
     const router = useRouter();
     const monthly = currentPaymentMethod === PAYMENT.MONTHLY;
     const period = monthly ? 'mo' : 'yr';
-    let totalPrice = currentPlan ? monthly ? currentPlan.priceMonth : currentPlan.priceYear : 0;
+    let totalPrice = currentPlan
+        ? monthly
+            ? currentPlan.priceMonth
+            : currentPlan.priceYear
+        : 0;
+
+    const onSubmit = () => {};
 
     const addonsList = currentAddons.map((addon) => {
         totalPrice += monthly ? addon.priceMonth : addon.priceYear;
@@ -36,12 +50,16 @@ const Step4 = () => {
         );
     });
 
-    return (
+    return showModal ? (
+        <div className="absolute left-0 top-0 h-full min-h-[400px] w-full overflow-hidden rounded-md bg-white">
+            <Thankyou />
+        </div>
+    ) : (
         <form
             noValidate
             aria-label="select summary form"
             className="text-sm text-coolGray [&_*]:first-letter:capitalize"
-            // onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleSubmit(onSubmit)}
         >
             <div className="mb-6 bg-alabaster p-4 lg:p-6">
                 {currentPlan ? (
@@ -60,7 +78,8 @@ const Step4 = () => {
                             </Link>
                         </span>
                         <span className="font-bold text-marineBlue lg:text-base">
-                            ${monthly
+                            $
+                            {monthly
                                 ? `${currentPlan.priceMonth}`
                                 : `${currentPlan.priceYear}`}
                             /{period}
@@ -92,6 +111,8 @@ const Step4 = () => {
                 <button
                     onClick={(e) => {
                         e.preventDefault();
+                        // setShowModal(true);
+                        dispatch(setValid(true));
                         // router.push('/summary');
                     }}
                     className="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white transition-all hover:bg-blue-500 lg:h-12 lg:w-32 lg:rounded-lg"

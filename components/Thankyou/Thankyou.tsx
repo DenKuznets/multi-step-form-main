@@ -12,7 +12,7 @@ const Thankyou = () => {
                 className='mb-4 sm:mb-8 sm:h-20 sm:w-20'
             />
             <h1 className="first-letter:capitalize mb-2 sm:mb-4 sm:text-4xl">thank you</h1>
-            <p>
+            <p className='text-coolGray'>
                 Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.
             </p>
         </div>
