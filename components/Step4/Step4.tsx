@@ -1,15 +1,17 @@
 'use client';
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { useAppSelector } from '@/lib/redux/hooks';
+import { selectPaymentMethod, selectPlan } from '@/lib/redux/slices/appSlice';
+import { PAYMENT } from '@/utils/steps';
 
 const Step4 = () => {
+    const currentPaymentMethod = useAppSelector(selectPaymentMethod);
+    const currentPlan = useAppSelector(selectPlan);
     const router = useRouter();
-    // const [monthly, setMonthly] = useState(false);
-    const monthly = false;
-    // const [yearly, setYearly] = useState(false);
-    const multiplier = monthly ? 1 : 10;
+    const monthly = currentPaymentMethod === PAYMENT.MONTHLY;
     const period = monthly ? 'mo' : 'yr';
+    const multiplier = monthly ? 1 : 10;
 
     return (
         <form
@@ -22,7 +24,8 @@ const Step4 = () => {
                 <div className="flex items-center justify-between">
                     <span>
                         <span className="font-bold capitalize text-marineBlue lg:text-base">
-                            arcade ({monthly ? 'monthly' : 'yearly'})
+                            {currentPlan.name} ({monthly ? 'monthly' : 'yearly'}
+                            )
                         </span>
                         <br />
                         <Link
@@ -32,9 +35,12 @@ const Step4 = () => {
                             change
                         </Link>
                     </span>
-                    <span className="font-bold text-marineBlue lg:text-base">{`$${
-                        9 * multiplier
-                    }/${period}`}</span>
+                    <span className="font-bold text-marineBlue lg:text-base">
+                        {monthly
+                            ? `${currentPlan.priceMonth}`
+                            : `${currentPlan.priceYear}`}
+                        /{period}
+                    </span>
                 </div>
                 <hr className="my-3 lg:mb-4 lg:mt-6" />
                 <div className="mb-3 flex justify-between lg:mb-4">

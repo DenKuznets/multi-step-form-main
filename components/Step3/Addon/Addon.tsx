@@ -5,8 +5,6 @@ import { FormValues } from '../Step3';
 import { Addon, PAYMENT } from '@/utils/steps';
 import { useAppSelector } from '@/lib/redux/hooks';
 import { selectPaymentMethod } from '@/lib/redux/slices/appSlice';
-// import { useAppSelector } from '@/lib/redux/hooks';
-// import { selectAddons } from '@/lib/redux/slices/appSlice';
 
 export type AddonProps = {
     addon: Addon;

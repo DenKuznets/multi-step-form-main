@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
-import { PAYMENT, Plans } from '@/utils/steps';
+import { PAYMENT, Plan, Plans } from '@/utils/steps';
 // import {
 //     AddonsStep,
 //     PersonalInfoStep,
@@ -23,7 +23,7 @@ interface AppState {
     name: string;
     phone: string;
     email: string;
-    plan: string;
+    plan: Plan;
     paymentMethod: string;
     addons: AddonsType;
 }
@@ -34,7 +34,7 @@ export const initialState: AppState = {
     name: 'den',
     email: 'den@mail.ru',
     phone: '123456789',
-    plan: Plans[2].name,
+    plan: Plans[2],
     paymentMethod: PAYMENT.YEARLY,
     addons: {
         online: false,
@@ -59,7 +59,7 @@ export const appSlice = createSlice({
         setEmail: (state, action: PayloadAction<string>) => {
             state.email = action.payload;
         },
-        setPlan: (state, action: PayloadAction<string>) => {
+        setPlan: (state, action: PayloadAction<Plan>) => {
             state.plan = action.payload;
         },
         togglePaymentMethod: (state) => {

@@ -24,13 +24,16 @@ const Step2 = () => {
     const currentPaymentMethod = useAppSelector(selectPaymentMethod);
     const { register, handleSubmit, control } = useForm<FormValues>({
         defaultValues: {
-            plan: currentPlan
+            plan: currentPlan.name
         }
     });
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
-        dispatch(setPlan(data.plan));
-        router.push('/add-ons');
+        const currentPlan = Plans.find((plan) => plan.name === data.plan);
+        if (currentPlan) {
+            dispatch(setPlan(currentPlan));
+            router.push('/add-ons');
+        }
     };
 
     const plansList = Plans.map((plan) => {
