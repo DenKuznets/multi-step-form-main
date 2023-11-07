@@ -3,12 +3,6 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
 import { PAYMENT,  Plans } from '@/utils/steps';
 
-export interface AddonsType {
-    online: boolean;
-    storage: boolean;
-    customize: boolean;
-}
-
 // Define a type for the slice state
 interface AppState {
     name: string;
