@@ -4,9 +4,9 @@ import AddonCard from './Addon/AddonCard';
 import { Addons } from './Addon/addons';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import { selectAddons, setAddons } from '@/lib/redux/slices/appSlice';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
 
-export interface FormValues {
+export interface FormValues extends FieldValues {
     online: boolean;
     storage: boolean;
     customize: boolean;
