@@ -1,6 +1,6 @@
 'use client';
 
-import PlanCard from './PlanCard/PlanCard';
+import PlanCard, { Plans } from './PlanCard/PlanCard';
 import { useRouter } from 'next/navigation';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
@@ -10,12 +10,16 @@ import {
     togglePaymentMethod,
     setPlan
 } from '@/lib/redux/slices/appSlice';
-import { PAYMENT, Plans } from '@/utils/steps';
 import { DevTool } from '@hookform/devtools';
 
 export interface FormValues {
     plan: string;
 }
+
+export const PAYMENT = {
+    MONTHLY: 'monthly',
+    YEARLY: 'yearly'
+};
 
 const Step2 = () => {
     const router = useRouter();

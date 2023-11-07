@@ -30,68 +30,8 @@ export const steps = [
     }
 ];
 
-export interface Plan {
-    name: string;
-    priceMonth: number;
-    priceYear: number;
-    imgUrl: string;
-}
 
-export const Plans: Plan[] = [
-    {
-        name: 'arcade',
-        priceMonth: 9,
-        priceYear: 90,
-        imgUrl: 'icon-arcade.svg'
-    },
-    {
-        name: 'advanced',
-        priceMonth: 12,
-        priceYear: 120,
-        imgUrl: 'icon-advanced.svg'
-    },
-    {
-        name: 'pro',
-        priceMonth: 15,
-        priceYear: 150,
-        imgUrl: 'icon-pro.svg'
-    }
-];
 
-export const PAYMENT = {
-    MONTHLY: 'monthly',
-    YEARLY: 'yearly'
-};
 
-export interface Addon {
-    name: string;
-    priceMonth: number;
-    priceYear: number;
-    header: string;
-    info: string;
-    selected?:boolean
-}
 
-export const Addons: Addon[] = [
-    {
-        name: 'online',
-        priceMonth: 1,
-        priceYear: 10,
-        header: 'Online service',
-        info: 'Access to multiplayer games'
-    },
-    {
-        name: 'storage',
-        priceMonth: 2,
-        priceYear: 20,
-        header: 'Larger storage',
-        info: 'Extra 1TB of cloud save'
-    },
-    {
-        name: 'customize',
-        priceMonth: 2,
-        priceYear: 20,
-        header: 'Customizable Profile',
-        info: 'Custom theme on your profile'
-    }
-];
+

@@ -2,9 +2,42 @@ import { Checkmark } from '@/lib/svgs';
 import { PropsWithChildren } from 'react';
 import { UseFormRegister } from 'react-hook-form';
 import { FormValues } from '../Step3';
-import { Addon, PAYMENT } from '@/utils/steps';
 import { useAppSelector } from '@/lib/redux/hooks';
 import { selectPaymentMethod } from '@/lib/redux/slices/appSlice';
+import { PAYMENT } from '@/components/Step2/Step2';
+
+export interface Addon {
+    name: string;
+    priceMonth: number;
+    priceYear: number;
+    header: string;
+    info: string;
+    selected?: boolean;
+}
+
+export const Addons: Addon[] = [
+    {
+        name: 'online',
+        priceMonth: 1,
+        priceYear: 10,
+        header: 'Online service',
+        info: 'Access to multiplayer games'
+    },
+    {
+        name: 'storage',
+        priceMonth: 2,
+        priceYear: 20,
+        header: 'Larger storage',
+        info: 'Extra 1TB of cloud save'
+    },
+    {
+        name: 'customize',
+        priceMonth: 2,
+        priceYear: 20,
+        header: 'Customizable Profile',
+        info: 'Custom theme on your profile'
+    }
+];
 
 export type AddonProps = {
     addon: Addon;

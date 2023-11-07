@@ -1,9 +1,8 @@
 'use client';
 import { useRouter } from 'next/navigation';
-import AddonCard from './Addon/Addon';
+import AddonCard, { Addons } from './Addon/Addon';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import { selectAddons, setAddons } from '@/lib/redux/slices/appSlice';
-import { Addons } from '@/utils/steps';
 import { SubmitHandler, useForm } from 'react-hook-form';
 
 export interface FormValues {

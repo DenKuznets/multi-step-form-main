@@ -1,15 +1,42 @@
 import Image from 'next/image';
 import React from 'react';
 import { UseFormRegister } from 'react-hook-form';
-import { FormValues } from '../Step2';
+import { FormValues, PAYMENT } from '../Step2';
 import { useAppSelector } from '@/lib/redux/hooks';
 import { selectPaymentMethod } from '@/lib/redux/slices/appSlice';
-import { PAYMENT, Plan } from '@/utils/steps';
 
 export interface PlanCardProps extends React.HTMLAttributes<HTMLDivElement> {
     register: UseFormRegister<FormValues>;
     plan: Plan;
 }
+
+export interface Plan {
+    name: string;
+    priceMonth: number;
+    priceYear: number;
+    imgUrl: string;
+}
+
+export const Plans: Plan[] = [
+    {
+        name: 'arcade',
+        priceMonth: 9,
+        priceYear: 90,
+        imgUrl: 'icon-arcade.svg'
+    },
+    {
+        name: 'advanced',
+        priceMonth: 12,
+        priceYear: 120,
+        imgUrl: 'icon-advanced.svg'
+    },
+    {
+        name: 'pro',
+        priceMonth: 15,
+        priceYear: 150,
+        imgUrl: 'icon-pro.svg'
+    }
+];
 
 const PlanCard = ({
     register,

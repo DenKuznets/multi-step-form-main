@@ -8,8 +8,10 @@ import {
     selectPlan,
     setValid
 } from '@/lib/redux/slices/appSlice';
-import { Addons, PAYMENT, Plans } from '@/utils/steps';
 import { useForm } from 'react-hook-form';
+import { Addons } from '../Step3/Addon/Addon';
+import { PAYMENT } from '../Step2/Step2';
+import { Plans } from '../Step2/PlanCard/PlanCard';
 
 const Step4 = () => {
     const dispatch = useAppDispatch();
