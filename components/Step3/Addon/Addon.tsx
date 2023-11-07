@@ -2,7 +2,11 @@ import { Checkmark } from '@/lib/svgs';
 import { PropsWithChildren } from 'react';
 import { UseFormRegister } from 'react-hook-form';
 import { FormValues } from '../Step3';
-import { Addon } from '@/utils/steps';
+import { Addon, PAYMENT } from '@/utils/steps';
+import { useAppSelector } from '@/lib/redux/hooks';
+import { selectPaymentMethod } from '@/lib/redux/slices/appSlice';
+// import { useAppSelector } from '@/lib/redux/hooks';
+// import { selectAddons } from '@/lib/redux/slices/appSlice';
 
 export type AddonProps = {
     addon: Addon;
@@ -10,6 +14,11 @@ export type AddonProps = {
 } & PropsWithChildren;
 
 const AddonCard = ({ addon, register }: AddonProps) => {
+    const currentPaymentMethod = useAppSelector(selectPaymentMethod);
+    const [price] =
+        currentPaymentMethod === PAYMENT.MONTHLY
+            ? [`$${addon.priceMonth}/mo`, '']
+            : [`$${addon.priceYear}/yr`, '2 months free'];
     return (
         <div
             data-testid="add-on"
@@ -23,7 +32,6 @@ const AddonCard = ({ addon, register }: AddonProps) => {
                 className={`peer appearance-none checked:border-0`}
                 type="checkbox"
                 id={addon.name}
-                defaultChecked={defaultChecked}
                 {...register(addon.name)}
             />
             <div
@@ -33,10 +41,10 @@ const AddonCard = ({ addon, register }: AddonProps) => {
             </div>
             <div className="mr-auto">
                 <div className="text-sm font-bold text-marineBlue lg:text-base">
-                    {header}
+                    {addon.header}
                 </div>
                 <div className="text-xs text-coolGray lg:text-sm lg:font-medium">
-                    {info}
+                    {addon.info}
                 </div>
             </div>
             <div className="text-xs font-bold text-blue-700 lg:text-sm lg:font-bold">
