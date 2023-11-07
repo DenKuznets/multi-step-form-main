@@ -1,11 +1,9 @@
 'use client';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
-// import { selectStep1 } from '@/lib/redux/slices/appSlice';
 import { selectName } from '@/lib/redux/slices/appSlice';
 import { selectPhone } from '@/lib/redux/slices/appSlice';
 import { selectEmail } from '@/lib/redux/slices/appSlice';
-// import { PersonalInfoStep } from '@/lib/types';
 import { useRouter } from 'next/navigation';
 import { setName, setEmail, setPhone } from '@/lib/redux/slices/appSlice';
 
@@ -17,7 +15,6 @@ interface FormValues {
 
 const Step1 = () => {
     const router = useRouter();
-    // const stepState = useAppSelector(selectStep1) as PersonalInfoStep;
     const name = useAppSelector(selectName);
     const phone = useAppSelector(selectPhone);
     const email = useAppSelector(selectEmail);
