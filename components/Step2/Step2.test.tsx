@@ -5,7 +5,7 @@ import {
     within
 } from '@/lib/redux/utils-for-tests';
 import Step2 from './Step2';
-import userEvent from '@testing-library/user-event';
+// import userEvent from '@testing-library/user-event';
 
 jest.mock('next/navigation', () => ({
     useRouter() {
