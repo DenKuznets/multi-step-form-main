@@ -1,6 +1,6 @@
 'use client';
 
-import { PageProps } from '@/.next/types/app/layout';
+import { PageProps } from '@/.next/types/app/page';
 import Step1 from '@/components/Step1/Step1';
 import Step2 from '@/components/Step2/Step2';
 import Step3 from '@/components/Step3/Step3';
