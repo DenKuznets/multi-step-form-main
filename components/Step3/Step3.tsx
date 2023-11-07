@@ -2,15 +2,15 @@
 import { useRouter } from 'next/navigation';
 import AddonCard from './Addon/Addon';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
-import {
-    AddonsType,
-    selectAddons,
-    setAddons
-} from '@/lib/redux/slices/appSlice';
+import { selectAddons, setAddons } from '@/lib/redux/slices/appSlice';
 import { Addons } from '@/utils/steps';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
-export interface FormValues extends FieldValues, AddonsType {}
+export interface FormValues {
+    online: boolean;
+    storage: boolean;
+    customize: boolean;
+}
 
 const Step3 = () => {
     const dispatch = useAppDispatch();
@@ -25,7 +25,9 @@ const Step3 = () => {
 
     const onSubmit: SubmitHandler<FormValues> = (data) => {
         // data is an array of input checkboxes names and their state (checked or not). If checkbox is checked, we add its name to array of selected addons
-        const selectedAddons = Object.keys(data).filter((key) => data[key]);
+        const selectedAddons = Object.keys(data).filter(
+            (key) => data[key as keyof FormValues]
+        );
         dispatch(setAddons(selectedAddons));
         router.push('/summary');
     };

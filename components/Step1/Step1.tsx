@@ -1,5 +1,5 @@
 'use client';
-import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 // import { selectStep1 } from '@/lib/redux/slices/appSlice';
 import { selectName } from '@/lib/redux/slices/appSlice';
@@ -9,7 +9,7 @@ import { selectEmail } from '@/lib/redux/slices/appSlice';
 import { useRouter } from 'next/navigation';
 import { setName, setEmail, setPhone } from '@/lib/redux/slices/appSlice';
 
-interface FormValues extends FieldValues {
+interface FormValues {
     name: string;
     phone: string;
     email: string;

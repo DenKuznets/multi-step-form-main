@@ -2,7 +2,7 @@
 
 import PlanCard from './PlanCard/PlanCard';
 import { useRouter } from 'next/navigation';
-import { useForm, SubmitHandler, FieldValues } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import {
     selectPaymentMethod,
@@ -13,8 +13,8 @@ import {
 import { PAYMENT, Plans } from '@/utils/steps';
 import { DevTool } from '@hookform/devtools';
 
-export interface FormValues extends FieldValues {
-    selectedPlan: string;
+export interface FormValues {
+    plan: string;
 }
 
 const Step2 = () => {

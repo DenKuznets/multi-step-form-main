@@ -2,15 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { RootState } from '../store';
 import { PAYMENT,  Plans } from '@/utils/steps';
-// import {
-//     AddonsStep,
-//     PersonalInfoStep,
-//     SelectPlanStep,
-//     SummaryStep
-// } from '@/lib/types';
-// import { PLANS, SUBSCRIBTION } from '@/utils/steps';
-
-// type stepsType = PersonalInfoStep | SelectPlanStep | AddonsStep | SummaryStep;
 
 export interface AddonsType {
     online: boolean;
@@ -30,13 +21,12 @@ interface AppState {
 
 // Define the initial state using that type
 export const initialState: AppState = {
-    // currentStepIndex: 0,
-    name: 'den',
-    email: 'den@mail.ru',
-    phone: '123456789',
-    plan: Plans[2].name,
-    paymentMethod: PAYMENT.YEARLY,
-    addons: ["online", "storage"]
+    name: '',
+    email: '',
+    phone: '',
+    plan: Plans[0].name,
+    paymentMethod: PAYMENT.MONTHLY,
+    addons: []
 };
 
 export const appSlice = createSlice({
