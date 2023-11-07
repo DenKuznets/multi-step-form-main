@@ -94,7 +94,7 @@ const Step4 = () => {
                         e.preventDefault();
                         // router.push('/summary');
                     }}
-                    className="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white transition-all hover:bg-pastelBlue lg:h-12 lg:w-32 lg:rounded-lg"
+                    className="btn h-10 w-24 rounded-[4px] bg-blue-700 text-white transition-all hover:bg-blue-500 lg:h-12 lg:w-32 lg:rounded-lg"
                 >
                     Confirm
                 </button>
