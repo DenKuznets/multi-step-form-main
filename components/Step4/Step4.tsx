@@ -4,7 +4,10 @@ import Link from 'next/link';
 import { useAppDispatch, useAppSelector } from '@/lib/redux/hooks';
 import {
     selectAddons,
+    selectEmail,
+    selectName,
     selectPaymentMethod,
+    selectPhone,
     selectPlan,
     setValid
 } from '@/lib/redux/slices/appSlice';
@@ -25,6 +28,9 @@ const Step4 = () => {
 
     const { handleSubmit } = useForm();
 
+    const name = useAppSelector(selectName);
+    const phone = useAppSelector(selectPhone);
+    const email = useAppSelector(selectEmail);
     const router = useRouter();
     const monthly = currentPaymentMethod === PAYMENT.MONTHLY;
     const period = monthly ? 'mo' : 'yr';
@@ -35,7 +41,11 @@ const Step4 = () => {
         : 0;
 
     const onSubmit = () => {
-        dispatch(setValid(true));
+        if (name && phone && email) {
+            dispatch(setValid(true));
+        } else {
+            router.push('personal-info');
+        }
     };
 
     const addonsList = currentAddons.map((addon) => {
