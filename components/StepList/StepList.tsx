@@ -7,16 +7,15 @@ const StepsList = ({ currentStepUrl }: { currentStepUrl: string }) => {
         const stepNumber = index + 1;
         return (
             <li className={`items-center sm:flex sm:gap-x-4`} key={step.name}>
-                <Link
-                    href={step.url}
+                <div
                     className={`${
                         step.url === currentStepUrl
                             ? 'bg-lightBlue text-marineBlue'
                             : 'bg-transparent text-white'
-                    } flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border text-center font-bold transition-all`}
+                    } flex h-8 w-8 items-center justify-center rounded-full border text-center font-bold transition-all`}
                 >
                     {stepNumber}
-                </Link>
+                </div>
                 <div className="hidden flex-col justify-center gap-y-1 sm:flex">
                     <div className="text-[0.8rem] uppercase leading-none text-lightGray ">
                         Step {stepNumber}
