@@ -9,11 +9,11 @@
 
     .input {
         @apply block w-full min-w-0 rounded outline px-3 py-2 font-bold transition-all placeholder:text-[.95rem] placeholder:tracking-[-.015em] placeholder:text-coolGray hover:outline-purplishBlue focus:outline-purplishBlue sm:mt-1 sm:px-4 outline-1 outline-lightGray
-        sm:py-3 sm:placeholder:text-[1rem] ;
+        sm:py-3 sm:placeholder:text-[1rem] text-marineBlue;
     }
 
     .label {
-        @apply text-[0.75rem] font-bold tracking-[-.015em] sm:text-[0.9rem];
+        @apply text-[0.75rem] font-medium tracking-[-.015em] sm:text-[0.9rem] text-marineBlue;
     }
 
     .btn {
