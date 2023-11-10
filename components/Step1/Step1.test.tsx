@@ -5,6 +5,9 @@ import {
     within
 } from '@/lib/redux/utils-for-tests';
 import Step1 from './Step1';
+import userEvent from '@testing-library/user-event';
+import { produce } from 'immer';
+import { initialState } from '@/lib/redux/slices/appSlice';
 
 jest.mock('next/navigation', () => ({
     useRouter() {
@@ -15,9 +18,7 @@ jest.mock('next/navigation', () => ({
 }));
 
 test('renders correctly', () => {
-    renderWithProviders(
-        <Step1 />
-    );
+    renderWithProviders(<Step1 />);
 
     const form = screen.getByRole('form', { name: /personal info form/i });
     const nameLabel = within(form).getByText(/name/i);
@@ -40,38 +41,37 @@ test('renders correctly', () => {
     expect(nextStepButton).toBeInTheDocument();
 });
 
-// test('required message pops up at empty required fields when submit button clicked', async () => {
-//     const user = userEvent.setup();
-//     renderWithProviders(<Step1 />);
-//     const nextStepButton = screen.getByRole('button', {
-//         name: /next step/i
-//     });
-//     await user.click(nextStepButton);
-//     const requiredMessages = screen.getAllByText('This field is required');
-//     expect(requiredMessages).toHaveLength(3);
-// });
+test('required message pops up at empty required fields when submit button clicked', async () => {
+    const user = userEvent.setup();
+    renderWithProviders(<Step1 />);
+    const nextStepButton = screen.getByRole('button', {
+        name: /next step/i
+    });
+    await user.click(nextStepButton);
+    const requiredMessages = screen.getAllByText('This field is required');
+    expect(requiredMessages).toHaveLength(3);
+});
 
-// test('invalid email message pops up at incorrectly filled email field when submit button clicked', async () => {
-//     const user = userEvent.setup();
-//     const newState = produce(initialState, (drafState) => {
-//         const step = drafState.steps[0] as PersonalInfoStep;
-//         step.value.email = 'asdas';
-//     });
+test('invalid email message pops up at incorrectly filled email field when submit button clicked', async () => {
+    const user = userEvent.setup();
+    const newState = produce(initialState, (drafState) => {
+        drafState.email = 'asdas';
+    });
 
-//     renderWithProviders(<Step1 />, {
-//         preloadedState: {
-//             app: {
-//                 ...newState
-//             }
-//         }
-//     });
-//     const nextStepButton = screen.getByRole('button', {
-//         name: /next step/i
-//     });
-//     await user.click(nextStepButton);
-//     const requiredMessages = screen.getByText('Invalid email');
-//     expect(requiredMessages).toBeInTheDocument();
-// });
+    renderWithProviders(<Step1 />, {
+        preloadedState: {
+            app: {
+                ...newState
+            }
+        }
+    });
+    const nextStepButton = screen.getByRole('button', {
+        name: /next step/i
+    });
+    await user.click(nextStepButton);
+    const requiredMessages = screen.getByText('Invalid email');
+    expect(requiredMessages).toBeInTheDocument();
+});
 
 test('snapshot', () => {
     const { container } = renderWithProviders(<Step1 />);

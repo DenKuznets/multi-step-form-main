@@ -1,6 +1,4 @@
-'use client';
 import { steps } from '@/utils/steps';
-import Link from 'next/link';
 
 const StepsList = ({ currentStepUrl }: { currentStepUrl: string }) => {
     const stepListItems = steps.map((step, index) => {

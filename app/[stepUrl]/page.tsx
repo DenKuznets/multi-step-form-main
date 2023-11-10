@@ -1,5 +1,3 @@
-'use client';
-
 import { PageProps } from '@/.next/types/app/page';
 import Step1 from '@/components/Step1/Step1';
 import Step2 from '@/components/Step2/Step2';
@@ -16,7 +14,6 @@ const page = ({ params }: PageProps) => {
             return <Step3 />;
         case 'summary':
             return <Step4 />;
-
         default:
             break;
     }
